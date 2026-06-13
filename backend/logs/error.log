@@ -1,0 +1,478 @@
+2026-06-10 12:30:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 801E12FB01000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-10 12:30:19 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 801E12FB01000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-10 12:30:34 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-10 12:30:53 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-10 12:30:53 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-10 13:00:00 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 801E12FB01000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:30:00 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:30:14 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:30:29 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 13:30:34 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:30:46 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 13:30:46 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 13:31:12 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 13:31:27 [error]: Threat scan error for bestforluck.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for savadelhi.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for jmdcontrol.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for asblogisticsindia.in: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for directionacademy.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for aggoverseas.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for studio-neoteric.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for physioguide.co.in: timeout of 15000ms exceeded
+2026-06-11 13:31:54 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 13:31:59 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 13:31:59 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 13:32:05 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:32:05 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 13:33:07 [error]: Threat scan error for tarunngrandpartyhall.com: timeout of 15000ms exceeded
+2026-06-11 13:33:27 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 13:33:45 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 13:33:46 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 13:33:46 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 13:34:00 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 13:34:27 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:34:27 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 13:34:49 [error]: Threat scan error for drpoojadentalcentre.co.in: read ECONNRESET
+2026-06-11 13:35:28 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 13:36:02 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 13:36:02 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 13:36:54 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 13:37:17 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 13:37:17 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 13:37:17 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 13:37:32 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 13:37:32 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 13:37:32 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 13:37:48 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 13:37:48 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 13:37:48 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 13:37:48 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 13:37:58 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 13:37:58 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 13:37:58 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 13:37:58 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 13:38:18 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 13:38:18 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 13:38:18 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 13:38:32 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 13:38:33 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 13:38:33 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 13:38:50 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 13:38:50 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 13:39:02 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 13:39:02 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 13:39:02 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 13:39:02 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 13:39:12 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 13:39:12 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 13:39:12 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 13:39:12 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 13:39:26 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 13:39:26 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 13:39:26 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 13:39:26 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 13:39:39 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 13:39:39 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 13:39:39 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 14:00:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:00:16 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:00:31 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 14:00:36 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:00:49 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 14:00:49 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 14:01:11 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 14:01:33 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 14:01:39 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 14:01:39 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 14:01:45 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 14:01:45 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:02:47 [error]: Threat scan error for tarunngrandpartyhall.com: timeout of 15000ms exceeded
+2026-06-11 14:03:01 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 14:03:15 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 14:03:15 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 14:03:15 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 14:03:29 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 14:03:55 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:03:55 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 14:05:28 [error]: Threat scan error for musiczonemusicals.com: aborted
+2026-06-11 14:05:28 [error]: Threat scan error for shreeramresearch.com: aborted
+2026-06-11 14:18:14 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 14:18:54 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 14:18:54 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 14:24:46 [error]: Threat scan error for phoniclandbykiransingh.com: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for drkrishnagopal.in: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for dramitbansalortho.com: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for withstandventures.com: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for drmohitjain.co.in: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for opticalplaza.co.in: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for drseyeinstitute.com: aborted
+2026-06-11 14:34:33 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 14:35:01 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 14:35:01 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 14:35:01 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 14:35:22 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 14:35:22 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 14:35:22 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 14:35:45 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 14:35:45 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 14:35:46 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 14:35:46 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 14:36:05 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 14:36:05 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 14:36:05 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 14:36:05 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 14:36:22 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 14:36:23 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 14:36:23 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 14:36:45 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 14:36:46 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 14:36:46 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 14:37:04 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 14:37:04 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 14:37:24 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 14:37:24 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 14:37:24 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 14:37:24 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 14:37:40 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 14:37:40 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 14:37:40 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 14:37:40 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 14:37:58 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 14:37:58 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 14:37:58 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 14:37:59 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 14:38:21 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 14:38:21 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 14:38:21 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 15:00:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:00:17 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:00:32 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 15:00:37 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:00:49 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 15:00:49 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 15:01:12 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 15:01:35 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:01:42 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 15:01:42 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 15:01:48 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 15:01:48 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:02:03 [error]: Threat scan error for pramhut.com: timeout of 15000ms exceeded
+2026-06-11 15:03:19 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 15:03:30 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 15:03:30 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 15:03:30 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 15:03:46 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:04:15 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 15:04:15 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:05:15 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 15:05:49 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 15:05:49 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 15:06:46 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:07:07 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 15:07:07 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 15:07:07 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 15:07:20 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 15:07:20 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 15:07:20 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 15:07:34 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 15:07:34 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 15:07:34 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 15:07:34 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 15:07:46 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 15:07:46 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 15:07:46 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 15:07:46 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 15:08:04 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 15:08:04 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 15:08:04 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 15:08:21 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 15:08:21 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 15:08:21 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 15:08:39 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 15:08:39 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 15:08:52 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 15:08:52 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 15:08:52 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 15:08:52 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 15:09:09 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 15:09:09 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 15:09:09 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 15:09:09 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 15:09:25 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 15:09:25 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 15:09:25 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 15:09:25 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 15:09:42 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 15:09:42 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 15:09:42 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 15:30:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:12 [error]: Threat scan error for ganesh.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:12 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:12 [error]: Threat scan error for car.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:27 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 15:30:32 [error]: Threat scan error for unity.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for lado.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for swasthya-hospital.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for dr-bindiya-p-mehta.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for bakshikitchensandinteriors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for omeducation.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:43 [error]: Threat scan error for unity-hyundai.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:44 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 15:30:44 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 15:30:57 [error]: Threat scan error for totalkneereplacementguide.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:57 [error]: Threat scan error for sampoorn.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:57 [error]: Threat scan error for newtvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:31:05 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 15:31:27 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:31:35 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 15:31:35 [error]: Threat scan error for veracious.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:31:35 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 15:31:40 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 15:31:41 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:33:20 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 15:33:29 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 15:33:29 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 15:33:29 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 15:33:42 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:34:10 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:34:10 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 15:35:04 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 15:35:38 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 15:35:38 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 15:36:31 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:41:00 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 15:41:00 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 15:41:00 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 15:41:16 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 15:41:17 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 15:41:17 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 15:41:30 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 15:41:30 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 15:41:30 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 15:41:30 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 15:41:43 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 15:41:43 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 15:41:43 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 15:41:43 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 15:41:53 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 15:41:53 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 15:41:53 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 15:42:10 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 15:42:10 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 15:42:10 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 15:42:27 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 15:42:27 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 15:42:41 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 15:42:41 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 15:42:41 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 15:42:41 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 15:42:53 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 15:42:53 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 15:42:53 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 15:42:53 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 15:43:09 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 15:43:09 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 15:43:09 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 15:43:13 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 15:43:23 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 15:43:23 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 15:43:23 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 16:00:00 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:16 [error]: Threat scan error for ganesh.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:16 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:16 [error]: Threat scan error for car.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:31 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 16:00:36 [error]: Threat scan error for bakshikitchensandinteriors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for unity.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for swasthya-hospital.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for dr-bindiya-p-mehta.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for lado.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for omeducation.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:48 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 16:00:49 [error]: Threat scan error for shastrinagartvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:49 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 16:00:49 [error]: Threat scan error for unity-hyundai.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:01 [error]: Threat scan error for newtvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:01 [error]: Threat scan error for sampoorn.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:01 [error]: Threat scan error for totalkneereplacementguide.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:10 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 16:01:25 [error]: Threat scan error for vendorservice.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:25 [error]: Threat scan error for rgbathandkitchen.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:32 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 16:01:38 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 16:01:38 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 16:01:38 [error]: Threat scan error for pilotsacademy.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:38 [error]: Threat scan error for salasartvsmotors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:38 [error]: Threat scan error for salasartvs.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:38 [error]: Threat scan error for veracious.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:44 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 16:01:44 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:03:25 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 16:03:35 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 16:03:35 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 16:03:35 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 16:03:48 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 16:04:16 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:04:16 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 16:05:08 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 16:05:39 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 16:05:39 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 16:06:30 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 16:06:50 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 16:06:50 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 16:06:50 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 16:07:04 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 16:07:04 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 16:07:04 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 16:07:17 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 16:07:17 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 16:07:17 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 16:07:17 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 16:07:27 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 16:07:27 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 16:07:27 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 16:07:27 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 16:07:36 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 16:07:36 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 16:07:36 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 16:07:49 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 16:07:49 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 16:07:49 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 16:08:07 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 16:08:07 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 16:08:17 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 16:08:17 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 16:08:17 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 16:08:17 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 16:08:27 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 16:08:27 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 16:08:27 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 16:08:27 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 16:08:37 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 16:08:37 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 16:08:37 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 16:08:37 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 16:08:48 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 16:08:48 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 16:08:48 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 18:30:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:18 [error]: Threat scan error for ganesh.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:18 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:18 [error]: Threat scan error for car.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:33 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 18:30:38 [error]: Threat scan error for lado.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for unity.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for dr-bindiya-p-mehta.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for bakshikitchensandinteriors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for omeducation.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for swasthya-hospital.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:53 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 18:30:53 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 18:30:53 [error]: Threat scan error for unity-hyundai.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:53 [error]: Threat scan error for shastrinagartvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:07 [error]: Threat scan error for newtvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:07 [error]: Threat scan error for sampoorn.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:07 [error]: Threat scan error for totalkneereplacementguide.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:07 [error]: Threat scan error for sushruta-ano-rectal-institute.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:12 [error]: Threat scan error for helpubuild.in: Client network socket disconnected before secure TLS connection was established
+2026-06-11 18:31:17 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 18:31:31 [error]: Threat scan error for vendorservice.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:31 [error]: Threat scan error for rgbathandkitchen.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:39 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 18:31:45 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 18:31:45 [error]: Threat scan error for veracious.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:46 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 18:31:46 [error]: Threat scan error for pilotsacademy.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:46 [error]: Threat scan error for salasartvs.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:46 [error]: Threat scan error for salasartvsmotors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:46 [error]: Threat scan error for newstylefurniture.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:51 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 18:31:51 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+

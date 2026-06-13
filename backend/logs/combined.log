@@ -1,0 +1,1278 @@
+2026-06-10 12:24:01 [info]: ::1 - - [10/Jun/2026:06:54:01 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:24:30 [info]: ::1 - - [10/Jun/2026:06:54:30 +0000] "GET /api/ssl/expiring HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:24:30 [info]: ::1 - - [10/Jun/2026:06:54:30 +0000] "GET /api/websites/stats HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:24:31 [info]: ::1 - - [10/Jun/2026:06:54:31 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:24:31 [info]: ::1 - - [10/Jun/2026:06:54:31 +0000] "GET /api/incidents?limit=5&status=open&sort=-detectionTime HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:24:31 [info]: ::1 - - [10/Jun/2026:06:54:31 +0000] "GET /api/threats?limit=6&sort=-detectedAt HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:24:32 [info]: ::1 - - [10/Jun/2026:06:54:32 +0000] "GET /api/dns?hasChanged=true&limit=5 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:01 [info]: ::1 - - [10/Jun/2026:06:55:01 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:09 [info]: ::1 - - [10/Jun/2026:06:55:09 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:09 [info]: ::1 - - [10/Jun/2026:06:55:09 +0000] "GET /api/websites?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:10 [info]: ::1 - - [10/Jun/2026:06:55:10 +0000] "GET /api/websites?page=1&limit=20&search=vimuktaacademy HTTP/1.1" 200 1013 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:25 [info]: ::1 - - [10/Jun/2026:06:55:25 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:27 [info]: ::1 - - [10/Jun/2026:06:55:27 +0000] "GET /api/incidents?search=vimuktaacademy&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:31 [info]: ::1 - - [10/Jun/2026:06:55:31 +0000] "GET /api/incidents?search=vimuktaacadem&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:31 [info]: ::1 - - [10/Jun/2026:06:55:31 +0000] "GET /api/incidents?search=vimuktaacade&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:31 [info]: ::1 - - [10/Jun/2026:06:55:31 +0000] "GET /api/incidents?search=vimuktaacad&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:31 [info]: ::1 - - [10/Jun/2026:06:55:31 +0000] "GET /api/incidents?search=vimuktaaca&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:32 [info]: ::1 - - [10/Jun/2026:06:55:32 +0000] "GET /api/incidents?search=vimuktaac&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:32 [info]: ::1 - - [10/Jun/2026:06:55:32 +0000] "GET /api/incidents?search=vimuktaa&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:32 [info]: ::1 - - [10/Jun/2026:06:55:32 +0000] "GET /api/incidents?search=vimukta&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:32 [info]: ::1 - - [10/Jun/2026:06:55:32 +0000] "GET /api/incidents?search=vimukt&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:32 [info]: ::1 - - [10/Jun/2026:06:55:32 +0000] "GET /api/incidents?search=vimuk&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:32 [info]: ::1 - - [10/Jun/2026:06:55:32 +0000] "GET /api/incidents?search=vimu&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:32 [info]: ::1 - - [10/Jun/2026:06:55:32 +0000] "GET /api/incidents?search=vim&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:32 [info]: ::1 - - [10/Jun/2026:06:55:32 +0000] "GET /api/incidents?search=vi&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:32 [info]: ::1 - - [10/Jun/2026:06:55:32 +0000] "GET /api/incidents?search=v&page=1&limit=25 HTTP/1.1" 200 942 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:39 [info]: ::1 - - [10/Jun/2026:06:55:39 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:39 [info]: ::1 - - [10/Jun/2026:06:55:39 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:39 [info]: ::1 - - [10/Jun/2026:06:55:39 +0000] "GET /api/screenshots/stats HTTP/1.1" 200 107 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:40 [info]: ::1 - - [10/Jun/2026:06:55:40 +0000] "GET /api/screenshots?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:25:41 [info]: ::1 - - [10/Jun/2026:06:55:41 +0000] "GET /api/screenshots?page=1&limit=20&search=vimuktaacademy HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:26:09 [info]: ::1 - - [10/Jun/2026:06:56:09 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:26:25 [info]: ::1 - - [10/Jun/2026:06:56:25 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:26:25 [info]: ::1 - - [10/Jun/2026:06:56:25 +0000] "GET /api/ssl?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:26:25 [info]: ::1 - - [10/Jun/2026:06:56:25 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:27:25 [info]: ::1 - - [10/Jun/2026:06:57:25 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:27:55 [info]: ::1 - - [10/Jun/2026:06:57:55 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:29:25 [info]: Socket.IO initialized
+2026-06-10 12:29:25 [info]: Initializing cron jobs...
+2026-06-10 12:29:25 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:25 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:25 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:25 [info]: Socket.IO initialized
+2026-06-10 12:29:25 [info]: Initializing cron jobs...
+2026-06-10 12:29:25 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:25 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:25 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:26 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:29:27 [info]: Socket.IO initialized
+2026-06-10 12:29:27 [info]: Initializing cron jobs...
+2026-06-10 12:29:27 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:27 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:27 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:27 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:29:28 [info]: Socket.IO initialized
+2026-06-10 12:29:28 [info]: Initializing cron jobs...
+2026-06-10 12:29:28 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:28 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:28 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:29 [info]: MongoDB connected: ac-1dmibho-shard-00-01.y9evv10.mongodb.net
+2026-06-10 12:29:29 [info]: Socket.IO initialized
+2026-06-10 12:29:29 [info]: Initializing cron jobs...
+2026-06-10 12:29:29 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:29 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:29 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:30 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:29:32 [info]: Socket.IO initialized
+2026-06-10 12:29:32 [info]: Initializing cron jobs...
+2026-06-10 12:29:32 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:32 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:32 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:33 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:29:34 [info]: Socket.IO initialized
+2026-06-10 12:29:34 [info]: Initializing cron jobs...
+2026-06-10 12:29:34 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:34 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:34 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:35 [info]: MongoDB connected: ac-1dmibho-shard-00-01.y9evv10.mongodb.net
+2026-06-10 12:29:36 [info]: Socket.IO initialized
+2026-06-10 12:29:36 [info]: Initializing cron jobs...
+2026-06-10 12:29:36 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:36 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:36 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:37 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:29:38 [info]: Socket.IO initialized
+2026-06-10 12:29:38 [info]: Initializing cron jobs...
+2026-06-10 12:29:38 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:38 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:38 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:38 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:29:39 [info]: Socket.IO initialized
+2026-06-10 12:29:39 [info]: Initializing cron jobs...
+2026-06-10 12:29:39 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:39 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:39 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:40 [info]: MongoDB connected: ac-1dmibho-shard-00-01.y9evv10.mongodb.net
+2026-06-10 12:29:42 [info]: Socket.IO initialized
+2026-06-10 12:29:42 [info]: Initializing cron jobs...
+2026-06-10 12:29:42 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:42 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:42 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:29:43 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:29:59 [info]: Socket.IO initialized
+2026-06-10 12:29:59 [info]: Initializing cron jobs...
+2026-06-10 12:29:59 [info]: All 7 cron jobs initialized
+2026-06-10 12:29:59 [info]: Shield Pro API running on port 5555
+2026-06-10 12:29:59 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:30:00 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:30:00 [info]: [CRON] Health checks starting
+2026-06-10 12:30:00 [info]: [CRON] Threat detection starting
+2026-06-10 12:30:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 801E12FB01000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-10 12:30:19 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 801E12FB01000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-10 12:30:19 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: advocaterishabandnancychaudhary.apnipaathshaala.in
+2026-06-10 12:30:20 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: uppaltours.apnipaathshaala.in
+2026-06-10 12:30:34 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-10 12:30:53 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-10 12:30:53 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-10 12:30:57 [info]: Socket.IO initialized
+2026-06-10 12:30:57 [info]: Initializing cron jobs...
+2026-06-10 12:30:57 [info]: All 7 cron jobs initialized
+2026-06-10 12:30:57 [info]: Shield Pro API running on port 5555
+2026-06-10 12:30:57 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:30:57 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:31:25 [info]: ::1 - - [10/Jun/2026:07:01:25 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:31:26 [info]: ::1 - - [10/Jun/2026:07:01:26 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:37:55 [info]: Socket.IO initialized
+2026-06-10 12:37:55 [info]: Initializing cron jobs...
+2026-06-10 12:37:55 [info]: All 7 cron jobs initialized
+2026-06-10 12:37:55 [info]: Shield Pro API running on port 5555
+2026-06-10 12:37:55 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:37:55 [info]: Socket.IO initialized
+2026-06-10 12:37:55 [info]: Initializing cron jobs...
+2026-06-10 12:37:55 [info]: All 7 cron jobs initialized
+2026-06-10 12:37:55 [info]: Shield Pro API running on port 5555
+2026-06-10 12:37:55 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:37:56 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:39:47 [info]: Socket.IO initialized
+2026-06-10 12:39:47 [info]: Initializing cron jobs...
+2026-06-10 12:39:47 [info]: All 7 cron jobs initialized
+2026-06-10 12:39:47 [info]: Shield Pro API running on port 5555
+2026-06-10 12:39:47 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:39:48 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:40:41 [info]: Socket.IO initialized
+2026-06-10 12:40:41 [info]: Initializing cron jobs...
+2026-06-10 12:40:41 [info]: All 7 cron jobs initialized
+2026-06-10 12:40:41 [info]: Shield Pro API running on port 5555
+2026-06-10 12:40:41 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:40:42 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:41:58 [info]: Socket.IO initialized
+2026-06-10 12:41:58 [info]: Initializing cron jobs...
+2026-06-10 12:41:58 [info]: All 7 cron jobs initialized
+2026-06-10 12:41:58 [info]: Shield Pro API running on port 5555
+2026-06-10 12:41:58 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:41:58 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:42:58 [info]: Socket.IO initialized
+2026-06-10 12:42:58 [info]: Initializing cron jobs...
+2026-06-10 12:42:58 [info]: All 7 cron jobs initialized
+2026-06-10 12:42:58 [info]: Shield Pro API running on port 5555
+2026-06-10 12:42:58 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:42:59 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:43:02 [info]: Socket.IO initialized
+2026-06-10 12:43:02 [info]: Initializing cron jobs...
+2026-06-10 12:43:02 [info]: All 7 cron jobs initialized
+2026-06-10 12:43:02 [info]: Shield Pro API running on port 5555
+2026-06-10 12:43:02 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:43:02 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:43:12 [info]: Socket.IO initialized
+2026-06-10 12:43:12 [info]: Initializing cron jobs...
+2026-06-10 12:43:12 [info]: All 7 cron jobs initialized
+2026-06-10 12:43:12 [info]: Shield Pro API running on port 5555
+2026-06-10 12:43:12 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:43:12 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:43:15 [info]: Socket.IO initialized
+2026-06-10 12:43:15 [info]: Initializing cron jobs...
+2026-06-10 12:43:15 [info]: All 7 cron jobs initialized
+2026-06-10 12:43:15 [info]: Shield Pro API running on port 5555
+2026-06-10 12:43:15 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:43:15 [info]: MongoDB connected: ac-1dmibho-shard-00-01.y9evv10.mongodb.net
+2026-06-10 12:43:17 [info]: Socket.IO initialized
+2026-06-10 12:43:17 [info]: Initializing cron jobs...
+2026-06-10 12:43:17 [info]: All 7 cron jobs initialized
+2026-06-10 12:43:17 [info]: Shield Pro API running on port 5555
+2026-06-10 12:43:17 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:43:17 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:45:00 [info]: [CRON] Health checks starting
+2026-06-10 12:45:04 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: care.adsdigitalmedia.com
+2026-06-10 12:45:06 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: car.adsdigitalmedia.com
+2026-06-10 12:45:06 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: ganesh.adsdigitalmedia.com
+2026-06-10 12:45:26 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: yonoallgamers.com
+2026-06-10 12:45:32 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: dr-bindiya-p-mehta.apnipaathshaala.in
+2026-06-10 12:45:32 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: unity-hyundai.adsdigitalmedia.com
+2026-06-10 12:45:32 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: lado.apnipaathshaala.in
+2026-06-10 12:45:32 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: prustel.com
+2026-06-10 12:45:32 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: swasthya-hospital.adsdigitalmedia.com
+2026-06-10 12:45:32 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: bakshikitchensandinteriors.adsdigitalmedia.com
+2026-06-10 12:45:33 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: unity.apnipaathshaala.in
+2026-06-10 12:45:33 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: shastrinagartvsbalaji.adsdigitalmedia.com
+2026-06-10 12:45:33 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: omeducation.adsdigitalmedia.com
+2026-06-10 12:45:54 [info]: Socket.IO initialized
+2026-06-10 12:45:54 [info]: Initializing cron jobs...
+2026-06-10 12:45:54 [info]: All 7 cron jobs initialized
+2026-06-10 12:45:54 [info]: Shield Pro API running on port 5555
+2026-06-10 12:45:54 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:45:54 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:46:07 [info]: Socket.IO initialized
+2026-06-10 12:46:07 [info]: Initializing cron jobs...
+2026-06-10 12:46:07 [info]: All 7 cron jobs initialized
+2026-06-10 12:46:07 [info]: Shield Pro API running on port 5555
+2026-06-10 12:46:07 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:46:07 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:46:10 [info]: Socket.IO initialized
+2026-06-10 12:46:10 [info]: Initializing cron jobs...
+2026-06-10 12:46:10 [info]: All 7 cron jobs initialized
+2026-06-10 12:46:10 [info]: Shield Pro API running on port 5555
+2026-06-10 12:46:10 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:46:11 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:46:12 [info]: Socket.IO initialized
+2026-06-10 12:46:12 [info]: Initializing cron jobs...
+2026-06-10 12:46:12 [info]: All 7 cron jobs initialized
+2026-06-10 12:46:12 [info]: Shield Pro API running on port 5555
+2026-06-10 12:46:12 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:46:12 [info]: MongoDB connected: ac-1dmibho-shard-00-01.y9evv10.mongodb.net
+2026-06-10 12:51:01 [info]: Socket.IO initialized
+2026-06-10 12:51:01 [info]: Initializing cron jobs...
+2026-06-10 12:51:01 [info]: All 7 cron jobs initialized
+2026-06-10 12:51:01 [info]: Shield Pro API running on port 5555
+2026-06-10 12:51:01 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:51:02 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:51:05 [info]: Socket.IO initialized
+2026-06-10 12:51:05 [info]: Initializing cron jobs...
+2026-06-10 12:51:05 [info]: All 7 cron jobs initialized
+2026-06-10 12:51:05 [info]: Shield Pro API running on port 5555
+2026-06-10 12:51:05 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:51:05 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:51:07 [info]: Socket.IO initialized
+2026-06-10 12:51:07 [info]: Initializing cron jobs...
+2026-06-10 12:51:07 [info]: All 7 cron jobs initialized
+2026-06-10 12:51:07 [info]: Shield Pro API running on port 5555
+2026-06-10 12:51:07 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:51:07 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:51:08 [info]: Socket.IO initialized
+2026-06-10 12:51:08 [info]: Initializing cron jobs...
+2026-06-10 12:51:08 [info]: All 7 cron jobs initialized
+2026-06-10 12:51:08 [info]: Shield Pro API running on port 5555
+2026-06-10 12:51:08 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:51:09 [info]: MongoDB connected: ac-1dmibho-shard-00-01.y9evv10.mongodb.net
+2026-06-10 12:52:09 [info]: Socket.IO initialized
+2026-06-10 12:52:09 [info]: Initializing cron jobs...
+2026-06-10 12:52:09 [info]: All 7 cron jobs initialized
+2026-06-10 12:52:09 [info]: Shield Pro API running on port 5555
+2026-06-10 12:52:09 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:52:09 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:52:12 [info]: Socket.IO initialized
+2026-06-10 12:52:12 [info]: Initializing cron jobs...
+2026-06-10 12:52:12 [info]: All 7 cron jobs initialized
+2026-06-10 12:52:12 [info]: Shield Pro API running on port 5555
+2026-06-10 12:52:12 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:52:12 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:53:37 [info]: Socket.IO initialized
+2026-06-10 12:53:37 [info]: Initializing cron jobs...
+2026-06-10 12:53:37 [info]: All 7 cron jobs initialized
+2026-06-10 12:53:37 [info]: Shield Pro API running on port 5555
+2026-06-10 12:53:37 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:53:37 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-10 12:53:38 [info]: Socket.IO initialized
+2026-06-10 12:53:38 [info]: Initializing cron jobs...
+2026-06-10 12:53:38 [info]: All 7 cron jobs initialized
+2026-06-10 12:53:38 [info]: Shield Pro API running on port 5555
+2026-06-10 12:53:38 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-10 12:53:39 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-10 12:54:20 [info]: Login success: admin@shieldpro.com
+2026-06-10 12:54:20 [info]: ::1 - - [10/Jun/2026:07:24:20 +0000] "POST /api/auth/login HTTP/1.1" 200 543 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:21 [info]: ::1 - - [10/Jun/2026:07:24:21 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:21 [info]: ::1 - - [10/Jun/2026:07:24:21 +0000] "GET /api/ssl/expiring HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:21 [info]: ::1 - - [10/Jun/2026:07:24:21 +0000] "GET /api/threats?limit=6&sort=-detectedAt HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:21 [info]: ::1 - - [10/Jun/2026:07:24:21 +0000] "GET /api/incidents?limit=5&status=open&sort=-detectionTime HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:21 [info]: ::1 - - [10/Jun/2026:07:24:21 +0000] "GET /api/dns?hasChanged=true&limit=5 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:21 [info]: ::1 - - [10/Jun/2026:07:24:21 +0000] "GET /api/websites/stats HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:25 [info]: ::1 - - [10/Jun/2026:07:24:25 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:25 [info]: ::1 - - [10/Jun/2026:07:24:25 +0000] "GET /api/screenshots/stats HTTP/1.1" 200 107 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:25 [info]: ::1 - - [10/Jun/2026:07:24:25 +0000] "GET /api/screenshots?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:54:55 [info]: ::1 - - [10/Jun/2026:07:24:55 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:01 [info]: ::1 - - [10/Jun/2026:07:25:01 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:01 [info]: ::1 - - [10/Jun/2026:07:25:01 +0000] "GET /api/backups/stats HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:01 [info]: ::1 - - [10/Jun/2026:07:25:01 +0000] "GET /api/backups?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:04 [info]: ::1 - - [10/Jun/2026:07:25:04 +0000] "GET /api/websites?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:13 [info]: ::1 - - [10/Jun/2026:07:25:13 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:18 [info]: ::1 - - [10/Jun/2026:07:25:18 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:18 [info]: ::1 - - [10/Jun/2026:07:25:18 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:18 [info]: ::1 - - [10/Jun/2026:07:25:18 +0000] "GET /api/auth/me HTTP/1.1" 200 462 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:18 [info]: ::1 - - [10/Jun/2026:07:25:18 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:55:48 [info]: ::1 - - [10/Jun/2026:07:25:48 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:56:18 [info]: ::1 - - [10/Jun/2026:07:26:18 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:56:48 [info]: ::1 - - [10/Jun/2026:07:26:48 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:57:19 [info]: ::1 - - [10/Jun/2026:07:27:19 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:57:49 [info]: ::1 - - [10/Jun/2026:07:27:49 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:58:19 [info]: ::1 - - [10/Jun/2026:07:28:19 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:58:49 [info]: ::1 - - [10/Jun/2026:07:28:49 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:59:19 [info]: ::1 - - [10/Jun/2026:07:29:19 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 12:59:49 [info]: ::1 - - [10/Jun/2026:07:29:49 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-10 13:00:00 [info]: [CRON] Health checks starting
+2026-06-10 13:00:00 [info]: [CRON] Threat detection starting
+2026-06-10 13:00:00 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 801E12FB01000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-10 13:00:11 [info]: SIGINT received. Shutting down gracefully...
+2026-06-11 12:30:20 [info]: Socket.IO initialized
+2026-06-11 12:30:20 [info]: Initializing cron jobs...
+2026-06-11 12:30:20 [info]: All 7 cron jobs initialized
+2026-06-11 12:30:20 [info]: Shield Pro API running on port 5555
+2026-06-11 12:30:20 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:30:21 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-11 12:30:39 [info]: Socket.IO initialized
+2026-06-11 12:30:39 [info]: Initializing cron jobs...
+2026-06-11 12:30:39 [info]: All 7 cron jobs initialized
+2026-06-11 12:30:39 [info]: Shield Pro API running on port 5555
+2026-06-11 12:30:39 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:30:39 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-11 12:30:45 [info]: ::1 - - [11/Jun/2026:07:00:45 +0000] "GET /api/threats?limit=6&sort=-detectedAt HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:30:45 [info]: ::1 - - [11/Jun/2026:07:00:45 +0000] "GET /api/websites/stats HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:30:45 [info]: ::1 - - [11/Jun/2026:07:00:45 +0000] "GET /api/incidents?limit=5&status=open&sort=-detectionTime HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:30:45 [info]: ::1 - - [11/Jun/2026:07:00:45 +0000] "GET /api/dns?hasChanged=true&limit=5 HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:30:45 [info]: ::1 - - [11/Jun/2026:07:00:45 +0000] "GET /api/ssl/expiring HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:30:45 [info]: ::1 - - [11/Jun/2026:07:00:45 +0000] "POST /api/auth/refresh HTTP/1.1" 401 369 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:16 [info]: Login success: admin@shieldpro.com
+2026-06-11 12:31:16 [info]: ::1 - - [11/Jun/2026:07:01:16 +0000] "POST /api/auth/login HTTP/1.1" 200 543 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:17 [info]: ::1 - - [11/Jun/2026:07:01:17 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:17 [info]: ::1 - - [11/Jun/2026:07:01:17 +0000] "GET /api/ssl/expiring HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:17 [info]: ::1 - - [11/Jun/2026:07:01:17 +0000] "GET /api/threats?limit=6&sort=-detectedAt HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:17 [info]: ::1 - - [11/Jun/2026:07:01:17 +0000] "GET /api/incidents?limit=5&status=open&sort=-detectionTime HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:17 [info]: ::1 - - [11/Jun/2026:07:01:17 +0000] "GET /api/dns?hasChanged=true&limit=5 HTTP/1.1" 200 80 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:17 [info]: ::1 - - [11/Jun/2026:07:01:17 +0000] "GET /api/websites/stats HTTP/1.1" 200 119 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:25 [info]: ::1 - - [11/Jun/2026:07:01:25 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:25 [info]: ::1 - - [11/Jun/2026:07:01:25 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:34 [info]: ::1 - - [11/Jun/2026:07:01:34 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:34 [info]: ::1 - - [11/Jun/2026:07:01:34 +0000] "GET /api/auth/me HTTP/1.1" 200 462 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:34 [info]: ::1 - - [11/Jun/2026:07:01:34 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:35 [info]: ::1 - - [11/Jun/2026:07:01:35 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:41 [info]: ::1 - - [11/Jun/2026:07:01:41 +0000] "GET /api/threats?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:56 [info]: ::1 - - [11/Jun/2026:07:01:56 +0000] "GET /api/screenshots/stats HTTP/1.1" 200 107 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:56 [info]: ::1 - - [11/Jun/2026:07:01:56 +0000] "GET /api/screenshots?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:31:59 [info]: ::1 - - [11/Jun/2026:07:01:59 +0000] "GET /api/screenshots?page=1&limit=20&accountId=6a28fbe05cdd5cb01c577860 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:04 [info]: ::1 - - [11/Jun/2026:07:02:04 +0000] "GET /api/screenshots?page=1&limit=20&accountId=6a28fa845cdd5cb01c577755 HTTP/1.1" 200 51 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:06 [info]: ::1 - - [11/Jun/2026:07:02:06 +0000] "GET /api/screenshots?page=1&limit=20&accountId=6a28f9f55cdd5cb01c577544 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:10 [info]: ::1 - - [11/Jun/2026:07:02:10 +0000] "GET /api/screenshots?page=1&limit=20&accountId=6a28fcbb5cdd5cb01c5779ec HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:19 [info]: ::1 - - [11/Jun/2026:07:02:19 +0000] "POST /api/screenshots/6a28fcbdc0a22071a61cb07c/capture HTTP/1.1" 200 96 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:19 [info]: ::1 - - [11/Jun/2026:07:02:19 +0000] "GET /api/screenshots/stats HTTP/1.1" 200 107 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:19 [info]: ::1 - - [11/Jun/2026:07:02:19 +0000] "GET /api/screenshots?page=1&limit=20&accountId=6a28fcbb5cdd5cb01c5779ec HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:25 [info]: ::1 - - [11/Jun/2026:07:02:25 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:35 [info]: ::1 - - [11/Jun/2026:07:02:35 +0000] "POST /api/screenshots/6a28fcbdc0a22071a61cb082/capture HTTP/1.1" 200 96 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:35 [info]: ::1 - - [11/Jun/2026:07:02:35 +0000] "GET /api/screenshots/stats HTTP/1.1" 200 107 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:35 [info]: ::1 - - [11/Jun/2026:07:02:35 +0000] "GET /api/screenshots?page=1&limit=20&accountId=6a28fcbb5cdd5cb01c5779ec HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:55 [info]: ::1 - - [11/Jun/2026:07:02:55 +0000] "POST /api/screenshots/6a28fcbec0a22071a61cb08e/capture HTTP/1.1" 200 96 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:55 [info]: ::1 - - [11/Jun/2026:07:02:55 +0000] "GET /api/screenshots/stats HTTP/1.1" 200 107 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:55 [info]: ::1 - - [11/Jun/2026:07:02:55 +0000] "GET /api/screenshots?page=1&limit=20&accountId=6a28fcbb5cdd5cb01c5779ec HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:32:55 [info]: ::1 - - [11/Jun/2026:07:02:55 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:33:10 [info]: ::1 - - [11/Jun/2026:07:03:10 +0000] "GET /api/screenshots?page=1&limit=20&accountId=6a28f9f55cdd5cb01c577544 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:33:14 [info]: ::1 - - [11/Jun/2026:07:03:14 +0000] "GET /api/screenshots?page=1&limit=20&accountId=6a2828d3667b220611398f53 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:33:26 [info]: ::1 - - [11/Jun/2026:07:03:26 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:33:28 [info]: ::1 - - [11/Jun/2026:07:03:28 +0000] "GET /api/screenshots?page=2&limit=20&accountId=6a2828d3667b220611398f53 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:33:31 [info]: ::1 - - [11/Jun/2026:07:03:31 +0000] "GET /api/screenshots?page=3&limit=20&accountId=6a2828d3667b220611398f53 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:33:50 [info]: ::1 - - [11/Jun/2026:07:03:50 +0000] "POST /api/screenshots/6a2828d6c0a22071a61c8cb3/capture HTTP/1.1" 500 357 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:33:56 [info]: ::1 - - [11/Jun/2026:07:03:56 +0000] "GET /api/screenshots/stats HTTP/1.1" 200 107 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:33:56 [info]: ::1 - - [11/Jun/2026:07:03:56 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:00 [info]: ::1 - - [11/Jun/2026:07:04:00 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:15 [info]: ::1 - - [11/Jun/2026:07:04:15 +0000] "POST /api/accounts/6a28fbe05cdd5cb01c577860/sync HTTP/1.1" 200 50 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:15 [info]: ::1 - - [11/Jun/2026:07:04:15 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:18 [info]: ::1 - - [11/Jun/2026:07:04:18 +0000] "GET /api/websites?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:27 [info]: ::1 - - [11/Jun/2026:07:04:27 +0000] "GET /api/websites?page=1&limit=20&accountId=6a28f9f55cdd5cb01c577544 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:31 [info]: ::1 - - [11/Jun/2026:07:04:31 +0000] "GET /api/websites?page=1&limit=20&accountId=6a28fa845cdd5cb01c577755 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:33 [info]: ::1 - - [11/Jun/2026:07:04:33 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:37 [info]: ::1 - - [11/Jun/2026:07:04:37 +0000] "POST /api/accounts/6a28fa845cdd5cb01c577755/sync HTTP/1.1" 200 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:37 [info]: ::1 - - [11/Jun/2026:07:04:37 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:40 [info]: ::1 - - [11/Jun/2026:07:04:40 +0000] "POST /api/accounts/6a28fa845cdd5cb01c577755/sync HTTP/1.1" 200 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:34:40 [info]: ::1 - - [11/Jun/2026:07:04:40 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:35:13 [info]: ::1 - - [11/Jun/2026:07:05:13 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:35:43 [info]: ::1 - - [11/Jun/2026:07:05:43 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:36:13 [info]: ::1 - - [11/Jun/2026:07:06:13 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:36:43 [info]: ::1 - - [11/Jun/2026:07:06:43 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:37:37 [info]: ::1 - - [11/Jun/2026:07:07:37 +0000] "GET /api/websites?page=1&limit=20&accountId=6a28fbe05cdd5cb01c577860 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:37:42 [info]: ::1 - - [11/Jun/2026:07:07:42 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:37:44 [info]: ::1 - - [11/Jun/2026:07:07:44 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:38:05 [info]: ::1 - - [11/Jun/2026:07:08:05 +0000] "POST /api/accounts/6a28fcbb5cdd5cb01c5779ec/sync HTTP/1.1" 200 50 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:38:05 [info]: ::1 - - [11/Jun/2026:07:08:05 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:38:14 [info]: ::1 - - [11/Jun/2026:07:08:14 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:38:34 [info]: ::1 - - [11/Jun/2026:07:08:34 +0000] "POST /api/accounts/6a28fa845cdd5cb01c577755/sync HTTP/1.1" 200 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:38:34 [info]: ::1 - - [11/Jun/2026:07:08:34 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:38:44 [info]: ::1 - - [11/Jun/2026:07:08:44 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:39:14 [info]: ::1 - - [11/Jun/2026:07:09:14 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:39:44 [info]: ::1 - - [11/Jun/2026:07:09:44 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:39:54 [info]: Socket.IO initialized
+2026-06-11 12:39:54 [info]: Initializing cron jobs...
+2026-06-11 12:39:54 [info]: All 7 cron jobs initialized
+2026-06-11 12:39:54 [info]: Shield Pro API running on port 5555
+2026-06-11 12:39:54 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:39:55 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-11 12:39:55 [info]: Socket.IO initialized
+2026-06-11 12:39:55 [info]: Initializing cron jobs...
+2026-06-11 12:39:55 [info]: All 7 cron jobs initialized
+2026-06-11 12:39:55 [info]: Shield Pro API running on port 5555
+2026-06-11 12:39:55 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:39:56 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-11 12:39:57 [info]: Socket.IO initialized
+2026-06-11 12:39:57 [info]: Initializing cron jobs...
+2026-06-11 12:39:57 [info]: All 7 cron jobs initialized
+2026-06-11 12:39:57 [info]: Shield Pro API running on port 5555
+2026-06-11 12:39:57 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:39:58 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-11 12:40:00 [info]: Socket.IO initialized
+2026-06-11 12:40:00 [info]: Initializing cron jobs...
+2026-06-11 12:40:00 [info]: All 7 cron jobs initialized
+2026-06-11 12:40:00 [info]: Shield Pro API running on port 5555
+2026-06-11 12:40:00 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:40:00 [info]: MongoDB connected: ac-1dmibho-shard-00-01.y9evv10.mongodb.net
+2026-06-11 12:40:01 [info]: Socket.IO initialized
+2026-06-11 12:40:01 [info]: Initializing cron jobs...
+2026-06-11 12:40:01 [info]: All 7 cron jobs initialized
+2026-06-11 12:40:01 [info]: Shield Pro API running on port 5555
+2026-06-11 12:40:01 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:40:01 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-11 12:40:14 [info]: ::1 - - [11/Jun/2026:07:10:14 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:40:44 [info]: ::1 - - [11/Jun/2026:07:10:44 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:41:14 [info]: ::1 - - [11/Jun/2026:07:11:14 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:41:44 [info]: ::1 - - [11/Jun/2026:07:11:44 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:42:46 [info]: ::1 - - [11/Jun/2026:07:12:46 +0000] "POST /api/accounts/6a28fa845cdd5cb01c577755/sync HTTP/1.1" 200 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:42:47 [info]: ::1 - - [11/Jun/2026:07:12:47 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:43:02 [info]: ::1 - - [11/Jun/2026:07:13:02 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:43:13 [info]: ::1 - - [11/Jun/2026:07:13:13 +0000] "POST /api/accounts/6a28fa845cdd5cb01c577755/sync HTTP/1.1" 200 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:43:13 [info]: ::1 - - [11/Jun/2026:07:13:13 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:43:32 [info]: ::1 - - [11/Jun/2026:07:13:32 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:43:47 [info]: Socket.IO initialized
+2026-06-11 12:43:47 [info]: Initializing cron jobs...
+2026-06-11 12:43:47 [info]: All 7 cron jobs initialized
+2026-06-11 12:43:47 [info]: Shield Pro API running on port 5555
+2026-06-11 12:43:47 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:43:47 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-11 12:44:02 [info]: ::1 - - [11/Jun/2026:07:14:02 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:44:17 [info]: Socket.IO initialized
+2026-06-11 12:44:17 [info]: Initializing cron jobs...
+2026-06-11 12:44:17 [info]: All 7 cron jobs initialized
+2026-06-11 12:44:17 [info]: Shield Pro API running on port 5555
+2026-06-11 12:44:17 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:44:17 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-11 12:44:24 [info]: Socket.IO initialized
+2026-06-11 12:44:24 [info]: Initializing cron jobs...
+2026-06-11 12:44:24 [info]: All 7 cron jobs initialized
+2026-06-11 12:44:24 [info]: Shield Pro API running on port 5555
+2026-06-11 12:44:24 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:44:25 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-11 12:44:26 [info]: Socket.IO initialized
+2026-06-11 12:44:26 [info]: Initializing cron jobs...
+2026-06-11 12:44:26 [info]: All 7 cron jobs initialized
+2026-06-11 12:44:26 [info]: Shield Pro API running on port 5555
+2026-06-11 12:44:26 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:44:26 [info]: MongoDB connected: ac-1dmibho-shard-00-01.y9evv10.mongodb.net
+2026-06-11 12:44:27 [info]: Socket.IO initialized
+2026-06-11 12:44:27 [info]: Initializing cron jobs...
+2026-06-11 12:44:27 [info]: All 7 cron jobs initialized
+2026-06-11 12:44:27 [info]: Shield Pro API running on port 5555
+2026-06-11 12:44:27 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 12:44:28 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-11 12:44:33 [info]: ::1 - - [11/Jun/2026:07:14:33 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:45:00 [info]: [CRON] Health checks starting
+2026-06-11 12:45:03 [info]: ::1 - - [11/Jun/2026:07:15:03 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:45:26 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: avspackaging.in
+2026-06-11 12:45:33 [info]: ::1 - - [11/Jun/2026:07:15:33 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:45:47 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: optforphysio.com
+2026-06-11 12:46:03 [info]: ::1 - - [11/Jun/2026:07:16:03 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:46:33 [info]: ::1 - - [11/Jun/2026:07:16:33 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:46:33 [info]: ::1 - - [11/Jun/2026:07:16:33 +0000] "POST /api/auth/refresh HTTP/1.1" 200 430 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:46:33 [info]: ::1 - - [11/Jun/2026:07:16:33 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:46:36 [info]: ::1 - - [11/Jun/2026:07:16:36 +0000] "POST /api/accounts/6a28fa845cdd5cb01c577755/sync HTTP/1.1" 200 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:46:36 [info]: ::1 - - [11/Jun/2026:07:16:36 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:47:03 [info]: ::1 - - [11/Jun/2026:07:17:03 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:47:07 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: withstandventures.com
+2026-06-11 12:47:08 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: opticalplaza.co.in
+2026-06-11 12:47:08 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: balsonintl.com
+2026-06-11 12:47:14 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: rardesigns.co.in
+2026-06-11 12:47:14 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: pawsitive3h.com
+2026-06-11 12:47:14 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: drsweenaarora.com
+2026-06-11 12:47:14 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: sakurainternational.in
+2026-06-11 12:47:33 [info]: ::1 - - [11/Jun/2026:07:17:33 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:48:03 [info]: ::1 - - [11/Jun/2026:07:18:03 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:48:37 [info]: ::1 - - [11/Jun/2026:07:18:37 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:49:02 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 12:49:07 [info]: ::1 - - [11/Jun/2026:07:19:07 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:49:43 [info]: ::1 - - [11/Jun/2026:07:19:43 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:50:13 [info]: ::1 - - [11/Jun/2026:07:20:13 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:50:43 [info]: ::1 - - [11/Jun/2026:07:20:43 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:51:14 [info]: ::1 - - [11/Jun/2026:07:21:14 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 12:55:12 [warn]: MongoDB disconnected. Reconnecting...
+2026-06-11 13:00:52 [warn]: MongoDB disconnected. Reconnecting...
+2026-06-11 13:00:53 [info]: ::1 - - [11/Jun/2026:07:30:53 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:00:57 [info]: ::1 - - [11/Jun/2026:07:30:57 +0000] "POST /api/accounts/6a28fa845cdd5cb01c577755/sync HTTP/1.1" 200 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:00:57 [info]: ::1 - - [11/Jun/2026:07:30:57 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:01:01 [info]: ::1 - - [11/Jun/2026:07:31:01 +0000] "POST /api/accounts/6a28f9f55cdd5cb01c577544/sync HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:01:01 [info]: ::1 - - [11/Jun/2026:07:31:01 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:01:11 [info]: ::1 - - [11/Jun/2026:07:31:11 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:01:41 [info]: ::1 - - [11/Jun/2026:07:31:41 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:01:41 [info]: ::1 - - [11/Jun/2026:07:31:41 +0000] "POST /api/auth/refresh HTTP/1.1" 200 430 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:01:41 [info]: ::1 - - [11/Jun/2026:07:31:41 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:02:11 [info]: ::1 - - [11/Jun/2026:07:32:11 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:02:41 [info]: ::1 - - [11/Jun/2026:07:32:41 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:03:11 [info]: ::1 - - [11/Jun/2026:07:33:11 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:06:08 [info]: Socket.IO initialized
+2026-06-11 13:06:08 [info]: Initializing cron jobs...
+2026-06-11 13:06:08 [info]: All 7 cron jobs initialized
+2026-06-11 13:06:08 [info]: Shield Pro API running on port 5555
+2026-06-11 13:06:08 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 13:06:09 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-11 13:09:25 [info]: Socket.IO initialized
+2026-06-11 13:09:25 [info]: Initializing cron jobs...
+2026-06-11 13:09:25 [info]: All 7 cron jobs initialized
+2026-06-11 13:09:25 [info]: Shield Pro API running on port 5555
+2026-06-11 13:09:25 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 13:09:25 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-11 13:09:27 [info]: Socket.IO initialized
+2026-06-11 13:09:27 [info]: Initializing cron jobs...
+2026-06-11 13:09:27 [info]: All 7 cron jobs initialized
+2026-06-11 13:09:27 [info]: Shield Pro API running on port 5555
+2026-06-11 13:09:27 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 13:09:27 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-11 13:09:32 [info]: ::1 - - [11/Jun/2026:07:39:32 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:09:32 [info]: ::1 - - [11/Jun/2026:07:39:32 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:09:32 [info]: ::1 - - [11/Jun/2026:07:39:32 +0000] "GET /api/websites?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:09:45 [info]: ::1 - - [11/Jun/2026:07:39:45 +0000] "POST /api/accounts/6a28fa845cdd5cb01c577755/sync HTTP/1.1" 200 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:09:45 [info]: ::1 - - [11/Jun/2026:07:39:45 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:10:10 [info]: Socket.IO initialized
+2026-06-11 13:10:10 [info]: Initializing cron jobs...
+2026-06-11 13:10:10 [info]: All 7 cron jobs initialized
+2026-06-11 13:10:10 [info]: Shield Pro API running on port 5555
+2026-06-11 13:10:10 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 13:10:10 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-11 13:10:11 [info]: ::1 - - [11/Jun/2026:07:40:11 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:10:17 [info]: Socket.IO initialized
+2026-06-11 13:10:17 [info]: Initializing cron jobs...
+2026-06-11 13:10:17 [info]: All 7 cron jobs initialized
+2026-06-11 13:10:17 [info]: Shield Pro API running on port 5555
+2026-06-11 13:10:17 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 13:10:17 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-11 13:10:24 [info]: ::1 - - [11/Jun/2026:07:40:24 +0000] "POST /api/accounts/6a28fa845cdd5cb01c577755/sync HTTP/1.1" 200 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:10:24 [info]: ::1 - - [11/Jun/2026:07:40:24 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:10:41 [info]: ::1 - - [11/Jun/2026:07:40:41 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:11:35 [info]: Socket.IO initialized
+2026-06-11 13:11:35 [info]: Initializing cron jobs...
+2026-06-11 13:11:35 [info]: All 7 cron jobs initialized
+2026-06-11 13:11:35 [info]: Shield Pro API running on port 5555
+2026-06-11 13:11:35 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 13:11:36 [info]: MongoDB connected: ac-1dmibho-shard-00-00.y9evv10.mongodb.net
+2026-06-11 13:11:37 [info]: Socket.IO initialized
+2026-06-11 13:11:37 [info]: Initializing cron jobs...
+2026-06-11 13:11:37 [info]: All 7 cron jobs initialized
+2026-06-11 13:11:37 [info]: Shield Pro API running on port 5555
+2026-06-11 13:11:37 [info]: Swagger docs at http://localhost:5555/api/docs
+2026-06-11 13:11:37 [info]: MongoDB connected: ac-1dmibho-shard-00-02.y9evv10.mongodb.net
+2026-06-11 13:12:58 [info]: ::1 - - [11/Jun/2026:07:42:58 +0000] "POST /api/accounts/6a28f7c15cdd5cb01c577284/sync HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:12:58 [info]: ::1 - - [11/Jun/2026:07:42:58 +0000] "GET /api/accounts HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:13:11 [info]: ::1 - - [11/Jun/2026:07:43:11 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:13:41 [info]: ::1 - - [11/Jun/2026:07:43:41 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:14:11 [info]: ::1 - - [11/Jun/2026:07:44:11 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:14:41 [info]: ::1 - - [11/Jun/2026:07:44:41 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:15:00 [info]: [CRON] Health checks starting
+2026-06-11 13:15:11 [info]: ::1 - - [11/Jun/2026:07:45:11 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:15:39 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: avanterealtors.in
+2026-06-11 13:15:41 [info]: ::1 - - [11/Jun/2026:07:45:41 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:00 [info]: ::1 - - [11/Jun/2026:07:46:00 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:00 [info]: ::1 - - [11/Jun/2026:07:46:00 +0000] "GET /api/threats?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:03 [info]: ::1 - - [11/Jun/2026:07:46:03 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:06 [info]: ::1 - - [11/Jun/2026:07:46:06 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:06 [info]: ::1 - - [11/Jun/2026:07:46:06 +0000] "GET /api/auth/me HTTP/1.1" 200 462 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:06 [info]: ::1 - - [11/Jun/2026:07:46:06 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:06 [info]: ::1 - - [11/Jun/2026:07:46:06 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:18 [info]: ::1 - - [11/Jun/2026:07:46:18 +0000] "GET /api/threats?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:53 [info]: ::1 - - [11/Jun/2026:07:46:53 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:53 [info]: ::1 - - [11/Jun/2026:07:46:53 +0000] "POST /api/auth/refresh HTTP/1.1" 200 430 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:16:53 [info]: ::1 - - [11/Jun/2026:07:46:53 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:17:20 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: shriramayurvedcentre.in
+2026-06-11 13:17:20 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: cmeducationhub.com
+2026-06-11 13:17:20 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: flyingbirdenterprise.in
+2026-06-11 13:17:21 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: flindialogistics.com
+2026-06-11 13:17:21 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: nobledentalcare.co.in
+2026-06-11 13:17:21 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: rbmeyeinstitute.com
+2026-06-11 13:17:22 [info]: Email sent to hbsdevelopersteam@gmail.com: 🔴 Site Down: bgtclogistic.com
+2026-06-11 13:17:23 [info]: ::1 - - [11/Jun/2026:07:47:23 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:17:53 [info]: ::1 - - [11/Jun/2026:07:47:53 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:18:23 [info]: ::1 - - [11/Jun/2026:07:48:23 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:18:24 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 13:18:53 [info]: ::1 - - [11/Jun/2026:07:48:53 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:19:23 [info]: ::1 - - [11/Jun/2026:07:49:23 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:19:53 [info]: ::1 - - [11/Jun/2026:07:49:53 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:20:23 [info]: ::1 - - [11/Jun/2026:07:50:23 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:20:54 [info]: ::1 - - [11/Jun/2026:07:50:54 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:21:24 [info]: ::1 - - [11/Jun/2026:07:51:24 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:21:54 [info]: ::1 - - [11/Jun/2026:07:51:54 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:22:24 [info]: ::1 - - [11/Jun/2026:07:52:24 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:22:54 [info]: ::1 - - [11/Jun/2026:07:52:54 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:23:24 [info]: ::1 - - [11/Jun/2026:07:53:24 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:23:54 [info]: ::1 - - [11/Jun/2026:07:53:54 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:24:24 [info]: ::1 - - [11/Jun/2026:07:54:24 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:24:54 [info]: ::1 - - [11/Jun/2026:07:54:54 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:25:24 [info]: ::1 - - [11/Jun/2026:07:55:24 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:30:00 [info]: [CRON] Health checks starting
+2026-06-11 13:30:00 [info]: [CRON] Threat detection starting
+2026-06-11 13:30:00 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:30:14 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:30:29 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 13:30:31 [info]: ::1 - - [11/Jun/2026:08:00:31 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:30:34 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:30:34 [info]: ::1 - - [11/Jun/2026:08:00:34 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:30:35 [info]: ::1 - - [11/Jun/2026:08:00:35 +0000] "GET /api/threats?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:30:38 [info]: Email sent to hbsdevelopersteam@gmail.com: 🚨 HACKED: dessobuild.com — Shield Pro Alert
+2026-06-11 13:30:38 [warn]: HACK DETECTED: dessobuild.com — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:30:39 [info]: ::1 - - [11/Jun/2026:08:00:39 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:30:46 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 13:30:46 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 13:30:51 [info]: Email sent to hbsdevelopersteam@gmail.com: 🚨 HACKED: safariexpedition4x4.com — Shield Pro Alert
+2026-06-11 13:30:51 [warn]: HACK DETECTED: safariexpedition4x4.com — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:31:04 [info]: ::1 - - [11/Jun/2026:08:01:04 +0000] "GET /api/users/me HTTP/1.1" 200 486 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:31:04 [info]: ::1 - - [11/Jun/2026:08:01:04 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:31:05 [info]: Email sent to hbsdevelopersteam@gmail.com: 🚨 HACKED: helpubuild.in — Shield Pro Alert
+2026-06-11 13:31:05 [warn]: HACK DETECTED: helpubuild.in — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:31:11 [info]: ::1 - - [11/Jun/2026:08:01:11 +0000] "PATCH /api/users/me/alert-preferences HTTP/1.1" 200 505 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:31:11 [info]: ::1 - - [11/Jun/2026:08:01:11 +0000] "GET /api/users/me HTTP/1.1" 200 487 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:31:12 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 13:31:13 [info]: ::1 - - [11/Jun/2026:08:01:13 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:31:13 [info]: ::1 - - [11/Jun/2026:08:01:13 +0000] "GET /api/websites?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:31:21 [warn]: HACK DETECTED: daccindia.org — Score: 93 — Threats: seo_link_injection
+2026-06-11 13:31:27 [error]: Threat scan error for bestforluck.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for savadelhi.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for jmdcontrol.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for asblogisticsindia.in: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for directionacademy.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for aggoverseas.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for studio-neoteric.com: timeout of 15000ms exceeded
+2026-06-11 13:31:27 [error]: Threat scan error for physioguide.co.in: timeout of 15000ms exceeded
+2026-06-11 13:31:44 [warn]: HACK DETECTED: admin.blueaceindia.com — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:31:44 [warn]: HACK DETECTED: blueaceindia.com — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:31:51 [warn]: HACK DETECTED: freshlinedairy.in — Score: 93 — Threats: seo_link_injection
+2026-06-11 13:31:54 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 13:31:59 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 13:31:59 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 13:32:05 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:32:05 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 13:32:54 [warn]: HACK DETECTED: elearnstocks.demomarts.com — Score: 100 — Threats: exposed_env
+2026-06-11 13:33:07 [error]: Threat scan error for tarunngrandpartyhall.com: timeout of 15000ms exceeded
+2026-06-11 13:33:20 [warn]: HACK DETECTED: aurumgold.in — Score: 93 — Threats: seo_link_injection
+2026-06-11 13:33:20 [warn]: HACK DETECTED: brainiacgym.com — Score: 98 — Threats: casino_spam, seo_link_injection
+2026-06-11 13:33:27 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 13:33:28 [warn]: HACK DETECTED: tayebah.co — Score: 90 — Threats: gambling_spam
+2026-06-11 13:33:28 [warn]: HACK DETECTED: rkfinancialhub.com — Score: 95 — Threats: casino_spam, gambling_spam
+2026-06-11 13:33:28 [warn]: HACK DETECTED: homeinterio.in — Score: 100 — Threats: exposed_env
+2026-06-11 13:33:45 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 13:33:46 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 13:33:46 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 13:33:46 [warn]: HACK DETECTED: onlinebcsa.com — Score: 100 — Threats: exposed_env
+2026-06-11 13:33:47 [warn]: HACK DETECTED: codewins.in — Score: 100 — Threats: exposed_env
+2026-06-11 13:33:50 [warn]: HACK DETECTED: drshaliniultrasoundclinic.com — Score: 80 — Threats: pharma_spam
+2026-06-11 13:33:57 [warn]: HACK DETECTED: rkpharma.co.in — Score: 95 — Threats: suspicious_redirect
+2026-06-11 13:33:58 [warn]: HACK DETECTED: drmedhasharma.com — Score: 80 — Threats: pharma_spam
+2026-06-11 13:34:00 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 13:34:01 [warn]: HACK DETECTED: moneyforgold.info — Score: 93 — Threats: seo_link_injection
+2026-06-11 13:34:12 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 13:34:15 [warn]: HACK DETECTED: hokhospital.com — Score: 80 — Threats: pharma_spam
+2026-06-11 13:34:22 [warn]: HACK DETECTED: drmfoundation.com — Score: 100 — Threats: exposed_env
+2026-06-11 13:34:27 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 13:34:27 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 13:34:28 [warn]: HACK DETECTED: lovelightscnc.com — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:34:49 [error]: Threat scan error for drpoojadentalcentre.co.in: read ECONNRESET
+2026-06-11 13:34:52 [warn]: HACK DETECTED: drrmsinghsexologist.com — Score: 80 — Threats: pharma_spam
+2026-06-11 13:35:20 [warn]: HACK DETECTED: drrajesharora.in — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:35:20 [warn]: HACK DETECTED: nirbhayportacabin.co.in — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:35:28 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 13:36:02 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 13:36:02 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 13:36:27 [warn]: HACK DETECTED: drsweenaarora.com — Score: 80 — Threats: pharma_spam
+2026-06-11 13:36:27 [warn]: HACK DETECTED: skylarkbuildtech.com — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:36:54 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 13:37:07 [warn]: HACK DETECTED: dieticianprincybatra.in — Score: 93 — Threats: seo_link_injection
+2026-06-11 13:37:17 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 13:37:17 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 13:37:17 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 13:37:32 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 13:37:32 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 13:37:32 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 13:37:48 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 13:37:48 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 13:37:48 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 13:37:48 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 13:37:58 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 13:37:58 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 13:37:58 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 13:37:58 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 13:37:59 [warn]: HACK DETECTED: mkbuildersandassociates.com — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:38:18 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 13:38:18 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 13:38:18 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 13:38:32 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 13:38:33 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 13:38:33 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 13:38:45 [warn]: HACK DETECTED: dreamsetueducation.com — Score: 100 — Threats: casino_spam, gambling_spam, debug_mode
+2026-06-11 13:38:50 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 13:38:50 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 13:39:02 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 13:39:02 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 13:39:02 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 13:39:02 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 13:39:12 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 13:39:12 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 13:39:12 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 13:39:12 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 13:39:26 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 13:39:26 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 13:39:26 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 13:39:26 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 13:39:27 [warn]: HACK DETECTED: printhutt.in — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:39:39 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 13:39:39 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 13:39:39 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 13:39:40 [warn]: HACK DETECTED: xpelgurgaon.com — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:39:49 [warn]: HACK DETECTED: psychiatristdrsoumiyamudgal.com — Score: 100 — Threats: casino_spam, exposed_env
+2026-06-11 13:39:55 [warn]: HACK DETECTED: dentalcharms.in — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 13:40:05 [info]: [CRON] Threat detection done
+2026-06-11 13:45:00 [info]: [CRON] Health checks starting
+2026-06-11 13:48:23 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 13:57:02 [info]: ::1 - - [11/Jun/2026:08:27:02 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:57:02 [info]: ::1 - - [11/Jun/2026:08:27:02 +0000] "POST /api/auth/refresh HTTP/1.1" 200 430 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:57:02 [info]: ::1 - - [11/Jun/2026:08:27:02 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:57:04 [info]: ::1 - - [11/Jun/2026:08:27:04 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:57:04 [info]: ::1 - - [11/Jun/2026:08:27:04 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:57:21 [info]: ::1 - - [11/Jun/2026:08:27:21 +0000] "GET /api/incidents?accountId=6a28fcbb5cdd5cb01c5779ec&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:57:54 [info]: ::1 - - [11/Jun/2026:08:27:54 +0000] "GET /api/incidents?accountId=6a28fbe05cdd5cb01c577860&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:58:04 [info]: ::1 - - [11/Jun/2026:08:28:04 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:58:05 [info]: ::1 - - [11/Jun/2026:08:28:05 +0000] "GET /api/incidents?accountId=6a28f9f55cdd5cb01c577544&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:58:26 [info]: ::1 - - [11/Jun/2026:08:28:26 +0000] "GET /api/incidents?accountId=6a2828d3667b220611398f53&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:58:34 [info]: ::1 - - [11/Jun/2026:08:28:34 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:58:50 [info]: ::1 - - [11/Jun/2026:08:28:50 +0000] "GET /api/incidents?accountId=6a28fcbb5cdd5cb01c5779ec&page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:58:52 [info]: ::1 - - [11/Jun/2026:08:28:52 +0000] "GET /api/incidents?accountId=6a28fbe05cdd5cb01c577860&page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:58:56 [info]: ::1 - - [11/Jun/2026:08:28:56 +0000] "GET /api/incidents?accountId=6a28fa845cdd5cb01c577755&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:58:59 [info]: ::1 - - [11/Jun/2026:08:28:59 +0000] "GET /api/incidents?accountId=6a28f9f55cdd5cb01c577544&page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:59:04 [info]: ::1 - - [11/Jun/2026:08:29:04 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 13:59:34 [info]: ::1 - - [11/Jun/2026:08:29:34 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:00:00 [info]: [CRON] Health checks starting
+2026-06-11 14:00:00 [info]: [CRON] Threat detection starting
+2026-06-11 14:00:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:00:04 [info]: ::1 - - [11/Jun/2026:08:30:04 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:00:16 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:00:22 [info]: ::1 - - [11/Jun/2026:08:30:22 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:00:22 [info]: ::1 - - [11/Jun/2026:08:30:22 +0000] "GET /api/websites?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:00:24 [info]: ::1 - - [11/Jun/2026:08:30:24 +0000] "GET /api/websites?page=1&limit=20&search=g HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:00:24 [info]: ::1 - - [11/Jun/2026:08:30:24 +0000] "GET /api/websites?page=1&limit=20&search=gr HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:00:25 [info]: ::1 - - [11/Jun/2026:08:30:25 +0000] "GET /api/websites?page=1&limit=20&search=gra HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:00:25 [info]: ::1 - - [11/Jun/2026:08:30:25 +0000] "GET /api/websites?page=1&limit=20&search=grad HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:00:31 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 14:00:36 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:00:49 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 14:00:49 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 14:00:52 [info]: ::1 - - [11/Jun/2026:08:30:52 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:01:11 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 14:01:12 [warn]: HACK DETECTED: studio-neoteric.com — Score: 80 — Threats: pharma_spam
+2026-06-11 14:01:33 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 14:01:39 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 14:01:39 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 14:01:40 [warn]: HACK DETECTED: avanterealtors.in — Score: 100 — Threats: exposed_env, debug_mode
+2026-06-11 14:01:45 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 14:01:45 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:02:47 [error]: Threat scan error for tarunngrandpartyhall.com: timeout of 15000ms exceeded
+2026-06-11 14:03:01 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 14:03:15 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 14:03:15 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 14:03:15 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 14:03:16 [warn]: HACK DETECTED: worldwideexplorer.in — Score: 100 — Threats: exposed_env
+2026-06-11 14:03:23 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 14:03:29 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 14:03:55 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 14:03:55 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 14:05:28 [error]: Threat scan error for musiczonemusicals.com: aborted
+2026-06-11 14:05:28 [error]: Threat scan error for shreeramresearch.com: aborted
+2026-06-11 14:05:29 [warn]: MongoDB disconnected. Reconnecting...
+2026-06-11 14:16:05 [warn]: MongoDB disconnected. Reconnecting...
+2026-06-11 14:18:14 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 14:18:54 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 14:18:54 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 14:22:55 [warn]: MongoDB disconnected. Reconnecting...
+2026-06-11 14:24:46 [error]: Threat scan error for phoniclandbykiransingh.com: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for drkrishnagopal.in: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for dramitbansalortho.com: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for withstandventures.com: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for drmohitjain.co.in: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for opticalplaza.co.in: timeout of 15000ms exceeded
+2026-06-11 14:24:46 [error]: Threat scan error for drseyeinstitute.com: aborted
+2026-06-11 14:34:01 [warn]: HACK DETECTED: rbmeyeinstitute.com — Score: 93 — Threats: seo_link_injection
+2026-06-11 14:34:33 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 14:35:01 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 14:35:01 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 14:35:01 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 14:35:22 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 14:35:22 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 14:35:22 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 14:35:45 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 14:35:45 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 14:35:46 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 14:35:46 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 14:36:05 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 14:36:05 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 14:36:05 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 14:36:05 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 14:36:22 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 14:36:23 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 14:36:23 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 14:36:45 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 14:36:46 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 14:36:46 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 14:37:04 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 14:37:04 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 14:37:24 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 14:37:24 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 14:37:24 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 14:37:24 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 14:37:40 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 14:37:40 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 14:37:40 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 14:37:40 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 14:37:58 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 14:37:58 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 14:37:58 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 14:37:59 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 14:38:21 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 14:38:21 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 14:38:21 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 14:38:30 [warn]: HACK DETECTED: psychiatristdrsoumiyamudgal.com — Score: 100 — Threats: debug_mode
+2026-06-11 14:38:44 [info]: [CRON] Threat detection done
+2026-06-11 14:45:00 [info]: [CRON] Health checks starting
+2026-06-11 14:48:52 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 14:57:11 [info]: ::1 - - [11/Jun/2026:09:27:11 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:11 [info]: ::1 - - [11/Jun/2026:09:27:11 +0000] "POST /api/auth/refresh HTTP/1.1" 200 430 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:11 [info]: ::1 - - [11/Jun/2026:09:27:11 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:12 [info]: ::1 - - [11/Jun/2026:09:27:12 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:13 [info]: ::1 - - [11/Jun/2026:09:27:13 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:23 [info]: ::1 - - [11/Jun/2026:09:27:23 +0000] "GET /api/incidents?severity=high&page=1&limit=25 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:25 [info]: ::1 - - [11/Jun/2026:09:27:25 +0000] "GET /api/incidents?severity=critical&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:41 [info]: ::1 - - [11/Jun/2026:09:27:41 +0000] "GET /api/incidents?severity=critical&page=2&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:42 [info]: ::1 - - [11/Jun/2026:09:27:42 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:43 [info]: ::1 - - [11/Jun/2026:09:27:43 +0000] "GET /api/incidents?severity=critical&page=3&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:54 [info]: ::1 - - [11/Jun/2026:09:27:54 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:55 [info]: ::1 - - [11/Jun/2026:09:27:55 +0000] "GET /api/ssl?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:57:59 [info]: ::1 - - [11/Jun/2026:09:27:59 +0000] "GET /api/dns?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:58:00 [info]: ::1 - - [11/Jun/2026:09:28:00 +0000] "GET /api/backups/stats HTTP/1.1" 200 134 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:58:00 [info]: ::1 - - [11/Jun/2026:09:28:00 +0000] "GET /api/backups?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:58:06 [info]: ::1 - - [11/Jun/2026:09:28:06 +0000] "GET /api/backups?limit=200 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:58:30 [info]: ::1 - - [11/Jun/2026:09:28:30 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:58:39 [info]: ::1 - - [11/Jun/2026:09:28:39 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:58:39 [info]: ::1 - - [11/Jun/2026:09:28:39 +0000] "GET /api/backups/restore-history?page=1&limit=15 HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:58:40 [info]: ::1 - - [11/Jun/2026:09:28:40 +0000] "GET /api/screenshots/stats HTTP/1.1" 200 107 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:58:40 [info]: ::1 - - [11/Jun/2026:09:28:40 +0000] "GET /api/screenshots?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 14:59:12 [info]: ::1 - - [11/Jun/2026:09:29:12 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:00:00 [info]: [CRON] Health checks starting
+2026-06-11 15:00:00 [info]: [CRON] Threat detection starting
+2026-06-11 15:00:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:00:17 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:00:32 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 15:00:37 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:00:49 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 15:00:49 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 15:01:12 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 15:01:35 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:01:42 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 15:01:42 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 15:01:48 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 15:01:48 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:02:03 [error]: Threat scan error for pramhut.com: timeout of 15000ms exceeded
+2026-06-11 15:03:19 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 15:03:30 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 15:03:30 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 15:03:30 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 15:03:46 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:04:08 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 15:04:15 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 15:04:15 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:05:15 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 15:05:49 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 15:05:49 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 15:06:46 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:07:07 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 15:07:07 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 15:07:07 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 15:07:20 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 15:07:20 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 15:07:20 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 15:07:34 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 15:07:34 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 15:07:34 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 15:07:34 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 15:07:46 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 15:07:46 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 15:07:46 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 15:07:46 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 15:08:04 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 15:08:04 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 15:08:04 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 15:08:21 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 15:08:21 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 15:08:21 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 15:08:39 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 15:08:39 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 15:08:52 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 15:08:52 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 15:08:52 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 15:08:52 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 15:09:09 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 15:09:09 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 15:09:09 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 15:09:09 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 15:09:25 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 15:09:25 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 15:09:25 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 15:09:25 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 15:09:42 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 15:09:42 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 15:09:42 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 15:10:02 [info]: [CRON] Threat detection done
+2026-06-11 15:15:00 [info]: [CRON] Health checks starting
+2026-06-11 15:18:09 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 15:28:46 [warn]: MongoDB disconnected. Reconnecting...
+2026-06-11 15:30:00 [info]: [CRON] Health checks starting
+2026-06-11 15:30:00 [info]: [CRON] Threat detection starting
+2026-06-11 15:30:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:12 [error]: Threat scan error for ganesh.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:12 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:12 [error]: Threat scan error for car.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:27 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 15:30:32 [error]: Threat scan error for unity.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for lado.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for swasthya-hospital.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for dr-bindiya-p-mehta.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for bakshikitchensandinteriors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:32 [error]: Threat scan error for omeducation.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:38 [warn]: HACK DETECTED: drrajneeshkant.com — Score: 93 — Threats: seo_link_injection
+2026-06-11 15:30:43 [error]: Threat scan error for unity-hyundai.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:44 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 15:30:44 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 15:30:57 [error]: Threat scan error for totalkneereplacementguide.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:57 [error]: Threat scan error for sampoorn.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:30:57 [error]: Threat scan error for newtvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:31:05 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 15:31:27 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:31:35 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 15:31:35 [error]: Threat scan error for veracious.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:31:35 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 15:31:40 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 15:31:41 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:33:20 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 15:33:29 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 15:33:29 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 15:33:29 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 15:33:42 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:34:06 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 15:34:10 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 15:34:10 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 15:35:04 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 15:35:38 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 15:35:38 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 15:36:31 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 15:40:56 [info]: ::1 - - [11/Jun/2026:10:10:56 +0000] "GET /api/screenshots/stats HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:40:56 [info]: ::1 - - [11/Jun/2026:10:10:56 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:40:56 [info]: ::1 - - [11/Jun/2026:10:10:56 +0000] "POST /api/auth/refresh HTTP/1.1" 200 430 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:40:56 [info]: ::1 - - [11/Jun/2026:10:10:56 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:40:56 [info]: ::1 - - [11/Jun/2026:10:10:56 +0000] "GET /api/screenshots/stats HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:41:00 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 15:41:00 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 15:41:00 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 15:41:16 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 15:41:17 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 15:41:17 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 15:41:23 [info]: ::1 - - [11/Jun/2026:10:11:23 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:41:23 [info]: ::1 - - [11/Jun/2026:10:11:23 +0000] "GET /api/websites?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:41:25 [info]: ::1 - - [11/Jun/2026:10:11:25 +0000] "GET /api/websites?page=1&limit=20&search=cloudytailz HTTP/1.1" 200 1004 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:41:30 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 15:41:30 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 15:41:30 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 15:41:30 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 15:41:43 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 15:41:43 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 15:41:43 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 15:41:43 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 15:41:53 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 15:41:53 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 15:41:53 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 15:41:53 [info]: ::1 - - [11/Jun/2026:10:11:53 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:42:10 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 15:42:10 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 15:42:10 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 15:42:23 [info]: ::1 - - [11/Jun/2026:10:12:23 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:42:27 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 15:42:27 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 15:42:41 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 15:42:41 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 15:42:41 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 15:42:41 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 15:42:53 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 15:42:53 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 15:42:53 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 15:42:53 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 15:42:53 [info]: ::1 - - [11/Jun/2026:10:12:53 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 15:43:09 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 15:43:09 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 15:43:09 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 15:43:13 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 15:43:23 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 15:43:23 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 15:43:23 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 15:43:53 [info]: [CRON] Threat detection done
+2026-06-11 15:45:00 [info]: [CRON] Health checks starting
+2026-06-11 15:48:06 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 16:00:00 [info]: [CRON] Health checks starting
+2026-06-11 16:00:00 [info]: [CRON] Threat detection starting
+2026-06-11 16:00:00 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:16 [error]: Threat scan error for ganesh.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:16 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:16 [error]: Threat scan error for car.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:31 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 16:00:36 [error]: Threat scan error for bakshikitchensandinteriors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for unity.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for swasthya-hospital.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for dr-bindiya-p-mehta.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for lado.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:36 [error]: Threat scan error for omeducation.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:48 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 16:00:49 [error]: Threat scan error for shastrinagartvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:00:49 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 16:00:49 [error]: Threat scan error for unity-hyundai.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:01 [error]: Threat scan error for newtvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:01 [error]: Threat scan error for sampoorn.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:01 [error]: Threat scan error for totalkneereplacementguide.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:10 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 16:01:25 [error]: Threat scan error for vendorservice.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:25 [error]: Threat scan error for rgbathandkitchen.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:32 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 16:01:38 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 16:01:38 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 16:01:38 [error]: Threat scan error for pilotsacademy.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:38 [error]: Threat scan error for salasartvsmotors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:38 [error]: Threat scan error for salasartvs.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:38 [error]: Threat scan error for veracious.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:01:44 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 16:01:44 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:03:17 [info]: [CRON] Health checks done for 415 websites
+2026-06-11 16:03:25 [error]: Threat scan error for tarapsychologyclinic.com: getaddrinfo ENOTFOUND tarapsychologyclinic.com
+2026-06-11 16:03:35 [error]: Threat scan error for ssmfoundation.in: getaddrinfo ENOTFOUND ssmfoundation.in
+2026-06-11 16:03:35 [error]: Threat scan error for mitru.co.in: getaddrinfo ENOTFOUND mitru.co.in
+2026-06-11 16:03:35 [error]: Threat scan error for anandsales.co: getaddrinfo ENOTFOUND anandsales.co
+2026-06-11 16:03:48 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 16:04:16 [error]: Threat scan error for sheetalcolorlab.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 16:04:16 [error]: Threat scan error for themarvelousmusicacademy.com: getaddrinfo ENOTFOUND themarvelousmusicacademy.com
+2026-06-11 16:05:08 [error]: Threat scan error for manoshantimindcare.com: getaddrinfo ENOTFOUND manoshantimindcare.com
+2026-06-11 16:05:39 [error]: Threat scan error for propacre.in: getaddrinfo ENOTFOUND propacre.in
+2026-06-11 16:05:39 [error]: Threat scan error for firstkeyinterior.com: getaddrinfo ENOTFOUND firstkeyinterior.com
+2026-06-11 16:06:30 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 16:06:50 [error]: Threat scan error for firesafetycoursesdelhi.com: getaddrinfo ENOTFOUND firesafetycoursesdelhi.com
+2026-06-11 16:06:50 [error]: Threat scan error for lifecureproducts.com: getaddrinfo ENOTFOUND lifecureproducts.com
+2026-06-11 16:06:50 [error]: Threat scan error for shrisaiaccommodation.in: getaddrinfo ENOTFOUND shrisaiaccommodation.in
+2026-06-11 16:07:04 [error]: Threat scan error for shreesaiinstitute.co.in: getaddrinfo ENOTFOUND shreesaiinstitute.co.in
+2026-06-11 16:07:04 [error]: Threat scan error for fitnfab.co.in: getaddrinfo ENOTFOUND fitnfab.co.in
+2026-06-11 16:07:04 [error]: Threat scan error for skyhighspecialschool.com: getaddrinfo ENOTFOUND skyhighspecialschool.com
+2026-06-11 16:07:17 [error]: Threat scan error for saidentalandhomeopathyclinic.com: getaddrinfo ENOTFOUND saidentalandhomeopathyclinic.com
+2026-06-11 16:07:17 [error]: Threat scan error for sssales.romywatercare.in: getaddrinfo ENOTFOUND sssales.romywatercare.in
+2026-06-11 16:07:17 [error]: Threat scan error for thermomax.in: getaddrinfo ENOTFOUND thermomax.in
+2026-06-11 16:07:17 [error]: Threat scan error for gymcreation.in: getaddrinfo ENOTFOUND gymcreation.in
+2026-06-11 16:07:27 [error]: Threat scan error for srisoumyafoundation.com: getaddrinfo ENOTFOUND srisoumyafoundation.com
+2026-06-11 16:07:27 [error]: Threat scan error for webedge.aggarwaltaxsolutions.com: read ECONNRESET
+2026-06-11 16:07:27 [error]: Threat scan error for yogaroga.com: getaddrinfo ENOTFOUND yogaroga.com
+2026-06-11 16:07:27 [error]: Threat scan error for talenttrackconsultancy.com: getaddrinfo ENOTFOUND talenttrackconsultancy.com
+2026-06-11 16:07:36 [error]: Threat scan error for morinauto.com: getaddrinfo ENOTFOUND morinauto.com
+2026-06-11 16:07:36 [error]: Threat scan error for kdeducationacademy.in: getaddrinfo ENOTFOUND kdeducationacademy.in
+2026-06-11 16:07:36 [error]: Threat scan error for dwdairy.com: getaddrinfo ENOTFOUND dwdairy.com
+2026-06-11 16:07:49 [error]: Threat scan error for hotellemon.in: getaddrinfo ENOTFOUND hotellemon.in
+2026-06-11 16:07:49 [error]: Threat scan error for coachila.com: getaddrinfo ENOTFOUND coachila.com
+2026-06-11 16:07:49 [error]: Threat scan error for vedicastrosolutions.org: getaddrinfo ENOTFOUND vedicastrosolutions.org
+2026-06-11 16:08:07 [error]: Threat scan error for bakshipg.in: getaddrinfo ENOTFOUND bakshipg.in
+2026-06-11 16:08:07 [error]: Threat scan error for ukelectric.in: getaddrinfo ENOTFOUND ukelectric.in
+2026-06-11 16:08:17 [error]: Threat scan error for romywatercare.in: getaddrinfo ENOTFOUND romywatercare.in
+2026-06-11 16:08:17 [error]: Threat scan error for flawlessolutions.in: getaddrinfo ENOTFOUND flawlessolutions.in
+2026-06-11 16:08:17 [error]: Threat scan error for bakshikitchensandinteriors.in: Hostname/IP does not match certificate's altnames: Host: bakshikitchensandinteriors.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 16:08:17 [error]: Threat scan error for domyinterior.com: getaddrinfo ENOTFOUND domyinterior.com
+2026-06-11 16:08:27 [error]: Threat scan error for kushicoolacservice.in: getaddrinfo ENOTFOUND kushicoolacservice.in
+2026-06-11 16:08:27 [error]: Threat scan error for starhealthdiagnosticandimagingcentre.com: getaddrinfo ENOTFOUND starhealthdiagnosticandimagingcentre.com
+2026-06-11 16:08:27 [error]: Threat scan error for canlivhealthcare.com: getaddrinfo ENOTFOUND canlivhealthcare.com
+2026-06-11 16:08:27 [error]: Threat scan error for stemfort.in: getaddrinfo ENOTFOUND stemfort.in
+2026-06-11 16:08:37 [error]: Threat scan error for silverscreenvisualpresentations.in: getaddrinfo ENOTFOUND silverscreenvisualpresentations.in
+2026-06-11 16:08:37 [error]: Threat scan error for guptaenterprises.org: certificate has expired
+2026-06-11 16:08:37 [error]: Threat scan error for flairdental.co.in: getaddrinfo ENOTFOUND flairdental.co.in
+2026-06-11 16:08:37 [error]: Threat scan error for blackpantherfx.com: getaddrinfo ENOTFOUND blackpantherfx.com
+2026-06-11 16:08:48 [error]: Threat scan error for vanyaphysiocare.com: getaddrinfo ENOTFOUND vanyaphysiocare.com
+2026-06-11 16:08:48 [error]: Threat scan error for panditbuildwell.com: getaddrinfo ENOTFOUND panditbuildwell.com
+2026-06-11 16:08:48 [error]: Threat scan error for katariatextorium.com: getaddrinfo ENOTFOUND katariatextorium.com
+2026-06-11 16:09:08 [info]: [CRON] Threat detection done
+2026-06-11 16:11:14 [info]: ::1 - - [11/Jun/2026:10:41:14 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 16:11:14 [info]: ::1 - - [11/Jun/2026:10:41:14 +0000] "POST /api/auth/refresh HTTP/1.1" 200 430 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 16:11:14 [info]: ::1 - - [11/Jun/2026:10:41:14 +0000] "GET /api/notifications/unread-count HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 16:11:16 [info]: ::1 - - [11/Jun/2026:10:41:16 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 16:11:16 [info]: ::1 - - [11/Jun/2026:10:41:16 +0000] "GET /api/threats?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 16:11:17 [info]: ::1 - - [11/Jun/2026:10:41:17 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 16:11:47 [info]: ::1 - - [11/Jun/2026:10:41:47 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 16:12:17 [info]: ::1 - - [11/Jun/2026:10:42:17 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 16:12:47 [info]: ::1 - - [11/Jun/2026:10:42:47 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 17:16:56 [warn]: MongoDB disconnected. Reconnecting...
+2026-06-11 17:49:40 [warn]: MongoDB disconnected. Reconnecting...
+2026-06-11 18:19:28 [warn]: MongoDB disconnected. Reconnecting...
+2026-06-11 18:19:30 [info]: ::1 - - [11/Jun/2026:12:49:30 +0000] "GET /api/notifications/unread-count HTTP/1.1" 401 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:19:30 [info]: ::1 - - [11/Jun/2026:12:49:30 +0000] "POST /api/auth/refresh HTTP/1.1" 200 430 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:19:30 [info]: ::1 - - [11/Jun/2026:12:49:30 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:20:00 [info]: ::1 - - [11/Jun/2026:12:50:00 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:20:05 [info]: ::1 - - [11/Jun/2026:12:50:05 +0000] "PATCH /api/incidents/6a2a6d0d6f326c646b402c55/resolve HTTP/1.1" 200 785 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:20:06 [info]: ::1 - - [11/Jun/2026:12:50:06 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:20:30 [info]: ::1 - - [11/Jun/2026:12:50:30 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:01 [info]: ::1 - - [11/Jun/2026:12:51:01 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:01 [info]: ::1 - - [11/Jun/2026:12:51:01 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:02 [info]: ::1 - - [11/Jun/2026:12:51:02 +0000] "GET /api/websites?page=1&limit=20 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:07 [info]: ::1 - - [11/Jun/2026:12:51:07 +0000] "GET /api/websites?page=1&limit=20&search=c HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:07 [info]: ::1 - - [11/Jun/2026:12:51:07 +0000] "GET /api/websites?page=1&limit=20&search=ck HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:07 [info]: ::1 - - [11/Jun/2026:12:51:07 +0000] "GET /api/websites?page=1&limit=20&search=cki HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:08 [info]: ::1 - - [11/Jun/2026:12:51:08 +0000] "GET /api/websites?page=1&limit=20&search=cki%3D HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:08 [info]: ::1 - - [11/Jun/2026:12:51:08 +0000] "GET /api/websites?page=1&limit=20&search=cki%3D%3D HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:11 [info]: ::1 - - [11/Jun/2026:12:51:11 +0000] "GET /api/websites?page=1&limit=20&search=cl HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:11 [info]: ::1 - - [11/Jun/2026:12:51:11 +0000] "GET /api/websites?page=1&limit=20&search=clo HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:12 [info]: ::1 - - [11/Jun/2026:12:51:12 +0000] "GET /api/websites?page=1&limit=20&search=clou HTTP/1.1" 200 1004 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:12 [info]: ::1 - - [11/Jun/2026:12:51:12 +0000] "GET /api/websites?page=1&limit=20&search=cloug HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:14 [info]: ::1 - - [11/Jun/2026:12:51:14 +0000] "GET /api/websites?page=1&limit=20&search=cloud HTTP/1.1" 200 1004 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:31 [info]: ::1 - - [11/Jun/2026:12:51:31 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:21:49 [info]: ::1 - - [11/Jun/2026:12:51:49 +0000] "GET /api/users/me HTTP/1.1" 200 487 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:22:19 [info]: ::1 - - [11/Jun/2026:12:52:19 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:22:25 [info]: ::1 - - [11/Jun/2026:12:52:25 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:22:26 [info]: ::1 - - [11/Jun/2026:12:52:26 +0000] "GET /api/screenshots/stats HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:22:26 [info]: ::1 - - [11/Jun/2026:12:52:26 +0000] "GET /api/screenshots?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:17 [info]: ::1 - - [11/Jun/2026:12:53:17 +0000] "GET /api/accounts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:17 [info]: ::1 - - [11/Jun/2026:12:53:17 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:17 [info]: ::1 - - [11/Jun/2026:12:53:17 +0000] "GET /api/screenshots/stats HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:17 [info]: ::1 - - [11/Jun/2026:12:53:17 +0000] "GET /api/screenshots?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:19 [info]: ::1 - - [11/Jun/2026:12:53:19 +0000] "GET /api/ssl?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:24 [info]: ::1 - - [11/Jun/2026:12:53:24 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:27 [info]: ::1 - - [11/Jun/2026:12:53:27 +0000] "GET /api/threats?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:43 [info]: ::1 - - [11/Jun/2026:12:53:43 +0000] "GET /api/incidents?search=d&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:43 [info]: ::1 - - [11/Jun/2026:12:53:43 +0000] "GET /api/incidents?search=de&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:43 [info]: ::1 - - [11/Jun/2026:12:53:43 +0000] "GET /api/incidents?search=des&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:23:44 [info]: ::1 - - [11/Jun/2026:12:53:44 +0000] "GET /api/incidents?search=dess&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:24:09 [info]: ::1 - - [11/Jun/2026:12:54:09 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:24:39 [info]: ::1 - - [11/Jun/2026:12:54:39 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:25:09 [info]: ::1 - - [11/Jun/2026:12:55:09 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:25:21 [info]: ::1 - - [11/Jun/2026:12:55:21 +0000] "GET /api/incidents?search=des&page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:25:21 [info]: ::1 - - [11/Jun/2026:12:55:21 +0000] "GET /api/incidents?search=de&page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:25:21 [info]: ::1 - - [11/Jun/2026:12:55:21 +0000] "GET /api/incidents?search=d&page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:25:21 [info]: ::1 - - [11/Jun/2026:12:55:21 +0000] "GET /api/incidents?page=1&limit=25 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:25:27 [info]: ::1 - - [11/Jun/2026:12:55:27 +0000] "GET /api/incidents?status=resolved&page=1&limit=25 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:25:39 [info]: ::1 - - [11/Jun/2026:12:55:39 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:26:09 [info]: ::1 - - [11/Jun/2026:12:56:09 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:26:40 [info]: ::1 - - [11/Jun/2026:12:56:40 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:27:10 [info]: ::1 - - [11/Jun/2026:12:57:10 +0000] "GET /api/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-11 18:30:00 [info]: [CRON] Health checks starting
+2026-06-11 18:30:00 [info]: [CRON] Threat detection starting
+2026-06-11 18:30:01 [error]: Threat scan error for kdecor.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:18 [error]: Threat scan error for ganesh.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:18 [error]: Threat scan error for care.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:18 [error]: Threat scan error for car.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:33 [error]: Threat scan error for yonoallgamers.com: timeout of 15000ms exceeded
+2026-06-11 18:30:38 [error]: Threat scan error for lado.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for unity.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for avspackaging.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for dr-bindiya-p-mehta.apnipaathshaala.in: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for bakshikitchensandinteriors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for omeducation.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:38 [error]: Threat scan error for swasthya-hospital.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:53 [error]: Threat scan error for testadmin.helpubuild.in: getaddrinfo ENOTFOUND testadmin.helpubuild.in
+2026-06-11 18:30:53 [error]: Threat scan error for test.helpubuild.in: getaddrinfo ENOTFOUND test.helpubuild.in
+2026-06-11 18:30:53 [error]: Threat scan error for unity-hyundai.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:30:53 [error]: Threat scan error for shastrinagartvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:07 [error]: Threat scan error for newtvsbalaji.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:07 [error]: Threat scan error for sampoorn.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:07 [error]: Threat scan error for totalkneereplacementguide.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:07 [error]: Threat scan error for sushruta-ano-rectal-institute.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:12 [error]: Threat scan error for helpubuild.in: Client network socket disconnected before secure TLS connection was established
+2026-06-11 18:31:17 [error]: Threat scan error for helpubuild.co.in: getaddrinfo ENOTFOUND helpubuild.co.in
+2026-06-11 18:31:31 [error]: Threat scan error for vendorservice.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:31 [error]: Threat scan error for rgbathandkitchen.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:39 [error]: Save threat results error: ThreatLog validation failed: threatType: `seo_spam` is not a valid enum value for path `threatType`.
+2026-06-11 18:31:45 [error]: Threat scan error for umangspeechandhearingaidcenter.in: Hostname/IP does not match certificate's altnames: Host: umangspeechandhearingaidcenter.in. is not in the cert's altnames: DNS:*.airtel.com, DNS:airtel.com
+2026-06-11 18:31:45 [error]: Threat scan error for veracious.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:46 [error]: Threat scan error for shripanchsheeldentaldermacare.com: getaddrinfo ENOTFOUND shripanchsheeldentaldermacare.com
+2026-06-11 18:31:46 [error]: Threat scan error for pilotsacademy.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:46 [error]: Threat scan error for salasartvs.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:46 [error]: Threat scan error for salasartvsmotors.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:46 [error]: Threat scan error for newstylefurniture.adsdigitalmedia.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:31:51 [error]: Threat scan error for aaranyayogaandfitness.in: getaddrinfo ENOTFOUND aaranyayogaandfitness.in
+2026-06-11 18:31:51 [error]: Threat scan error for optforphysio.com: write EPROTO 805EB6F201000000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:916:SSL alert number 80
+
+2026-06-11 18:33:19 [info]: SIGINT received. Shutting down gracefully...
