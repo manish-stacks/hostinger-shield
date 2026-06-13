@@ -1,4 +1,4 @@
-cat > ecosystem.config.js << 'EOF'
+
 module.exports = {
   apps: [
     {
@@ -13,4 +13,3 @@ module.exports = {
     }
   ]
 }
-EOF
