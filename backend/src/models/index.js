@@ -171,7 +171,7 @@ ThreatLogSchema.index({ website: 1, detectedAt: -1 });
 // ─── SSL LOG ──────────────────────────────────────────────────────────────────
 const SSLLogSchema = new mongoose.Schema({
   website: { type: mongoose.Schema.Types.ObjectId, ref: 'Website', required: true, index: true },
-  checkedAt: { type: Date, default: Date.now },
+  
   isValid: Boolean,
   issuer: String,
   subject: String,
@@ -189,7 +189,7 @@ SSLLogSchema.index({ website: 1, checkedAt: -1 });
 // ─── DNS LOG ──────────────────────────────────────────────────────────────────
 const DNSLogSchema = new mongoose.Schema({
   website: { type: mongoose.Schema.Types.ObjectId, ref: 'Website', required: true, index: true },
-  checkedAt: { type: Date, default: Date.now },
+  
   records: {
     A: [String],
     AAAA: [String],
