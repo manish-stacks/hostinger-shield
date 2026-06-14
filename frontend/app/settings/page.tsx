@@ -40,21 +40,21 @@ export default function SettingsPage() {
   });
 
   const [prefs, setPrefs] = useState({
-    email:       true,
-    whatsapp:    false,
-    inApp:       true,
+    email: true,
+    whatsapp: false,
+    inApp: true,
     phoneNumber: '',
-    alertEmail:  '',
+    alertEmail: '',
   });
 
   useEffect(() => {
     if (meData?.alertPreferences) {
       setPrefs({
-        email:       meData.alertPreferences.email       ?? true,
-        whatsapp:    meData.alertPreferences.whatsapp    ?? false,
-        inApp:       meData.alertPreferences.inApp       ?? true,
+        email: meData.alertPreferences.email ?? true,
+        whatsapp: meData.alertPreferences.whatsapp ?? false,
+        inApp: meData.alertPreferences.inApp ?? true,
         phoneNumber: meData.alertPreferences.phoneNumber || '',
-        alertEmail:  meData.alertPreferences.alertEmail  || '',
+        alertEmail: meData.alertPreferences.alertEmail || '',
       });
     }
   }, [meData]);
@@ -62,16 +62,23 @@ export default function SettingsPage() {
   const savePrefsMutation = useMutation({
     mutationFn: () => api.patch('/users/me/alert-preferences', prefs),
     onSuccess: () => { toast.success('Preferences saved'); qc.invalidateQueries({ queryKey: ['me'] }); },
-    onError:   () => toast.error('Failed to save'),
+    onError: () => toast.error('Failed to save'),
   });
 
   const fullScanMutation = useMutation({
     mutationFn: () => api.post('/websites/full-scan', {}),
-    onSuccess: (res: unknown) => {
-      const r = res as { data: { data: { started: number } } };
-      toast.success(`Full scan started for ${r.data.data.started} websites — updates in ~2 min`);
+
+    onSuccess: (res: any) => {
+      toast.success(
+        `Full scan started for ${res.data.started} websites — updates in ~2 min`
+      );
+      console.log('FULL RESPONSE', res);
     },
-    onError: () => toast.error('Scan failed'),
+
+    onError: (err: any) => {
+      console.error(err);
+      toast.error('Scan failed');
+    },  
   });
 
   // Single site scan
@@ -98,7 +105,7 @@ export default function SettingsPage() {
   const testMutation = useMutation({
     mutationFn: (channel: 'email' | 'whatsapp') => api.post('/users/me/test-alert', { channel }),
     onSuccess: (_: unknown, channel: string) => toast.success(`Test ${channel} sent`),
-    onError:   (_: unknown, channel: string) => toast.error(`Test ${channel} failed — check .env config`),
+    onError: (_: unknown, channel: string) => toast.error(`Test ${channel} failed — check .env config`),
   });
 
   return (
@@ -173,11 +180,11 @@ export default function SettingsPage() {
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {[
-                  { icon: '🛡️', label: 'Threat Detection',  desc: 'Casino/pharma/hack scan' },
-                  { icon: '🔒', label: 'SSL Check',          desc: 'Certificate validity' },
-                  { icon: '🌐', label: 'DNS Monitor',        desc: 'Record change detection' },
-                  { icon: '❤️', label: 'Health Check',       desc: 'Uptime & response time' },
-                  { icon: '📸', label: 'Screenshot',         desc: 'Visual change detection' },
+                  { icon: '🛡️', label: 'Threat Detection', desc: 'Casino/pharma/hack scan' },
+                  { icon: '🔒', label: 'SSL Check', desc: 'Certificate validity' },
+                  { icon: '🌐', label: 'DNS Monitor', desc: 'Record change detection' },
+                  { icon: '❤️', label: 'Health Check', desc: 'Uptime & response time' },
+                  { icon: '📸', label: 'Screenshot', desc: 'Visual change detection' },
                 ].map(({ icon, label, desc }) => (
                   <div key={label} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#161b22] border border-[#21262d] text-xs">
                     <span>{icon}</span>
@@ -383,11 +390,11 @@ export default function SettingsPage() {
           </div>
           <div className="space-y-2.5 text-xs">
             {[
-              { icon: '🚨', label: 'Website Hacked',  desc: 'Casino/pharma/redirect/defacement — every 30 min', color: 'text-red-400' },
-              { icon: '🔴', label: 'Site Down',        desc: 'HTTP fails or timeout — every 15 min',            color: 'text-red-400' },
-              { icon: '🔒', label: 'SSL Expiring',     desc: '30d / 15d / 7d / 3d before expiry — daily 3 AM', color: 'text-yellow-400' },
-              { icon: '🌐', label: 'DNS Changed',      desc: 'A/MX/NS records changed — daily 4 AM',           color: 'text-purple-400' },
-              { icon: '📸', label: 'Visual Change',    desc: 'Screenshot diff from previous — daily 2 AM',     color: 'text-blue-400' },
+              { icon: '🚨', label: 'Website Hacked', desc: 'Casino/pharma/redirect/defacement — every 30 min', color: 'text-red-400' },
+              { icon: '🔴', label: 'Site Down', desc: 'HTTP fails or timeout — every 15 min', color: 'text-red-400' },
+              { icon: '🔒', label: 'SSL Expiring', desc: '30d / 15d / 7d / 3d before expiry — daily 3 AM', color: 'text-yellow-400' },
+              { icon: '🌐', label: 'DNS Changed', desc: 'A/MX/NS records changed — daily 4 AM', color: 'text-purple-400' },
+              { icon: '📸', label: 'Visual Change', desc: 'Screenshot diff from previous — daily 2 AM', color: 'text-blue-400' },
             ].map(({ icon, label, desc, color }) => (
               <div key={label} className="flex items-start gap-2 p-2 rounded bg-[#0d1117] border border-[#21262d]">
                 <span className="text-sm shrink-0">{icon}</span>
@@ -406,12 +413,12 @@ export default function SettingsPage() {
             <Bell size={16} className="text-[#3b5bdb]" />
             <h2 className="font-semibold text-[#e6edf3]">Alert Configuration</h2>
           </div>
-          
+
           <div className="mt-3 space-y-2">
             {[
               { label: 'WhatsApp Alerts', desc: 'Via WAAPI — configure WAAPI_TOKEN in .env' },
-              { label: 'Email Alerts',    desc: 'Via Nodemailer SMTP — configure SMTP_* in .env' },
-              { label: 'In-App Alerts',   desc: 'Real-time via Socket.IO — always on' },
+              { label: 'Email Alerts', desc: 'Via Nodemailer SMTP — configure SMTP_* in .env' },
+              { label: 'In-App Alerts', desc: 'Real-time via Socket.IO — always on' },
             ].map(({ label, desc }) => (
               <div key={label} className="flex items-start gap-2 p-2 rounded bg-[#21262d]">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
