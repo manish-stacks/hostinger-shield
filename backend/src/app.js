@@ -36,7 +36,7 @@ const screenshotRoutes = require('./routes/screenshotRoutes');
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  cors: { origin: process.env.FRONTEND_URL, credentials: true }
+  cors: { origin: true, credentials: true }
 });
 
 // Connect Database
@@ -52,7 +52,7 @@ const limiter = rateLimit({
 
 // Middleware
 app.use(helmet());
-app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
+app.use(cors({ origin: true, credentials: true }));
 app.use(compression());
 app.use(morgan('combined', { stream: { write: msg => logger.info(msg.trim()) } }));
 app.use(express.json({ limit: '10mb' }));

@@ -25,10 +25,10 @@ export default function LoginPage() {
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
-    defaultValues: {
-      email: 'admin@shieldpro.com',
-      password: 'Admin@123456',
-    },
+    // defaultValues: {
+    //   email: 'admin@shieldpro.com',
+    //   password: 'Admin@123456',
+    // },
   });
 
   const onSubmit = async (data: FormData) => {
