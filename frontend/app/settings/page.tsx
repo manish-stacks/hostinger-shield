@@ -45,6 +45,8 @@ export default function SettingsPage() {
     inApp: true,
     phoneNumber: '',
     alertEmail: '',
+    escalationPhone: '',
+    escalationEmail: '',
   });
 
   useEffect(() => {
@@ -55,6 +57,8 @@ export default function SettingsPage() {
         inApp: meData.alertPreferences.inApp ?? true,
         phoneNumber: meData.alertPreferences.phoneNumber || '',
         alertEmail: meData.alertPreferences.alertEmail || '',
+        escalationPhone: meData.alertPreferences.escalationPhone || '',
+        escalationEmail: meData.alertPreferences.escalationEmail || '',
       });
     }
   }, [meData]);
@@ -328,6 +332,24 @@ export default function SettingsPage() {
                   </button>
                 </>
               )}
+            </div>
+
+            {/* Escalation contact */}
+            <div className="p-3 rounded-lg bg-[#0d1117] border border-[#21262d] space-y-2">
+              <p className="text-sm font-medium text-white">Escalation contact</p>
+              <p className="text-xs text-[#8b949e]">Alerted if a hack incident is not acknowledged (reminder every 10 min; backup contact from the 2nd reminder).</p>
+              <input
+                className="input text-xs py-1.5"
+                placeholder="Backup email"
+                value={prefs.escalationEmail}
+                onChange={(e) => setPrefs(p => ({ ...p, escalationEmail: e.target.value }))}
+              />
+              <input
+                className="input text-xs py-1.5"
+                placeholder="Backup WhatsApp number (with country code)"
+                value={prefs.escalationPhone}
+                onChange={(e) => setPrefs(p => ({ ...p, escalationPhone: e.target.value }))}
+              />
             </div>
 
             {/* WhatsApp toggle */}

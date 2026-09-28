@@ -4,6 +4,8 @@ const ThreatLogSchema = new mongoose.Schema({
   website: { type: mongoose.Schema.Types.ObjectId, ref: 'Website', required: true, index: true },
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   detectedAt: { type: Date, default: Date.now },
+  lastSeenAt: { type: Date, default: Date.now },
+  autoResolved: { type: Boolean, default: false },
   threatType: {
     type: String,
     enum: [
@@ -13,6 +15,7 @@ const ThreatLogSchema = new mongoose.Schema({
       'malware', 'phishing', 'exposed_env', 'directory_listing', 'debug_mode',
       'file_modified', 'file_deleted', 'new_file', 'dns_changed', 'ssl_expired',
       'website_down', 'keyword_missing', 'content_changed', 'seo_link_injection', 'korean_spam',
+      'seo_spam', 'cloaking', 'blacklisted', 'hidden_injection', 'spam_sitemap', 'wp_new_user', 'wp_new_plugin',
     ],
     required: true,
   },

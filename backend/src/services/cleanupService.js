@@ -20,6 +20,7 @@ const R = () => ({
   notifRead:     num(process.env.RETAIN_NOTIF_READ_DAYS, 7),
   notifAll:      num(process.env.RETAIN_NOTIF_DAYS, 15),
   screenshot:    num(process.env.RETAIN_SCREENSHOT_LOG_DAYS, 7),
+  evidence:      num(process.env.RETAIN_EVIDENCE_DAYS, 30),
   report:        num(process.env.RETAIN_REPORT_DAYS, 30),
   files:         num(process.env.RETAIN_FILES_DAYS, 30),
 });
@@ -93,7 +94,8 @@ async function runAll(factor = 1) {
   await purge('notifications all', Notification, { createdAt: { $lt: d(r.notifAll) } });
 
   // Screenshots: DB rows without files + error rows; files handled by per-site keep-latest + orphan sweep
-  await purge('screenshot logs', ScreenshotLog, { capturedAt: { $lt: d(r.screenshot) } }, await latestIds(ScreenshotLog, 'capturedAt'));
+  await purge('screenshot logs', ScreenshotLog, { isEvidence: { $ne: true }, capturedAt: { $lt: d(r.screenshot) } }, await latestIds(ScreenshotLog, 'capturedAt'));
+  await purge('evidence screenshots', ScreenshotLog, { isEvidence: true, capturedAt: { $lt: d(r.evidence) } });
   const shotDir = process.env.SCREENSHOT_DIR || path.join(__dirname, '../../screenshots');
   const keep = new Set((await ScreenshotLog.find({ screenshotPath: { $ne: null } }).select('screenshotPath').lean()).map((x) => x.screenshotPath));
   await cleanFiles(shotDir, 1, { onlyOrphans: true, referenced: keep });

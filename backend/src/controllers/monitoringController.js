@@ -113,6 +113,23 @@ exports.getIncident = async (req, res, next) => {
   } catch (err) { next(err); }
 };
 
+exports.acknowledgeIncident = async (req, res, next) => {
+  try {
+    const incident = await IncidentLog.findOneAndUpdate(
+      { _id: req.params.id, status: 'open' },
+      {
+        status: 'acknowledged',
+        userActionTime: new Date(),
+        acknowledgedBy: req.user._id,
+        $push: { timeline: { event: 'acknowledged', description: 'Acknowledged — reminders stopped', performedBy: req.user._id, timestamp: new Date() } },
+      },
+      { new: true }
+    );
+    if (!incident) return res.status(404).json({ success: false, message: 'Incident not found or already acknowledged' });
+    res.json({ success: true, data: incident });
+  } catch (err) { next(err); }
+};
+
 exports.resolveIncident = async (req, res, next) => {
   try {
     const incident = await IncidentLog.findByIdAndUpdate(

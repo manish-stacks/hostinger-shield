@@ -143,7 +143,7 @@ class ScreenshotService {
 
   async _cleanup(websiteId) {
     try {
-      const logs = await ScreenshotLog.find({ website: websiteId, screenshotPath: { $ne: null } })
+      const logs = await ScreenshotLog.find({ website: websiteId, screenshotPath: { $ne: null }, isEvidence: { $ne: true } })
         .sort({ capturedAt: -1 }).select('_id screenshotPath').lean();
 
       for (const log of logs.slice(KEEP_LATEST_N)) {
@@ -155,7 +155,7 @@ class ScreenshotService {
     }
   }
 
-  async captureAndCompare(website, browser = null) {
+  async captureAndCompare(website, browser = null, { evidence = false } = {}) {
     const ownBrowser = !browser;
     try {
       if (ownBrowser) browser = await this._launch();
@@ -191,11 +191,12 @@ class ScreenshotService {
         isDefaced,
         pageTitle:      capture.pageTitle,
         hash:           capture.hash,
+        isEvidence:     evidence,
         error:          null,
       });
 
       // Alert only on new defacement / change (not every run)
-      if (isDefaced && !previous?.isDefaced) {
+      if (isDefaced && !previous?.isDefaced && !evidence) {
         await notificationService.createNotification({
           user: website.user, website: website._id, type: 'threat',
           title: 'Defacement Detected', message: `${website.domain} may be defaced`, severity: 'critical',
@@ -203,7 +204,7 @@ class ScreenshotService {
       }
 
       await Website.findByIdAndUpdate(website._id, { lastScreenshot: new Date() });
-      await this._cleanup(website._id);
+      if (!evidence) await this._cleanup(website._id);
 
       return { success: true, hasChanged, isDefaced, changePercent };
     } finally {

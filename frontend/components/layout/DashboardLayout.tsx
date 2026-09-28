@@ -10,6 +10,7 @@ import {
 import { useAuthStore } from '@/stores/authStore';
 import { notificationsApi } from '@/lib/api';
 import { useQuery } from '@tanstack/react-query';
+import { useLiveAlerts } from '@/lib/useLiveAlerts';
 
 const NAV_ITEMS = [
   { href: '/dashboard',          icon: LayoutDashboard, label: 'Dashboard' },
@@ -34,6 +35,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { user, logout, loadUser, isAuthenticated, isLoading, _initialized } = useAuthStore();
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  useLiveAlerts(!!isAuthenticated);
 
   // loadUser fires ONCE per mount — checks cookie → validates token → sets state
   const didInit = useRef(false);

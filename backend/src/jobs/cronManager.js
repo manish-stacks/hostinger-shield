@@ -16,62 +16,86 @@ const getServices = () => ({
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// ── Helpers: overlap lock + bounded concurrency ─────────────────────────────
+const running = new Set();
+async function locked(name, fn) {
+  if (running.has(name)) { logger.warn(`[CRON] ${name} still running — skipped`); return; }
+  running.add(name);
+  const t0 = Date.now();
+  try { await fn(); logger.info(`[CRON] ${name} done in ${Math.round((Date.now() - t0) / 1000)}s`); }
+  catch (err) { logger.error(`[CRON] ${name} error: ${err.message}`); }
+  finally { running.delete(name); }
+}
+const activeSites = () => Website.find({ isActive: true, isMonitoringEnabled: true }).lean();
+async function pool(items, size, worker) {
+  let i = 0;
+  await Promise.all(Array.from({ length: Math.min(size, items.length) }, async () => {
+    while (i < items.length) {
+      const item = items[i++];
+      try { await worker(item); }
+      catch (e) { logger.error(`[CRON] ${item.domain}: ${e.message}`); }
+    }
+  }));
+}
+
 let io;
 
 function initCronJobs(socketIO) {
   io = socketIO;
   logger.info('Initializing cron jobs...');
 
-  // ── Every 15 min: Health checks ─────────────────────────────────────────────
-  cron.schedule('*/15 * * * *', async () => {
-    logger.info('[CRON] Health checks starting');
-    try {
-      const { monitoringService } = getServices();
-      const websites = await Website.find({ isActive: true, isMonitoringEnabled: true }).lean();
-      const batchSize = 20;
-      for (let i = 0; i < websites.length; i += batchSize) {
-        const batch = websites.slice(i, i + batchSize);
-        await Promise.allSettled(
-          batch.map((site) =>
-            monitoringService.checkWebsite(site).catch((e) =>
-              logger.error(`Health check failed for ${site.domain}: ${e.message}`)
-            )
-          )
-        );
-        if (i + batchSize < websites.length) await sleep(2000);
-      }
-      logger.info(`[CRON] Health checks done for ${websites.length} websites`);
-    } catch (err) {
-      logger.error(`[CRON] Health check error: ${err.message}`);
-    }
-  });
+  // ── Schedules (minutes configurable via .env) ────────────────────────────
+  const HEALTH_MIN = Math.max(1, parseInt(process.env.HEALTH_CHECK_MINUTES) || 5);
+  const FAST_MIN   = Math.max(1, parseInt(process.env.FAST_SCAN_MINUTES) || 10);
 
-  // ── Every 30 min: Threat detection ──────────────────────────────────────────
-  cron.schedule('*/30 * * * *', async () => {
-    logger.info('[CRON] Threat detection starting');
-    try {
-      const { threatService } = getServices();
-      const websites = await Website.find({ isActive: true, isMonitoringEnabled: true }).lean();
-      const batchSize = 10;
-      for (let i = 0; i < websites.length; i += batchSize) {
-        const batch = websites.slice(i, i + batchSize);
-        await Promise.allSettled(
-          batch.map(async (site) => {
-            try {
-              const results = await threatService.analyzeWebsite(site);
-              await threatService.saveThreatResults(site, results, io);
-            } catch (e) {
-              logger.error(`Threat scan failed for ${site.domain}: ${e.message}`);
-            }
-          })
-        );
-        if (i + batchSize < websites.length) await sleep(5000);
+  // Health checks (up/down) — every HEALTH_MIN minutes
+  cron.schedule(`*/${HEALTH_MIN} * * * *`, () => locked('health', async () => {
+    const { monitoringService } = getServices();
+    const sites = await activeSites();
+    await pool(sites, 25, (site) => monitoringService.checkWebsite(site));
+  }));
+
+  // Fast hack scan (homepage content, redirects, hidden injections) — every FAST_MIN minutes
+  cron.schedule(`*/${FAST_MIN} * * * *`, () => locked('fast-scan', async () => {
+    const { threatService } = getServices();
+    const sites = await activeSites();
+    await pool(sites, 15, async (site) => {
+      const results = await threatService.analyzeWebsite(site, { mode: 'light' });
+      await threatService.saveThreatResults(site, results, io);
+    });
+  }));
+
+  // Cloaking check (Googlebot / mobile-from-Google view) — hourly
+  cron.schedule('20 * * * *', () => locked('cloaking', async () => {
+    const { threatService } = getServices();
+    const sites = await activeSites();
+    await pool(sites, 8, async (site) => {
+      const results = await threatService.analyzeCloaking(site);
+      await threatService.saveThreatResults(site, results, io);
+    });
+  }));
+
+  // Deep scan (vulnerabilities, WordPress users/plugins/sitemap, blacklists) — daily 1 AM
+  cron.schedule('0 1 * * *', () => locked('deep-scan', async () => {
+    const { threatService } = getServices();
+    const guard = require('../services/guardService');
+    const sites = await activeSites();
+    const gsb = await guard.safeBrowsingBatch(sites); // one API call per 500 sites
+    await pool(sites, 8, async (site) => {
+      const results = await threatService.analyzeWebsite(site, { mode: 'full' });
+      const flagged = gsb.get(String(site._id));
+      if (flagged && !results.error) {
+        results.threats.push(...flagged);
+        results.isHacked = true;
       }
-      logger.info('[CRON] Threat detection done');
-    } catch (err) {
-      logger.error(`[CRON] Threat detection error: ${err.message}`);
-    }
-  });
+      await threatService.saveThreatResults(site, results, io);
+    });
+  }));
+
+  // Incident reminders (unacknowledged → re-alert, then escalation contact) — every 5 min
+  cron.schedule('*/5 * * * *', () => locked('escalation', async () => {
+    await getServices().threatService.escalateOpenIncidents(io);
+  }));
 
   // ── Every 6 hours: Hostinger account sync ───────────────────────────────────
   cron.schedule('0 */6 * * *', async () => {

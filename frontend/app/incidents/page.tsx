@@ -48,6 +48,12 @@ export default function IncidentsPage() {
   const incidents  = data?.data       || [];
   const pagination = data?.pagination || { total: 0 };
 
+  const ackMutation = useMutation({
+    mutationFn: (id: string) => monitoringApi.acknowledgeIncident(id),
+    onSuccess: () => { toast.success('Acknowledged — reminders stopped'); qc.invalidateQueries({ queryKey: ['incidents'] }); },
+    onError:   () => toast.error('Failed'),
+  });
+
   const resolveMutation = useMutation({
     mutationFn: (id: string) => monitoringApi.resolveIncident(id),
     onSuccess: () => { toast.success('Incident resolved'); qc.invalidateQueries({ queryKey: ['incidents'] }); },
@@ -171,6 +177,7 @@ export default function IncidentsPage() {
                   </td>
                   <td>
                     {i.status === 'open' ? <span className="badge-danger">Open</span>
+                      : i.status === 'acknowledged' ? <span className="badge-info">Acknowledged</span>
                       : i.status === 'in_progress' ? <span className="badge-warning">In Progress</span>
                       : <span className="badge-success">Resolved</span>}
                   </td>
@@ -180,7 +187,12 @@ export default function IncidentsPage() {
                       : '—'}
                   </td>
                   <td>
-                    {(i.status === 'open' || i.status === 'in_progress') && (
+                    {i.status === 'open' && (
+                      <button onClick={() => ackMutation.mutate(i._id as string)} disabled={ackMutation.isPending && ackMutation.variables === (i._id as string)} className="btn-secondary py-1 px-2 text-xs mr-1">
+                        Acknowledge
+                      </button>
+                    )}
+                    {(i.status === 'open' || i.status === 'acknowledged' || i.status === 'in_progress') && (
                       <button onClick={() => resolveMutation.mutate(i._id as string)} disabled={resolveMutation.isPending && resolveMutation.variables === (i._id as string)} className="btn-secondary py-1 px-2 text-xs">
                         {resolveMutation.isPending && resolveMutation.variables === (i._id as string) ? <Loader2 size={12} className="animate-spin" /> : 'Resolve'}
                       </button>

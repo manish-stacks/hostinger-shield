@@ -90,6 +90,7 @@ app.get('/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().
 // Socket.IO setup
 setupSocket(io);
 app.set('io', io);
+global.__io = io; // used by monitoringService for live down alerts
 
 // Error handler (must be last)
 app.use(errorHandler);

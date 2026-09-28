@@ -121,7 +121,8 @@ exports.scanWebsite = async (req, res, next) => {
 
     const [health, threat] = await Promise.allSettled([
       monitoringService.checkWebsite(website),
-      threatService.analyzeWebsite(website),
+      threatService.analyzeWebsite(website, { mode: 'full' })
+        .then(async (r) => { await threatService.saveThreatResults(website, r, req.app.get('io')); return r; }),
     ]);
 
     res.json({
@@ -144,7 +145,15 @@ exports.bulkScan = async (req, res, next) => {
     const websites = await Website.find(query).lean();
 
     // Fire async, don't await
-    Promise.allSettled(websites.map((w) => threatService.analyzeWebsite(w)));
+    const io = req.app.get('io');
+    (async () => {
+      for (const w of websites) {
+        try {
+          const r = await threatService.analyzeWebsite(w, { mode: 'full' });
+          await threatService.saveThreatResults(w, r, io);
+        } catch (e) { console.error(`Bulk scan ${w.domain}: ${e.message}`); }
+      }
+    })();
 
     res.json({ success: true, message: `Scan started for ${websites.length} websites` });
   } catch (err) {
@@ -261,7 +270,7 @@ exports.fullScan = async (req, res, next) => {
         await Promise.allSettled([
           monitoringService.checkWebsite(site).catch(e => console.error(`Health: ${site.domain}: ${e.message}`)),
           threatService.analyzeWebsite(site)
-            .then(results => threatService.saveThreatResults ? threatService.saveThreatResults(site, results) : null)
+            .then(results => threatService.saveThreatResults(site, results, null))
             .catch(e => console.error(`Threat: ${site.domain}: ${e.message}`)),
           sslService.checkAndSave(site).catch(e => console.error(`SSL: ${site.domain}: ${e.message}`)),
           dnsService.checkAndSave(site).catch(e => console.error(`DNS: ${site.domain}: ${e.message}`)),

@@ -20,6 +20,9 @@ const IncidentLogSchema = new mongoose.Schema({
     performedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     timestamp: { type: Date, default: Date.now },
   }],
+  alertCount: { type: Number, default: 1 },
+  lastAlertAt: { type: Date, default: Date.now },
+  acknowledgedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   resolvedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   resolution: String,
 }, { timestamps: true });

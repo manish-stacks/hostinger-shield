@@ -125,6 +125,7 @@ export const monitoringApi = {
   getIncidents:    (params?: Record<string, unknown>) => api.get('/incidents', { params }),
   getIncident:     (id: string)                       => api.get(`/incidents/${id}`),
   resolveIncident: (id: string)                       => api.patch(`/incidents/${id}/resolve`),
+  acknowledgeIncident: (id: string)                   => api.patch(`/incidents/${id}/acknowledge`),
 
   // SSL  →  /api/ssl
   getSSL:          (params?: Record<string, unknown>) => api.get('/ssl', { params }),

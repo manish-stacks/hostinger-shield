@@ -62,8 +62,9 @@ async function createNotification({ user, website, type, title, message, severit
 }
 
 // ─── TEMPLATES ────────────────────────────────────────────────────────────────
-function hackWhatsApp({ domain, threatScore, primaryThreat, incidentId }) {
-  return `🚨 *WEBSITE HACKED — Shield Pro*\n\n🌐 Domain: ${domain}\n⚠️ Score: ${threatScore}/100\n🦠 Threat: ${primaryThreat.replace(/_/g,' ').toUpperCase()}\n🆔 Incident: ${incidentId}\n🕐 ${new Date().toLocaleString()}\n\nLogin to restore backup:\n🔗 ${process.env.FRONTEND_URL}/incidents/${incidentId}\n\n— Hostinger Shield Pro`;
+function hackWhatsApp({ domain, threatScore, primaryThreat, incidentId, reminder, detail }) {
+  const head = reminder ? `🔔 *REMINDER #${reminder} — NOT ACKNOWLEDGED*\n` : '';
+  return `${head}🚨 *WEBSITE HACKED — Shield Pro*\n\n🌐 Domain: ${domain}\n⚠️ Score: ${threatScore}/100\n🦠 Threat: ${primaryThreat.replace(/_/g,' ').toUpperCase()}\n${detail ? `📝 ${String(detail).slice(0, 140)}\n` : ''}🆔 Incident: ${incidentId}\n🕐 ${new Date().toLocaleString()}\n\nLogin to restore backup:\n🔗 ${process.env.FRONTEND_URL}/incidents/${incidentId}\n\n— Hostinger Shield Pro`;
 }
 
 function hackEmail({ domain, threatScore, primaryThreat, incidentId, threats }) {
@@ -143,42 +144,70 @@ function downEmail({ domain, httpStatus, responseTime }) {
 }
 
 // ─── ALERT DISPATCHERS ────────────────────────────────────────────────────────
-async function sendHackAlert({ website, incident, threats, threatScore }) {
+async function sendHackAlert({ website, incident, threats, threatScore, reminder = 0, escalate = false }) {
   const user = await User.findById(website.user);
   if (!user) return;
 
   const primaryThreat = [...threats].sort((a, b) => b.score - a.score)[0];
-  const params = { domain: website.domain, threatScore, primaryThreat: primaryThreat.threatType, incidentId: incident._id, threats };
+  const params = {
+    domain: website.domain, threatScore, primaryThreat: primaryThreat.threatType,
+    incidentId: incident._id, threats, reminder, detail: primaryThreat.description,
+  };
+  const prefs = user.alertPreferences || {};
   const channels = {};
+  const tag = reminder ? `🔔 REMINDER #${reminder} — ` : '';
 
-  // WhatsApp
-  if (user.alertPreferences?.whatsapp && user.alertPreferences?.phoneNumber) {
-    try {
-      await sendWhatsApp(user.alertPreferences.phoneNumber, hackWhatsApp(params));
-      channels.whatsapp = { sent: true, sentAt: new Date() };
-    } catch (e) { channels.whatsapp = { sent: false, error: e.message }; }
+  // Recipients: main contact always; escalation contact from the 2nd reminder on
+  const phones = [prefs.phoneNumber];
+  const emails = [prefs.alertEmail || user.email];
+  if (escalate) { phones.push(prefs.escalationPhone); emails.push(prefs.escalationEmail); }
+
+  if (prefs.whatsapp) {
+    for (const ph of [...new Set(phones.filter(Boolean))]) {
+      try {
+        await sendWhatsApp(ph, hackWhatsApp(params));
+        channels.whatsapp = { sent: true, sentAt: new Date() };
+      } catch (e) { channels.whatsapp = { sent: false, error: e.message }; }
+    }
   }
 
-  // Email
-  if (user.alertPreferences?.email !== false) {
-    const to = user.alertPreferences?.alertEmail || user.email;
-    try {
-      await sendEmail(to, `🚨 HACKED: ${website.domain} — Shield Pro Alert`, hackEmail(params));
-      channels.email = { sent: true, sentAt: new Date() };
-    } catch (e) { channels.email = { sent: false, error: e.message }; }
+  if (prefs.email !== false) {
+    for (const to of [...new Set(emails.filter(Boolean))]) {
+      try {
+        await sendEmail(to, `${tag}🚨 HACKED: ${website.domain} — Shield Pro Alert`, hackEmail(params));
+        channels.email = { sent: true, sentAt: new Date() };
+      } catch (e) { channels.email = { sent: false, error: e.message }; }
+    }
   }
 
-  channels.inApp = { sent: true };
-  await Notification.create({
-    user: user._id, website: website._id,
-    type: 'threat',
-    title: `Website Hacked: ${website.domain}`,
-    message: `${threats.length} threat(s) detected. Score: ${threatScore}/100`,
-    severity: 'critical',
-    actionUrl: `/incidents/${incident._id}`,
-    channels,
-    isRead: false,
-  });
+  // In-app notification only on the first alert (reminders would flood the Alerts page)
+  if (!reminder) {
+    channels.inApp = { sent: true };
+    await Notification.create({
+      user: user._id, website: website._id, type: 'threat',
+      title: `Website Hacked: ${website.domain}`,
+      message: `${threats.length} threat(s) detected. Score: ${threatScore}/100`,
+      severity: 'critical', actionUrl: `/incidents/${incident._id}`, channels, isRead: false,
+    });
+  }
+}
+
+// Generic alert (email + WhatsApp + in-app) for non-hack events
+async function sendGenericAlert({ website, type = 'warning', severity = 'high', title, message }) {
+  const user = await User.findById(website.user);
+  if (!user) return;
+  const prefs = user.alertPreferences || {};
+  const channels = { inApp: { sent: true } };
+
+  if (prefs.whatsapp && prefs.phoneNumber) {
+    try { await sendWhatsApp(prefs.phoneNumber, `⚠️ *${title}*\n\n${message}\n🕐 ${new Date().toLocaleString()}\n\n— Hostinger Shield Pro`); channels.whatsapp = { sent: true, sentAt: new Date() }; }
+    catch (e) { channels.whatsapp = { sent: false, error: e.message }; }
+  }
+  if (prefs.email !== false) {
+    try { await sendEmail(prefs.alertEmail || user.email, `⚠️ ${title}`, `<div style="font-family:Arial;padding:16px"><h2>${title}</h2><p>${message}</p><p style="color:#888;font-size:12px">${new Date().toLocaleString()} — Hostinger Shield Pro</p></div>`); channels.email = { sent: true, sentAt: new Date() }; }
+    catch (e) { channels.email = { sent: false, error: e.message }; }
+  }
+  await Notification.create({ user: user._id, website: website._id, type, title, message, severity, channels, isRead: false });
 }
 
 async function sendSSLAlert({ website, daysLeft, expiry }) {
@@ -247,4 +276,4 @@ async function sendDownAlert({ website, httpStatus, responseTime }) {
   });
 }
 
-module.exports = { sendHackAlert, sendSSLAlert, sendDownAlert, sendWhatsApp, sendEmail, createNotification };
+module.exports = { sendHackAlert, sendGenericAlert, sendSSLAlert, sendDownAlert, sendWhatsApp, sendEmail, createNotification };

@@ -11,6 +11,7 @@ const ScreenshotLogSchema = new mongoose.Schema({
   isDefaced: { type: Boolean, default: false },
   pageTitle: String,
   hash: String,
+  isEvidence: { type: Boolean, default: false },
   error: String,
 }, { timestamps: false });
 

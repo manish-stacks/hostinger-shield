@@ -43,13 +43,15 @@ router.delete('/:id', restrictTo('admin'), catchAsync(async (req, res) => {
 
 // Current user: update alert preferences
 router.patch('/me/alert-preferences', catchAsync(async (req, res) => {
-  const { whatsapp, email, inApp, phoneNumber, alertEmail } = req.body;
+  const { whatsapp, email, inApp, phoneNumber, alertEmail, escalationPhone, escalationEmail } = req.body;
   const update = {};
   if (whatsapp  !== undefined) update['alertPreferences.whatsapp']  = whatsapp;
   if (email     !== undefined) update['alertPreferences.email']     = email;
   if (inApp     !== undefined) update['alertPreferences.inApp']     = inApp;
   if (phoneNumber !== undefined) update['alertPreferences.phoneNumber'] = phoneNumber;
   if (alertEmail  !== undefined) update['alertPreferences.alertEmail']  = alertEmail;
+  if (escalationPhone !== undefined) update['alertPreferences.escalationPhone'] = escalationPhone;
+  if (escalationEmail !== undefined) update['alertPreferences.escalationEmail'] = escalationEmail;
   const user = await User.findByIdAndUpdate(req.user._id, { $set: update }, { new: true }).select('-password -refreshTokens');
   sendSuccess(res, { data: user }, 'Alert preferences updated');
 }));

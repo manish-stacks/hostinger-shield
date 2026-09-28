@@ -22,6 +22,8 @@ const UserSchema = new mongoose.Schema({
     push: { type: Boolean, default: false },
     phoneNumber: String,
     alertEmail: String,
+    escalationPhone: String,
+    escalationEmail: String,
   },
   avatar: String,
 }, { timestamps: true });

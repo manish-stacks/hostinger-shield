@@ -5,5 +5,6 @@ const { protect } = require('../middleware');
 router.use(protect);
 router.get('/', monitoringController.getIncidents);
 router.get('/:id', monitoringController.getIncident);
+router.patch('/:id/acknowledge', monitoringController.acknowledgeIncident);
 router.patch('/:id/resolve', monitoringController.resolveIncident);
 module.exports = router;
