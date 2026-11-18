@@ -3,7 +3,7 @@ import { useParams } from 'next/navigation';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import {
   Globe, Scan, ShieldAlert, CheckCircle, AlertTriangle, Loader2,
-  ArrowLeft, Lock, Network, Camera, ExternalLink, Server,
+  ArrowLeft, Lock, Network, Camera, ExternalLink, Server, Zap, ShieldCheck,
 } from 'lucide-react';
 import Link from 'next/link';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
@@ -85,8 +85,36 @@ export default function WebsiteDetailPage() {
 
   const scanMutation = useMutation({
     mutationFn: () => websitesApi.scan(id),
-    onSuccess: () => { toast.success('Scan started'); qc.invalidateQueries({ queryKey: ['website', id] }); },
-    onError:   () => toast.error('Scan failed'),
+    onSuccess: () => {
+      toast.success('Full site scan complete');
+      qc.invalidateQueries({ queryKey: ['website', id] });
+      qc.invalidateQueries({ queryKey: ['website-health', id] });
+      qc.invalidateQueries({ queryKey: ['website-threats', id] });
+      qc.invalidateQueries({ queryKey: ['website-ssl', id] });
+      qc.invalidateQueries({ queryKey: ['website-dns', id] });
+    },
+    onError: () => toast.error('Scan failed'),
+  });
+
+  const pingMutation = useMutation({
+    mutationFn: () => websitesApi.ping(id),
+    onSuccess: (res) => {
+      const r = res.data.data;
+      if (r.isUp) toast.success(`UP · HTTP ${r.httpsStatus || r.httpStatus} · ${r.responseTime}ms`);
+      else toast.error(`DOWN · ${r.error || 'Unreachable'}`);
+      qc.invalidateQueries({ queryKey: ['website', id] });
+      qc.invalidateQueries({ queryKey: ['website-health', id] });
+    },
+    onError: () => toast.error('Ping failed'),
+  });
+
+  const baselineMutation = useMutation({
+    mutationFn: () => websitesApi.setBaseline(id),
+    onSuccess: () => {
+      toast.success('Defacement baseline captured from live page');
+      qc.invalidateQueries({ queryKey: ['website', id] });
+    },
+    onError: () => toast.error('Failed to capture baseline'),
   });
 
   if (isLoading) return (
@@ -140,10 +168,20 @@ export default function WebsiteDetailPage() {
               </div>
             </div>
           </div>
-          <button onClick={() => scanMutation.mutate()} disabled={scanMutation.isPending} className="btn-primary shrink-0">
-            {scanMutation.isPending ? <Loader2 size={15} className="animate-spin" /> : <Scan size={15} />}
-            Scan Now
-          </button>
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <button onClick={() => pingMutation.mutate()} disabled={pingMutation.isPending} className="btn-secondary text-xs">
+              {pingMutation.isPending ? <Loader2 size={14} className="animate-spin" /> : <Zap size={14} className="text-cyan-400" />}
+              Live Ping
+            </button>
+            <button onClick={() => baselineMutation.mutate()} disabled={baselineMutation.isPending} className="btn-secondary text-xs" title="Lock current homepage title as defacement baseline">
+              {baselineMutation.isPending ? <Loader2 size={14} className="animate-spin" /> : <ShieldCheck size={14} className="text-emerald-400" />}
+              {website.isBaselinesSet ? 'Update Baseline' : 'Set Baseline'}
+            </button>
+            <button onClick={() => scanMutation.mutate()} disabled={scanMutation.isPending} className="btn-primary text-xs">
+              {scanMutation.isPending ? <Loader2 size={14} className="animate-spin" /> : <Scan size={14} />}
+              Full Scan
+            </button>
+          </div>
         </div>
       </div>
 
@@ -199,18 +237,20 @@ export default function WebsiteDetailPage() {
           <p className="section-title mb-3">Site Information</p>
           <div className="grid grid-cols-2 gap-x-8 gap-y-2.5 text-sm">
             {[
+              { label: 'IP Address',      value: website.ipAddress      || '—' },
+              { label: 'Server Group',    value: website.serverName     || '—' },
               { label: 'Hosting Plan',    value: website.hostingPlan    || '—' },
               { label: 'Hosting User',    value: website.hostingUsername|| '—' },
-              { label: 'vHost Type',      value: website.vhostType      || '—' },
               { label: 'HTTP Status',     value: website.httpStatus     ? `${website.httpStatus}` : '—' },
               { label: 'Response Time',   value: website.responseTime   ? `${website.responseTime}ms` : '—' },
+              { label: '24h Uptime',      value: website.uptime24h != null ? `${website.uptime24h}%` : '—' },
               { label: 'Final URL',       value: website.finalUrl       || '—' },
               { label: 'Domain Expiry',   value: website.domainExpiry   ? new Date(website.domainExpiry).toLocaleDateString() : '—' },
               { label: 'SSL Expiry',      value: website.sslExpiry      ? new Date(website.sslExpiry).toLocaleDateString() : '—' },
               { label: 'Last Health',     value: website.lastHealthCheck? formatDistanceToNow(new Date(website.lastHealthCheck), { addSuffix: true }) : 'Never' },
+              { label: 'Last Error',      value: website.lastError      || 'None' },
+              { label: 'Baseline Title',  value: website.contentBaseline?.title || 'Not set' },
               { label: 'Last Backup',     value: website.lastBackup     ? formatDistanceToNow(new Date(website.lastBackup), { addSuffix: true }) : 'Never' },
-              { label: 'CMS / Tech',      value: website.technology?.cms || website.technology?.detected?.join(', ') || '—' },
-              { label: 'Server',          value: website.technology?.server || '—' },
             ].map(({ label, value }) => (
               <div key={label} className="flex items-start gap-2">
                 <span className="text-[#8b949e] shrink-0 min-w-[100px]">{label}</span>

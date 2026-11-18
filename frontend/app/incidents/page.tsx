@@ -56,8 +56,14 @@ export default function IncidentsPage() {
 
   const resolveMutation = useMutation({
     mutationFn: (id: string) => monitoringApi.resolveIncident(id),
-    onSuccess: () => { toast.success('Incident resolved'); qc.invalidateQueries({ queryKey: ['incidents'] }); },
-    onError:   () => toast.error('Failed'),
+    onSuccess: () => {
+      toast.success('Incident resolved');
+      qc.invalidateQueries({ queryKey: ['incidents'] });
+      qc.invalidateQueries({ queryKey: ['website-stats'] });
+      qc.invalidateQueries({ queryKey: ['websites'] });
+      qc.invalidateQueries({ queryKey: ['threats'] });
+    },
+    onError: () => toast.error('Failed'),
   });
 
   const handleExport = async (fmt: string) => {

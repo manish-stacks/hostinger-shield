@@ -130,10 +130,9 @@ export default function ScreenshotMonitorPage() {
       </div>
 
       {/* Info bar */}
-      <div className="flex items-center gap-2 p-3 mb-4 rounded-lg bg-[#161b22] border border-[#21262d] text-xs text-[#8b949e]">
-        <Camera size={13} />
-        Stored in <code className="bg-[#21262d] px-1 rounded mx-1">backend/screenshots/</code>
-        — latest 3 kept per site · files older than 30 days auto-deleted
+      <div className="flex items-center gap-2 p-3 mb-4 rounded-xl bg-[#0d1321] border border-slate-800 text-xs text-slate-400">
+        <Camera size={13} className="text-indigo-400 shrink-0" />
+        Stored on disk — latest 2 screenshots kept per site · orphan &amp; old captures auto-pruned to protect storage
       </div>
 
       {/* Filters */}

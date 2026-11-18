@@ -27,4 +27,7 @@ const IncidentLogSchema = new mongoose.Schema({
   resolution: String,
 }, { timestamps: true });
 
+IncidentLogSchema.index({ status: 1, detectionTime: -1 });
+IncidentLogSchema.index({ website: 1, status: 1 });
+
 module.exports = mongoose.model('IncidentLog', IncidentLogSchema);

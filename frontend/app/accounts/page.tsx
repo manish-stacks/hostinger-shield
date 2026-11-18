@@ -38,8 +38,14 @@ export default function AccountsPage() {
 
   const syncMutation = useMutation({
     mutationFn: (id: string) => accountsApi.sync(id),
-    onSuccess: () => { toast.success('Sync started'); qc.invalidateQueries({ queryKey: ['accounts'] }); },
+    onSuccess: () => { toast.success('Account synced'); qc.invalidateQueries({ queryKey: ['accounts'] }); qc.invalidateQueries({ queryKey: ['websites'] }); },
     onError: () => toast.error('Sync failed'),
+  });
+
+  const syncAllMutation = useMutation({
+    mutationFn: () => accountsApi.syncAll(),
+    onSuccess: () => { toast.success('All Hostinger accounts synced'); qc.invalidateQueries({ queryKey: ['accounts'] }); qc.invalidateQueries({ queryKey: ['websites'] }); },
+    onError: () => toast.error('Sync all failed'),
   });
 
   const toggleMutation = useMutation({
@@ -57,8 +63,19 @@ export default function AccountsPage() {
   return (
     <DashboardLayout>
       <div className="page-header">
-        <h1 className="page-title">Hostinger Accounts</h1>
-        <button onClick={openAdd} className="btn-primary"><Plus size={15} /> Add Account</button>
+        <div>
+          <h1 className="page-title">Hostinger Accounts</h1>
+          <p className="text-xs text-slate-400 mt-0.5">Auto-sync domains and plans from your Hostinger API tokens</p>
+        </div>
+        <div className="flex items-center gap-2">
+          {accounts.length > 0 && (
+            <button onClick={() => syncAllMutation.mutate()} disabled={syncAllMutation.isPending} className="btn-secondary text-xs">
+              {syncAllMutation.isPending ? <Loader2 size={14} className="animate-spin" /> : <RefreshCw size={14} />}
+              Sync All
+            </button>
+          )}
+          <button onClick={openAdd} className="btn-primary text-xs"><Plus size={14} /> Add Account</button>
+        </div>
       </div>
 
       <div className="table-wrapper">

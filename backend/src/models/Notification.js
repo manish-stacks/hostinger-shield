@@ -10,6 +10,8 @@ const NotificationSchema = new mongoose.Schema({
   channels: {
     whatsapp: { sent: Boolean, sentAt: Date, error: String },
     email: { sent: Boolean, sentAt: Date, error: String },
+    telegram: { sent: Boolean, sentAt: Date, error: String },
+    webhook: { sent: Boolean, sentAt: Date, error: String },
     inApp: { sent: Boolean, readAt: Date },
     push: { sent: Boolean, sentAt: Date, error: String },
   },
@@ -18,7 +20,8 @@ const NotificationSchema = new mongoose.Schema({
   actionUrl: String,
 }, { timestamps: true });
 
+const NOTIF_TTL_DAYS = Math.max(1, parseInt(process.env.RETAIN_NOTIF_DAYS) || 10);
 NotificationSchema.index({ user: 1, createdAt: -1 });
-NotificationSchema.index({ createdAt: 1 }, { expireAfterSeconds: 30 * 24 * 3600 });
+NotificationSchema.index({ createdAt: 1 }, { expireAfterSeconds: NOTIF_TTL_DAYS * 24 * 3600 });
 
 module.exports = mongoose.model('Notification', NotificationSchema);

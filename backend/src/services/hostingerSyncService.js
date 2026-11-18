@@ -121,7 +121,6 @@ class HostingerSyncService {
 
     const errors = [];
     let syncedCount = 0;
-    console.log('Synced Hostinger account:', account.apiToken);
 
     try {
       // Fetch websites, orders and domains in parallel
@@ -152,8 +151,8 @@ class HostingerSyncService {
       console.log(`[HostingerSync] Account: ${account.accountName}`);
       console.log(`[HostingerSync] Websites: ${rawWebsites.length}, Orders: ${rawOrders.length}, Domains: ${rawDomains.length}`);
 
-      // Update account website count
-      account.websiteCount = rawWebsites.filter(w => w.vhost_type === 'main').length;
+      // Update account website count (all active domains synced)
+      account.websiteCount = rawWebsites.length;
 
       for (const site of rawWebsites) {
         const domain = site.domain?.toLowerCase().trim();

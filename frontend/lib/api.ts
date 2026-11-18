@@ -76,12 +76,12 @@ api.interceptors.response.use(
 
 // ─── Auth ─────────────────────────────────────────────────────────────────────
 export const authApi = {
-  login:           (email: string, password: string) => api.post('/auth/login', { email, password }),
-  logout:          (refreshToken?: string)            => api.post('/auth/logout', { refreshToken }),
-  getMe:           ()                                 => api.get('/auth/me'),
-  forgotPassword:  (email: string)                    => api.post('/auth/forgot-password', { email }),
-  resetPassword:   (token: string, password: string)  => api.post(`/auth/reset-password/${token}`, { password }),
-  updatePassword:  (currentPassword: string, newPassword: string) =>
+  login:          (email: string, password: string) => api.post('/auth/login', { email, password }),
+  logout:         (refreshToken?: string)           => api.post('/auth/logout', { refreshToken }),
+  getMe:          ()                                => api.get('/auth/me'),
+  forgotPassword: (email: string)                   => api.post('/auth/forgot-password', { email }),
+  resetPassword:  (token: string, password: string) => api.post(`/auth/reset-password/${token}`, { password }),
+  updatePassword: (currentPassword: string, newPassword: string) =>
     api.patch('/auth/update-password', { currentPassword, newPassword }),
 };
 
@@ -100,89 +100,89 @@ export const accountsApi = {
 
 // ─── Websites ─────────────────────────────────────────────────────────────────
 export const websitesApi = {
-  list:        (params?: Record<string, unknown>) => api.get('/websites', { params }),
-  create:      (data: unknown)                    => api.post('/websites', data),
-  get:         (id: string)                       => api.get(`/websites/${id}`),
-  update:      (id: string, data: unknown)        => api.patch(`/websites/${id}`, data),
-  delete:      (id: string)                       => api.delete(`/websites/${id}`),
-  scan:        (id: string)                       => api.post(`/websites/${id}/scan`),
-  getHealth:   (id: string)                       => api.get(`/websites/${id}/health`),
-  getThreats:  (id: string)                       => api.get(`/websites/${id}/threats`),
-  bulkScan:    (ids: string[])                    => api.post('/websites/bulk-scan', { ids }),
-  bulkSSLCheck:(ids: string[])                    => api.post('/websites/bulk-ssl-check', { ids }),
-  // Backend route: GET /api/websites/stats  (NOT /stats/summary)
-  stats:       ()                                 => api.get('/websites/stats'),
+  list:             (params?: Record<string, unknown>) => api.get('/websites', { params }),
+  create:           (data: unknown)                    => api.post('/websites', data),
+  bulkImport:       (data: unknown)                    => api.post('/websites/bulk-import', data),
+  get:              (id: string)                       => api.get(`/websites/${id}`),
+  update:           (id: string, data: unknown)        => api.patch(`/websites/${id}`, data),
+  delete:           (id: string)                       => api.delete(`/websites/${id}`),
+  toggleMonitoring: (id: string)                       => api.patch(`/websites/${id}/toggle-monitoring`),
+  ping:             (id: string)                       => api.post(`/websites/${id}/ping`),
+  setBaseline:      (id: string, data?: unknown)       => api.post(`/websites/${id}/baseline`, data || {}),
+  scan:             (id: string)                       => api.post(`/websites/${id}/scan`),
+  getHealth:        (id: string)                       => api.get(`/websites/${id}/health`),
+  getThreats:       (id: string)                       => api.get(`/websites/${id}/threats`),
+  bulkScan:         (ids: string[])                    => api.post('/websites/bulk-scan', { ids }),
+  bulkSSLCheck:     (ids: string[])                    => api.post('/websites/bulk-ssl-check', { ids }),
+  fullScan:         (ids?: string[])                   => api.post('/websites/full-scan', ids?.length ? { ids } : {}),
+  stats:            ()                                 => api.get('/websites/stats'),
 };
 
 // ─── Monitoring ───────────────────────────────────────────────────────────────
 export const monitoringApi = {
-  // Threats  →  /api/threats
-  getThreats:      (params?: Record<string, unknown>) => api.get('/threats', { params }),
-  getThreat:       (id: string)                       => api.get(`/threats/${id}`),
-  resolveThreat:   (id: string, notes?: string)       => api.patch(`/threats/${id}/resolve`, { notes }),
+  getThreats:          (params?: Record<string, unknown>) => api.get('/threats', { params }),
+  getThreat:           (id: string)                       => api.get(`/threats/${id}`),
+  resolveThreat:       (id: string, notes?: string)       => api.patch(`/threats/${id}/resolve`, { notes }),
+  bulkResolveThreats:  (ids: string[], notes?: string)    => api.patch('/threats/bulk-resolve', { ids, notes }),
 
-  // Incidents  →  /api/incidents
-  getIncidents:    (params?: Record<string, unknown>) => api.get('/incidents', { params }),
-  getIncident:     (id: string)                       => api.get(`/incidents/${id}`),
-  resolveIncident: (id: string)                       => api.patch(`/incidents/${id}/resolve`),
-  acknowledgeIncident: (id: string)                   => api.patch(`/incidents/${id}/acknowledge`),
+  getIncidents:        (params?: Record<string, unknown>) => api.get('/incidents', { params }),
+  getIncident:         (id: string)                       => api.get(`/incidents/${id}`),
+  resolveIncident:     (id: string)                       => api.patch(`/incidents/${id}/resolve`),
+  acknowledgeIncident: (id: string)                       => api.patch(`/incidents/${id}/acknowledge`),
 
-  // SSL  →  /api/ssl
-  getSSL:          (params?: Record<string, unknown>) => api.get('/ssl', { params }),
-  getSSLExpiring:  ()                                 => api.get('/ssl/expiring'),
+  getSSL:              (params?: Record<string, unknown>) => api.get('/ssl', { params }),
+  getSSLExpiring:      ()                                 => api.get('/ssl/expiring'),
 
-  // DNS  →  /api/dns
-  getDNS:          (params?: Record<string, unknown>) => api.get('/dns', { params }),
+  getDNS:              (params?: Record<string, unknown>) => api.get('/dns', { params }),
 
-  // Screenshots  →  /api/screenshots
-  getScreenshots:  (params?: Record<string, unknown>) => api.get('/screenshots', { params }),
+  getScreenshots:      (params?: Record<string, unknown>) => api.get('/screenshots', { params }),
+};
+
+// ─── System / Database Storage ────────────────────────────────────────────────
+export const systemApi = {
+  dbStats: ()                                     => api.get('/system/db-stats'),
+  cleanup: (mode: 'normal' | 'aggressive' = 'normal') => api.post('/system/cleanup', { mode }),
 };
 
 // ─── Backups ──────────────────────────────────────────────────────────────────
 export const backupApi = {
-  list:        (params?: Record<string, unknown>) => api.get('/backups', { params }),
-  stats:       ()                                 => api.get('/backups/stats'),
-  addManual:   (data: unknown)                    => api.post('/backups/manual', data),
-  update:      (id: string, data: unknown)        => api.patch(`/backups/${id}`, data),
-  delete:      (id: string)                       => api.delete(`/backups/${id}`),
-  discover:    (websiteId?: string)               => api.post('/backups/discover', websiteId ? { websiteId } : {}),
-  restore:     (data: unknown)                    => api.post('/backups/restore', data),
-  history:     (params?: Record<string, unknown>) => api.get('/backups/restore-history', { params }),
-  getLog:      (id: string)                       => api.get(`/backups/restore-history/${id}`),
+  list:      (params?: Record<string, unknown>) => api.get('/backups', { params }),
+  stats:     ()                                 => api.get('/backups/stats'),
+  addManual: (data: unknown)                    => api.post('/backups/manual', data),
+  update:    (id: string, data: unknown)        => api.patch(`/backups/${id}`, data),
+  delete:    (id: string)                       => api.delete(`/backups/${id}`),
+  discover:  (websiteId?: string)               => api.post('/backups/discover', websiteId ? { websiteId } : {}),
+  restore:   (data: unknown)                    => api.post('/backups/restore', data),
+  history:   (params?: Record<string, unknown>) => api.get('/backups/restore-history', { params }),
+  getLog:    (id: string)                       => api.get(`/backups/restore-history/${id}`),
 };
 
 // ─── Exports ──────────────────────────────────────────────────────────────────
 export const exportApi = {
-  websites: (fmt: string, accountId?: string) =>
-    api.post('/exports/websites', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
-  threats: (fmt: string, accountId?: string) =>
-    api.post('/exports/threats', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
-  ssl: (fmt: string, accountId?: string) =>
-    api.post('/exports/ssl', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
-  dns: (fmt: string, accountId?: string) =>
-    api.post('/exports/dns', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
-  incidents: (fmt: string, accountId?: string) =>
-    api.post('/exports/incidents', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
-  restoreLogs: (fmt: string, accountId?: string) =>
-    api.post('/backups/export', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
+  websites:    (fmt: string, accountId?: string) => api.post('/exports/websites', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
+  threats:     (fmt: string, accountId?: string) => api.post('/exports/threats', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
+  ssl:         (fmt: string, accountId?: string) => api.post('/exports/ssl', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
+  dns:         (fmt: string, accountId?: string) => api.post('/exports/dns', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
+  incidents:   (fmt: string, accountId?: string) => api.post('/exports/incidents', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
+  restoreLogs: (fmt: string, accountId?: string) => api.post('/backups/export', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
 };
 
 // ─── Reports ──────────────────────────────────────────────────────────────────
 export const reportsApi = {
-  list:           (params?: Record<string, unknown>) => api.get('/reports', { params }),
-  get:            (id: string)                       => api.get(`/reports/${id}`),
-  generate:       (type: string)                     => api.post('/reports/generate', { type }),
-  download:       (id: string, format = 'pdf')       => api.get(`/reports/${id}/download`, { params: { format }, responseType: 'blob' }),
+  list:     (params?: Record<string, unknown>) => api.get('/reports', { params }),
+  get:      (id: string)                       => api.get(`/reports/${id}`),
+  generate: (type: string)                     => api.post('/reports/generate', { type }),
+  download: (id: string, format = 'pdf')       => api.get(`/reports/${id}/download`, { params: { format }, responseType: 'blob' }),
 };
 
 // ─── Notifications ────────────────────────────────────────────────────────────
 export const notificationsApi = {
   list:        (params?: Record<string, unknown>) => api.get('/notifications', { params }),
-  unreadCount: ()                                  => api.get('/notifications/unread-count'),
-  markRead:    (id: string)                        => api.patch(`/notifications/${id}/read`),
-  markAllRead: ()                                  => api.patch('/notifications/read-all'),
-  clearRead:   ()                                  => api.delete('/notifications/clear-read'),
-  remove:      (id: string)                        => api.delete(`/notifications/${id}`),
+  unreadCount: ()                                 => api.get('/notifications/unread-count'),
+  markRead:    (id: string)                       => api.patch(`/notifications/${id}/read`),
+  markAllRead: ()                                 => api.patch('/notifications/read-all'),
+  clearRead:   ()                                 => api.delete('/notifications/clear-read'),
+  remove:      (id: string)                       => api.delete(`/notifications/${id}`),
 };
 
 // ─── Users ────────────────────────────────────────────────────────────────────

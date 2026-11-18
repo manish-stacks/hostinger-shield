@@ -6,6 +6,7 @@ router.use(protect);
 
 router.get('/', accountController.getAccounts);
 router.post('/', accountController.createAccount);
+router.post('/sync-all', accountController.syncAllAccounts);
 router.get('/:id', accountController.getAccount);
 router.patch('/:id', accountController.updateAccount);
 router.delete('/:id', accountController.deleteAccount);

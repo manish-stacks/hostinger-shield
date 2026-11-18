@@ -4,6 +4,7 @@ const { protect } = require('../middleware');
 
 router.use(protect);
 router.get('/', monitoringController.getThreats);
+router.patch('/bulk-resolve', monitoringController.bulkResolveThreats);
 router.get('/:id', monitoringController.getThreat);
 router.patch('/:id/resolve', monitoringController.resolveThreat);
 module.exports = router;

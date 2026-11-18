@@ -25,11 +25,12 @@ exports.getThreats = async (req, res, next) => {
     if (status === 'active') query.isResolved = false;
     if (status === 'resolved') query.isResolved = true;
     if (websiteId) query.website = websiteId;
-    // search or accountId → resolve to website IDs
+    // search or accountId → resolve to website IDs (intersect if websiteId also given)
     if (search || accountId) {
       const siteQuery = {};
       if (accountId) siteQuery.hostingerAccount = accountId;
       if (search) siteQuery.domain = { $regex: search.trim(), $options: 'i' };
+      if (websiteId) siteQuery._id = websiteId;
       const ids = await Website.find(siteQuery).distinct('_id');
       query.website = { $in: ids };
     }
@@ -64,7 +65,27 @@ exports.resolveThreat = async (req, res, next) => {
       { new: true }
     );
     if (!threat) return next(new AppError('Threat not found', 404));
+    // Recompute website threatScore / threatLevel / status immediately
+    if (threat.website) {
+      await threatService.recomputeWebsiteThreatState(threat.website).catch(() => {});
+    }
     res.json({ success: true, data: threat });
+  } catch (err) { next(err); }
+};
+
+exports.bulkResolveThreats = async (req, res, next) => {
+  try {
+    const { ids, notes } = req.body;
+    if (!Array.isArray(ids) || !ids.length) return next(new AppError('No threat IDs provided', 400));
+    const affected = await ThreatLog.find({ _id: { $in: ids } }).distinct('website');
+    await ThreatLog.updateMany(
+      { _id: { $in: ids } },
+      { isResolved: true, resolvedAt: new Date(), resolvedBy: req.user._id, resolution: notes || 'Bulk resolved' }
+    );
+    for (const wid of affected) {
+      await threatService.recomputeWebsiteThreatState(wid).catch(() => {});
+    }
+    res.json({ success: true, message: `Resolved ${ids.length} threat(s)` });
   } catch (err) { next(err); }
 };
 
@@ -85,6 +106,7 @@ exports.getIncidents = async (req, res, next) => {
       const siteQuery = {};
       if (accountId) siteQuery.hostingerAccount = accountId;
       if (search) siteQuery.domain = { $regex: search.trim(), $options: 'i' };
+      if (websiteId) siteQuery._id = websiteId;
       const ids = await Website.find(siteQuery).distinct('_id');
       query.website = { $in: ids };
     }
@@ -138,11 +160,23 @@ exports.resolveIncident = async (req, res, next) => {
         status: 'resolved',
         resolutionTime: new Date(),
         resolvedBy: req.user._id,
-        $push: { timeline: { event: 'resolved', description: 'Marked resolved', performedBy: req.user._id, timestamp: new Date() } },
+        ...(req.body?.resolution ? { resolution: req.body.resolution } : {}),
+        $push: { timeline: { event: 'resolved', description: req.body?.resolution || 'Marked resolved', performedBy: req.user._id, timestamp: new Date() } },
       },
       { new: true }
     );
     if (!incident) return next(new AppError('Incident not found', 404));
+
+    if (incident.relatedThreats?.length) {
+      await ThreatLog.updateMany(
+        { _id: { $in: incident.relatedThreats }, isResolved: false },
+        { isResolved: true, resolvedAt: new Date(), resolvedBy: req.user._id, resolution: 'Resolved with incident' }
+      );
+    }
+    if (incident.website) {
+      await threatService.recomputeWebsiteThreatState(incident.website).catch(() => {});
+    }
+
     res.json({ success: true, data: incident });
   } catch (err) { next(err); }
 };
@@ -231,15 +265,24 @@ exports.getSSLLogs = async (req, res, next) => {
 
 exports.getSSLExpiring = async (req, res, next) => {
   try {
-    const days = parseInt(req.query.days) || 30;
+    const days = parseInt(req.query.days, 10) || 30;
     const cutoff = new Date(Date.now() + days * 86400000);
+    const activeIds = await Website.find({ isActive: true }).distinct('_id');
     const expiring = await SSLLog.aggregate([
+      { $match: { website: { $in: activeIds } } },
       { $sort: { checkedAt: -1 } },
       { $group: { _id: '$website', doc: { $first: '$$ROOT' } } },
       { $replaceRoot: { newRoot: '$doc' } },
       { $match: { validTo: { $lte: cutoff }, error: { $eq: null } } },
       { $sort: { validTo: 1 } },
-    ]);
+    ]).allowDiskUse(true);
+
+    await SSLLog.populate(expiring, {
+      path: 'website',
+      select: 'domain sslStatus sslExpiry sslDaysLeft',
+      populate: { path: 'hostingerAccount', select: 'accountName' },
+    });
+
     res.json({ success: true, data: expiring });
   } catch (err) { next(err); }
 };

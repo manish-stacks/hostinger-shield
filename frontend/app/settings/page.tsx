@@ -4,11 +4,12 @@ import { useAuthStore } from '@/stores/authStore';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import {
-  Lock, User, Bell, Loader2, Eye, EyeOff,
-  Mail, MessageCircle, Phone, Save, Shield, CheckCircle, Zap, RefreshCw, Search, Globe,
+  Lock, User, Bell, Loader2, Eye, EyeOff, Database, Trash2, Sparkles,
+  Mail, MessageCircle, Phone, Save, Shield, CheckCircle, Zap, RefreshCw,
+  Search, Globe, Send, Webhook,
 } from 'lucide-react';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
-import { authApi, api, websitesApi } from '@/lib/api';
+import { authApi, api, websitesApi, systemApi } from '@/lib/api';
 import { toast } from '@/components/ui/Toaster';
 
 export default function SettingsPage() {
@@ -33,6 +34,25 @@ export default function SettingsPage() {
     changePasswordMutation.mutate({ currentPassword: d.currentPassword, newPassword: d.newPassword });
   };
 
+  // ── Database Storage Stats & Cleanup ───────────────────────────────────────
+  const { data: sysData, isLoading: dbLoading, refetch: refetchDb } = useQuery({
+    queryKey: ['db-stats-full'],
+    queryFn: () => systemApi.dbStats().then((r) => r.data.data),
+    refetchInterval: 60000,
+  });
+  const db = sysData?.db;
+  const server = sysData?.server;
+
+  const cleanupMutation = useMutation({
+    mutationFn: (mode: 'normal' | 'aggressive') => systemApi.cleanup(mode),
+    onSuccess: (res) => {
+      toast.success(res.data.message || 'Database optimized');
+      qc.invalidateQueries({ queryKey: ['db-stats-full'] });
+      qc.invalidateQueries({ queryKey: ['db-stats'] });
+    },
+    onError: () => toast.error('Cleanup failed'),
+  });
+
   // ── Alert preferences ──────────────────────────────────────────────────────
   const { data: meData } = useQuery({
     queryKey: ['me'],
@@ -42,47 +62,48 @@ export default function SettingsPage() {
   const [prefs, setPrefs] = useState({
     email: true,
     whatsapp: false,
+    telegram: false,
+    webhook: false,
     inApp: true,
     phoneNumber: '',
     alertEmail: '',
     escalationPhone: '',
     escalationEmail: '',
+    telegramChatId: '',
+    webhookUrl: '',
   });
 
   useEffect(() => {
     if (meData?.alertPreferences) {
+      const ap = meData.alertPreferences;
       setPrefs({
-        email: meData.alertPreferences.email ?? true,
-        whatsapp: meData.alertPreferences.whatsapp ?? false,
-        inApp: meData.alertPreferences.inApp ?? true,
-        phoneNumber: meData.alertPreferences.phoneNumber || '',
-        alertEmail: meData.alertPreferences.alertEmail || '',
-        escalationPhone: meData.alertPreferences.escalationPhone || '',
-        escalationEmail: meData.alertPreferences.escalationEmail || '',
+        email: ap.email ?? true,
+        whatsapp: ap.whatsapp ?? false,
+        telegram: ap.telegram ?? false,
+        webhook: ap.webhook ?? false,
+        inApp: ap.inApp ?? true,
+        phoneNumber: ap.phoneNumber || '',
+        alertEmail: ap.alertEmail || '',
+        escalationPhone: ap.escalationPhone || '',
+        escalationEmail: ap.escalationEmail || '',
+        telegramChatId: ap.telegramChatId || '',
+        webhookUrl: ap.webhookUrl || '',
       });
     }
   }, [meData]);
 
   const savePrefsMutation = useMutation({
     mutationFn: () => api.patch('/users/me/alert-preferences', prefs),
-    onSuccess: () => { toast.success('Preferences saved'); qc.invalidateQueries({ queryKey: ['me'] }); },
+    onSuccess: () => { toast.success('Alert preferences saved'); qc.invalidateQueries({ queryKey: ['me'] }); },
     onError: () => toast.error('Failed to save'),
   });
 
   const fullScanMutation = useMutation({
-    mutationFn: () => api.post('/websites/full-scan', {}),
-
-    onSuccess: (res: any) => {
-      toast.success(
-        `Full scan started for ${res.data.started} websites — updates in ~2 min`
-      );
-      console.log('FULL RESPONSE', res);
+    mutationFn: () => websitesApi.fullScan(),
+    onSuccess: (res) => {
+      toast.success(`Full scan started for ${res.data.started ?? ''} websites`);
     },
-
-    onError: (err: any) => {
-      console.error(err);
-      toast.error('Scan failed');
-    },  
+    onError: () => toast.error('Scan failed'),
   });
 
   // Single site scan
@@ -97,7 +118,7 @@ export default function SettingsPage() {
   const searchSites = sitesData || [];
 
   const singleScanMutation = useMutation({
-    mutationFn: (id: string) => api.post('/websites/full-scan', { ids: [id] }),
+    mutationFn: (id: string) => websitesApi.fullScan([id]),
     onSuccess: () => {
       toast.success(`Scanning ${selectedSite?.domain} — updates in ~1 min`);
       setSelectedSite(null);
@@ -107,35 +128,468 @@ export default function SettingsPage() {
   });
 
   const testMutation = useMutation({
-    mutationFn: (channel: 'email' | 'whatsapp') => api.post('/users/me/test-alert', { channel }),
-    onSuccess: (_: unknown, channel: string) => toast.success(`Test ${channel} sent`),
-    onError: (_: unknown, channel: string) => toast.error(`Test ${channel} failed — check .env config`),
+    mutationFn: (channel: 'email' | 'whatsapp' | 'telegram' | 'webhook') =>
+      api.post('/users/me/test-alert', { channel }),
+    onSuccess: (_: unknown, channel: string) => toast.success(`Test ${channel} sent!`),
+    onError: (e: unknown, channel: string) => {
+      const msg = (e as { response?: { data?: { message?: string } } })?.response?.data?.message;
+      toast.error(msg || `Test ${channel} failed — check .env & preferences`);
+    },
   });
 
   return (
     <DashboardLayout>
-      <div className="page-header"><h1 className="page-title">Settings</h1></div>
+      <div className="page-header">
+        <div>
+          <h1 className="page-title">Settings &amp; System Control</h1>
+          <p className="text-xs text-slate-400 mt-0.5">
+            Database storage guard, instant multi-channel alerting, and manual scans
+          </p>
+        </div>
+      </div>
 
       <div className="grid lg:grid-cols-2 gap-6 max-w-7xl">
+
+        {/* ── Database Storage Guard & Optimizer (Solves Atlas 512MB Overflow!) ── */}
+        <div id="db-storage" className="card lg:col-span-2 border-cyan-500/25">
+          <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-cyan-500/15 flex items-center justify-center shrink-0">
+                <Database size={18} className="text-cyan-400" />
+              </div>
+              <div>
+                <h2 className="font-bold text-slate-50 flex items-center gap-2">
+                  Database Storage &amp; Auto-Retention Guard
+                  {db?.connected && (
+                    <span className={
+                      db.status === 'critical' ? 'badge-danger'
+                      : db.status === 'warning' ? 'badge-warning'
+                      : 'badge-success'
+                    }>
+                      {db.usagePercent}% used
+                    </span>
+                  )}
+                </h2>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Per-site rolling caps + 30-min quota guard prevent MongoDB Atlas from ever filling up.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <button onClick={() => refetchDb()} className="btn-secondary text-xs">
+                <RefreshCw size={13} /> Refresh
+              </button>
+              <button
+                onClick={() => cleanupMutation.mutate('normal')}
+                disabled={cleanupMutation.isPending}
+                className="btn-primary text-xs"
+              >
+                {cleanupMutation.isPending && cleanupMutation.variables === 'normal'
+                  ? <Loader2 size={13} className="animate-spin" />
+                  : <Sparkles size={13} />}
+                Optimize DB Now
+              </button>
+              <button
+                onClick={() => {
+                  if (confirm('Run aggressive cleanup? This keeps only latest 25% of retention logs to free maximum DB space immediately.')) {
+                    cleanupMutation.mutate('aggressive');
+                  }
+                }}
+                disabled={cleanupMutation.isPending}
+                className="btn-danger text-xs"
+              >
+                {cleanupMutation.isPending && cleanupMutation.variables === 'aggressive'
+                  ? <Loader2 size={13} className="animate-spin" />
+                  : <Trash2 size={13} />}
+                Aggressive Purge
+              </button>
+            </div>
+          </div>
+
+          {dbLoading || !db?.connected ? (
+            <div className="py-8 text-center text-slate-400 text-xs">
+              <Loader2 size={18} className="animate-spin mx-auto mb-2" /> Loading MongoDB storage stats…
+            </div>
+          ) : (
+            <div className="space-y-5">
+              {/* Storage bar + KPIs */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                <div className="sm:col-span-2 p-3.5 rounded-xl bg-[#070b14]/80 border border-slate-800">
+                  <div className="flex justify-between text-xs mb-2">
+                    <span className="text-slate-400">Quota Usage ({db.dbName})</span>
+                    <span className="font-bold text-slate-100 tabular-nums">{db.usedMB} MB / {db.limitMB} MB</span>
+                  </div>
+                  <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                    <div
+                      className={`h-full rounded-full transition-all ${
+                        db.usagePercent >= 85 ? 'bg-rose-500'
+                        : db.usagePercent >= 65 ? 'bg-amber-500'
+                        : 'bg-gradient-to-r from-indigo-500 to-cyan-400'
+                      }`}
+                      style={{ width: `${Math.max(3, db.usagePercent)}%` }}
+                    />
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-2">
+                    Auto-prune triggers automatically if DB exceeds {db.limitMB} MB
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-[#070b14]/80 border border-slate-800">
+                  <span className="text-[11px] text-slate-400 block">Data / Storage</span>
+                  <span className="text-lg font-bold text-slate-100 tabular-nums">{db.dataSizeMB} MB</span>
+                  <span className="text-[11px] text-slate-500 block">Disk: {db.storageSizeMB} MB</span>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-[#070b14]/80 border border-slate-800">
+                  <span className="text-[11px] text-slate-400 block">Indexes Size</span>
+                  <span className="text-lg font-bold text-cyan-400 tabular-nums">{db.indexSizeMB} MB</span>
+                  <span className="text-[11px] text-slate-500 block">Max {db.retention?.maxHealthPerSite} health/site</span>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-[#070b14]/80 border border-slate-800">
+                  <span className="text-[11px] text-slate-400 block">API Server RAM</span>
+                  <span className="text-lg font-bold text-indigo-400 tabular-nums">{server?.rssMB ?? '—'} MB</span>
+                  <span className="text-[11px] text-slate-500 block">
+                    Up {server?.uptimeSec ? `${Math.floor(server.uptimeSec / 3600)}h ${Math.floor((server.uptimeSec % 3600) / 60)}m` : '—'}
+                  </span>
+                </div>
+              </div>
+
+              {/* Per-Collection Breakdown */}
+              <div className="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Collection</th>
+                      <th>Documents</th>
+                      <th>Data Size</th>
+                      <th>Storage (Disk)</th>
+                      <th>Index Size</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {(db.collections || []).map((c: { name: string; count: number; sizeMB: number; storageMB: number; indexMB: number }) => (
+                      <tr key={c.name}>
+                        <td className="font-mono text-xs text-slate-200">{c.name}</td>
+                        <td className="text-xs tabular-nums text-slate-300">{c.count.toLocaleString()}</td>
+                        <td className="text-xs tabular-nums text-slate-300">{c.sizeMB} MB</td>
+                        <td className="text-xs tabular-nums text-slate-400">{c.storageMB} MB</td>
+                        <td className="text-xs tabular-nums text-cyan-400">{c.indexMB} MB</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* ── Manual Full Scan ─────────────────────────────────────────────── */}
+        <div className="card lg:col-span-2 border-indigo-500/30 bg-indigo-950/10">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <Zap size={16} className="text-indigo-400" />
+                <h2 className="font-bold text-slate-50">Manual Full Server Scan</h2>
+              </div>
+              <p className="text-xs text-slate-400 mb-3">
+                Runs Health + Threat + SSL + DNS + Screenshot checks immediately on all active websites.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { icon: '🛡️', label: 'Threat Scan', desc: 'Malware / spam / hack' },
+                  { icon: '🔒', label: 'SSL Audit', desc: 'Expiry & validity' },
+                  { icon: '🌐', label: 'DNS Diff', desc: 'A / MX / NS changes' },
+                  { icon: '❤️', label: 'Uptime Ping', desc: 'Status & latency' },
+                  { icon: '📸', label: 'Screenshot', desc: 'Visual defacement' },
+                ].map(({ icon, label, desc }) => (
+                  <div key={label} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#0d1321] border border-slate-800 text-xs">
+                    <span>{icon}</span>
+                    <div>
+                      <p className="text-slate-100 font-medium">{label}</p>
+                      <p className="text-slate-500 text-[10px]">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <button
+              onClick={() => fullScanMutation.mutate()}
+              disabled={fullScanMutation.isPending}
+              className="btn-primary shrink-0 py-3 px-6"
+            >
+              {fullScanMutation.isPending
+                ? <><Loader2 size={16} className="animate-spin" /> Starting…</>
+                : <><RefreshCw size={16} /> Run Full Scan</>}
+            </button>
+          </div>
+
+          {/* Single site scan */}
+          <div className="mt-5 pt-4 border-t border-slate-800/80">
+            <p className="text-xs font-medium text-slate-400 mb-2">Or deep-scan a specific website:</p>
+            <div className="flex gap-2">
+              <div className="relative flex-1">
+                <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                <input
+                  className="input pl-9 text-sm w-full"
+                  placeholder="Type domain to search..."
+                  value={selectedSite ? selectedSite.domain : singleSearch}
+                  onChange={(e) => { setSingleSearch(e.target.value); setSelectedSite(null); }}
+                />
+                {singleSearch.length > 1 && !selectedSite && searchSites.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#0d1321] border border-slate-700 rounded-xl shadow-2xl z-50 max-h-48 overflow-y-auto">
+                    {searchSites.map((s: Record<string, unknown>) => (
+                      <button
+                        key={s._id as string}
+                        onClick={() => { setSelectedSite({ _id: s._id as string, domain: s.domain as string }); setSingleSearch(''); }}
+                        className="w-full flex items-center gap-2 px-3 py-2 text-sm text-left hover:bg-slate-800/70 transition-colors"
+                      >
+                        <Globe size={12} className="text-slate-400 shrink-0" />
+                        <span className="text-slate-100">{s.domain as string}</span>
+                        {s.status ? (
+                          <span className={`ml-auto text-[10px] ${s.status === 'healthy' ? 'text-emerald-400' : s.status === 'hacked' || s.status === 'down' ? 'text-rose-400' : 'text-amber-400'}`}>
+                            {s.status as string}
+                          </span>
+                        ) : null}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <button
+                onClick={() => selectedSite && singleScanMutation.mutate(selectedSite._id)}
+                disabled={!selectedSite || singleScanMutation.isPending}
+                className="btn-secondary shrink-0"
+              >
+                {singleScanMutation.isPending ? <Loader2 size={14} className="animate-spin" /> : <Zap size={14} />}
+                Scan Site
+              </button>
+              {selectedSite && (
+                <button onClick={() => { setSelectedSite(null); setSingleSearch(''); }} className="btn-ghost px-2.5">×</button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* ── Instant Alert Channels ───────────────────────────────────────── */}
+        <div className="card lg:col-span-2">
+          <div className="flex items-center gap-2 mb-1">
+            <Bell size={16} className="text-indigo-400" />
+            <h2 className="font-bold text-slate-50">Instant Alert Channels</h2>
+          </div>
+          <p className="text-xs text-slate-400 mb-5">
+            Get notified within seconds when any site goes down, gets hacked, SSL expires, or DNS changes.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* In-App */}
+            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-sky-500/15 flex items-center justify-center shrink-0">
+                <Bell size={16} className="text-sky-400" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-slate-100">In-App + Browser + Alarm</p>
+                <p className="text-[11px] text-slate-400">Real-time Socket.IO alerts — always active</p>
+              </div>
+              <CheckCircle size={18} className="text-emerald-400 shrink-0" />
+            </div>
+
+            {/* Email */}
+            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-indigo-500/15 flex items-center justify-center shrink-0">
+                  <Mail size={16} className="text-indigo-400" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-slate-100">Email Alerts</p>
+                  <p className="text-[11px] text-slate-400">Detailed HTML incident reports</p>
+                </div>
+                <input
+                  type="checkbox"
+                  checked={prefs.email}
+                  onChange={(e) => setPrefs((p) => ({ ...p, email: e.target.checked }))}
+                  className="w-4 h-4 rounded cursor-pointer"
+                />
+              </div>
+              {prefs.email && (
+                <>
+                  <input
+                    className="input text-xs py-1.5"
+                    placeholder={`Alert email (default: ${user?.email || 'login email'})`}
+                    value={prefs.alertEmail}
+                    onChange={(e) => setPrefs((p) => ({ ...p, alertEmail: e.target.value }))}
+                  />
+                  <button
+                    onClick={() => testMutation.mutate('email')}
+                    disabled={testMutation.isPending}
+                    className="btn-secondary w-full justify-center text-xs py-1.5"
+                  >
+                    <Mail size={12} /> Send test email
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* WhatsApp */}
+            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-emerald-500/15 flex items-center justify-center shrink-0">
+                  <MessageCircle size={16} className="text-emerald-400" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-slate-100">WhatsApp (WAAPI)</p>
+                  <p className="text-[11px] text-slate-400">Instant mobile message</p>
+                </div>
+                <input
+                  type="checkbox"
+                  checked={prefs.whatsapp}
+                  onChange={(e) => setPrefs((p) => ({ ...p, whatsapp: e.target.checked }))}
+                  className="w-4 h-4 rounded cursor-pointer"
+                />
+              </div>
+              {prefs.whatsapp && (
+                <>
+                  <div className="relative">
+                    <Phone size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                    <input
+                      className="input pl-8 text-xs py-1.5"
+                      placeholder="91XXXXXXXXXX (with country code)"
+                      value={prefs.phoneNumber}
+                      onChange={(e) => setPrefs((p) => ({ ...p, phoneNumber: e.target.value }))}
+                    />
+                  </div>
+                  <button
+                    onClick={() => testMutation.mutate('whatsapp')}
+                    disabled={testMutation.isPending || !prefs.phoneNumber}
+                    className="btn-secondary w-full justify-center text-xs py-1.5"
+                  >
+                    <MessageCircle size={12} /> Send test WhatsApp
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Telegram Bot */}
+            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-cyan-500/15 flex items-center justify-center shrink-0">
+                  <Send size={16} className="text-cyan-400" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-slate-100">Telegram Bot</p>
+                  <p className="text-[11px] text-slate-400">Free, ultra-fast instant push</p>
+                </div>
+                <input
+                  type="checkbox"
+                  checked={prefs.telegram}
+                  onChange={(e) => setPrefs((p) => ({ ...p, telegram: e.target.checked }))}
+                  className="w-4 h-4 rounded cursor-pointer"
+                />
+              </div>
+              {prefs.telegram && (
+                <>
+                  <input
+                    className="input text-xs py-1.5"
+                    placeholder="Telegram Chat ID (e.g. 123456789)"
+                    value={prefs.telegramChatId}
+                    onChange={(e) => setPrefs((p) => ({ ...p, telegramChatId: e.target.value }))}
+                  />
+                  <button
+                    onClick={() => testMutation.mutate('telegram')}
+                    disabled={testMutation.isPending}
+                    className="btn-secondary w-full justify-center text-xs py-1.5"
+                  >
+                    <Send size={12} /> Send test Telegram
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Slack / Discord Webhook */}
+            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-purple-500/15 flex items-center justify-center shrink-0">
+                  <Webhook size={16} className="text-purple-400" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-slate-100">Discord / Slack Webhook</p>
+                  <p className="text-[11px] text-slate-400">Team channel alerts</p>
+                </div>
+                <input
+                  type="checkbox"
+                  checked={prefs.webhook}
+                  onChange={(e) => setPrefs((p) => ({ ...p, webhook: e.target.checked }))}
+                  className="w-4 h-4 rounded cursor-pointer"
+                />
+              </div>
+              {prefs.webhook && (
+                <>
+                  <input
+                    className="input text-xs py-1.5"
+                    placeholder="https://discord.com/api/webhooks/..."
+                    value={prefs.webhookUrl}
+                    onChange={(e) => setPrefs((p) => ({ ...p, webhookUrl: e.target.value }))}
+                  />
+                  <button
+                    onClick={() => testMutation.mutate('webhook')}
+                    disabled={testMutation.isPending}
+                    className="btn-secondary w-full justify-center text-xs py-1.5"
+                  >
+                    <Webhook size={12} /> Send test Webhook
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Escalation Contact */}
+            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-2.5">
+              <p className="text-sm font-semibold text-slate-100">Escalation Backup Contact</p>
+              <p className="text-[11px] text-slate-400">
+                Notified automatically if a hack incident stays unacknowledged after 2 reminders.
+              </p>
+              <input
+                className="input text-xs py-1.5"
+                placeholder="Backup email"
+                value={prefs.escalationEmail}
+                onChange={(e) => setPrefs((p) => ({ ...p, escalationEmail: e.target.value }))}
+              />
+              <input
+                className="input text-xs py-1.5"
+                placeholder="Backup WhatsApp (with country code)"
+                value={prefs.escalationPhone}
+                onChange={(e) => setPrefs((p) => ({ ...p, escalationPhone: e.target.value }))}
+              />
+            </div>
+          </div>
+
+          <button
+            onClick={() => savePrefsMutation.mutate()}
+            disabled={savePrefsMutation.isPending}
+            className="btn-primary mt-5"
+          >
+            {savePrefsMutation.isPending ? <Loader2 size={14} className="animate-spin" /> : <Save size={14} />}
+            Save Alert Preferences
+          </button>
+        </div>
 
         {/* ── Profile ──────────────────────────────────────────────────────── */}
         <div className="card">
           <div className="flex items-center gap-2 mb-4">
-            <User size={16} className="text-[#3b5bdb]" />
-            <h2 className="font-semibold text-[#e6edf3]">Profile</h2>
+            <User size={16} className="text-indigo-400" />
+            <h2 className="font-bold text-slate-50">Profile</h2>
           </div>
           <div className="space-y-3">
             <div>
               <label className="label">Name</label>
-              <input readOnly value={user?.name || ''} className="input opacity-60 cursor-default" />
+              <input readOnly value={user?.name || ''} className="input opacity-65 cursor-default" />
             </div>
             <div>
               <label className="label">Email</label>
-              <input readOnly value={user?.email || ''} className="input opacity-60 cursor-default" />
+              <input readOnly value={user?.email || ''} className="input opacity-65 cursor-default" />
             </div>
             <div>
               <label className="label">Role</label>
-              <input readOnly value={user?.role || ''} className="input opacity-60 cursor-default capitalize" />
+              <input readOnly value={user?.role?.replace('_', ' ') || ''} className="input opacity-65 cursor-default capitalize" />
             </div>
           </div>
         </div>
@@ -143,8 +597,8 @@ export default function SettingsPage() {
         {/* ── Change Password ───────────────────────────────────────────────── */}
         <div className="card">
           <div className="flex items-center gap-2 mb-4">
-            <Lock size={16} className="text-[#3b5bdb]" />
-            <h2 className="font-semibold text-[#e6edf3]">Change Password</h2>
+            <Lock size={16} className="text-indigo-400" />
+            <h2 className="font-bold text-slate-50">Change Password</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
             <div>
@@ -155,7 +609,7 @@ export default function SettingsPage() {
               <label className="label">New Password</label>
               <div className="relative">
                 <input {...register('newPassword', { required: true, minLength: 8 })} type={showPass ? 'text' : 'password'} className="input pr-10" />
-                <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-3 top-1/2 -translate-y-1/2 text-[#8b949e]">
+                <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
                   {showPass ? <EyeOff size={14} /> : <Eye size={14} />}
                 </button>
               </div>
@@ -170,283 +624,26 @@ export default function SettingsPage() {
           </form>
         </div>
 
-
-        {/* ── Full Scan ─────────────────────────────────────────────────── */}
-        <div className="card lg:col-span-2 border-[#3b5bdb]/30 bg-[#3b5bdb]/5">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <Zap size={16} className="text-[#3b5bdb]" />
-                <h2 className="font-semibold text-[#e6edf3]">Manual Full Scan</h2>
-              </div>
-              <p className="text-xs text-[#8b949e] mb-3">
-                Runs all checks immediately — no need to wait for cron. Scans all active websites.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {[
-                  { icon: '🛡️', label: 'Threat Detection', desc: 'Casino/pharma/hack scan' },
-                  { icon: '🔒', label: 'SSL Check', desc: 'Certificate validity' },
-                  { icon: '🌐', label: 'DNS Monitor', desc: 'Record change detection' },
-                  { icon: '❤️', label: 'Health Check', desc: 'Uptime & response time' },
-                  { icon: '📸', label: 'Screenshot', desc: 'Visual change detection' },
-                ].map(({ icon, label, desc }) => (
-                  <div key={label} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#161b22] border border-[#21262d] text-xs">
-                    <span>{icon}</span>
-                    <div>
-                      <p className="text-[#e6edf3] font-medium">{label}</p>
-                      <p className="text-[#8b949e] text-[10px]">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <button
-              onClick={() => fullScanMutation.mutate()}
-              disabled={fullScanMutation.isPending}
-              className="btn-primary shrink-0 py-3 px-6 text-base"
-            >
-              {fullScanMutation.isPending
-                ? <><Loader2 size={18} className="animate-spin" /> Scanning...</>
-                : <><RefreshCw size={18} /> Run Full Scan</>}
-            </button>
-          </div>
-          {fullScanMutation.isPending && (
-            <div className="mt-2 p-3 rounded-lg bg-[#3b5bdb]/10 border border-[#3b5bdb]/20">
-              <div className="flex items-center gap-2 text-xs text-[#3b5bdb]">
-                <Loader2 size={12} className="animate-spin shrink-0" />
-                <span>Running — Health → Threats → SSL → DNS → Screenshots. Check Dashboard in 1–2 minutes.</span>
-              </div>
-            </div>
-          )}
-
-          {/* Single site scan */}
-          <div className="mt-4 pt-4 border-t border-[#21262d]">
-            <p className="text-xs font-medium text-[#8b949e] mb-2">Or scan a single website:</p>
-            <div className="flex gap-2">
-              <div className="relative flex-1">
-                <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8b949e]" />
-                <input
-                  className="input pl-8 text-sm w-full"
-                  placeholder="Type domain to search..."
-                  value={selectedSite ? selectedSite.domain : singleSearch}
-                  onChange={(e) => { setSingleSearch(e.target.value); setSelectedSite(null); }}
-                />
-                {/* Dropdown */}
-                {singleSearch.length > 1 && !selectedSite && searchSites.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#161b22] border border-[#30363d] rounded-lg shadow-xl z-50 max-h-48 overflow-y-auto">
-                    {searchSites.map((s: Record<string, unknown>) => (
-                      <button
-                        key={s._id as string}
-                        onClick={() => { setSelectedSite({ _id: s._id as string, domain: s.domain as string }); setSingleSearch(''); }}
-                        className="w-full flex items-center gap-2 px-3 py-2 text-sm text-left hover:bg-[#21262d] transition-colors"
-                      >
-                        <Globe size={12} className="text-[#8b949e] shrink-0" />
-                        <span className="text-[#e6edf3]">{s.domain as string}</span>
-                        {s.status && (
-                          <span className={`ml-auto text-[10px] ${s.status === 'healthy' ? 'text-emerald-400' : s.status === 'hacked' ? 'text-red-400' : 'text-yellow-400'}`}>
-                            {s.status as string}
-                          </span>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <button
-                onClick={() => selectedSite && singleScanMutation.mutate(selectedSite._id)}
-                disabled={!selectedSite || singleScanMutation.isPending}
-                className="btn-secondary shrink-0"
-              >
-                {singleScanMutation.isPending
-                  ? <Loader2 size={14} className="animate-spin" />
-                  : <Zap size={14} />}
-                Scan
-              </button>
-              {selectedSite && (
-                <button onClick={() => { setSelectedSite(null); setSingleSearch(''); }} className="btn-ghost px-2">
-                  ×
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* ── Alert Preferences ─────────────────────────────────────────────── */}
+        {/* ── Automated Cron Schedule Reference ────────────────────────────── */}
         <div className="card lg:col-span-2">
-          <div className="flex items-center gap-2 mb-1">
-            <Bell size={16} className="text-[#3b5bdb]" />
-            <h2 className="font-semibold text-[#e6edf3]">Alert Preferences</h2>
-          </div>
-          <p className="text-xs text-[#8b949e] mb-5">
-            Choose how you want to be notified when a site is hacked, SSL expires, or site goes down.
-          </p>
-
-          <div className="grid lg:grid-cols-3 gap-5">
-
-            {/* In-app */}
-            <div className="flex items-center gap-3 p-3 rounded-lg bg-[#0d1117] border border-[#21262d]">
-              <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0">
-                <Bell size={15} className="text-blue-400" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-[#e6edf3]">In-app</p>
-                <p className="text-[11px] text-[#8b949e]">Bell icon — always on</p>
-              </div>
-              <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-                <CheckCircle size={12} className="text-white" />
-              </div>
-            </div>
-
-            {/* Email toggle */}
-            <div className="p-3 rounded-lg bg-[#0d1117] border border-[#21262d] space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0">
-                  <Mail size={15} className="text-purple-400" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-[#e6edf3]">Email alerts</p>
-                  <p className="text-[11px] text-[#8b949e]">HTML email with details</p>
-                </div>
-                <input
-                  type="checkbox"
-                  checked={prefs.email}
-                  onChange={(e) => setPrefs(p => ({ ...p, email: e.target.checked }))}
-                  className="w-4 h-4 rounded cursor-pointer"
-                />
-              </div>
-              {prefs.email && (
-                <>
-                  <input
-                    className="input text-xs py-1.5"
-                    placeholder={`Alert email (default: ${user?.email || 'login email'})`}
-                    value={prefs.alertEmail}
-                    onChange={(e) => setPrefs(p => ({ ...p, alertEmail: e.target.value }))}
-                  />
-                  <button
-                    onClick={() => testMutation.mutate('email')}
-                    disabled={testMutation.isPending}
-                    className="btn-secondary w-full justify-center text-xs py-1"
-                  >
-                    {testMutation.isPending ? <Loader2 size={11} className="animate-spin" /> : <Mail size={11} />}
-                    Send test email
-                  </button>
-                </>
-              )}
-            </div>
-
-            {/* Escalation contact */}
-            <div className="p-3 rounded-lg bg-[#0d1117] border border-[#21262d] space-y-2">
-              <p className="text-sm font-medium text-white">Escalation contact</p>
-              <p className="text-xs text-[#8b949e]">Alerted if a hack incident is not acknowledged (reminder every 10 min; backup contact from the 2nd reminder).</p>
-              <input
-                className="input text-xs py-1.5"
-                placeholder="Backup email"
-                value={prefs.escalationEmail}
-                onChange={(e) => setPrefs(p => ({ ...p, escalationEmail: e.target.value }))}
-              />
-              <input
-                className="input text-xs py-1.5"
-                placeholder="Backup WhatsApp number (with country code)"
-                value={prefs.escalationPhone}
-                onChange={(e) => setPrefs(p => ({ ...p, escalationPhone: e.target.value }))}
-              />
-            </div>
-
-            {/* WhatsApp toggle */}
-            <div className="p-3 rounded-lg bg-[#0d1117] border border-[#21262d] space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0">
-                  <MessageCircle size={15} className="text-emerald-400" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-[#e6edf3]">WhatsApp alerts</p>
-                  <p className="text-[11px] text-[#8b949e]">Instant message via WAAPI</p>
-                </div>
-                <input
-                  type="checkbox"
-                  checked={prefs.whatsapp}
-                  onChange={(e) => setPrefs(p => ({ ...p, whatsapp: e.target.checked }))}
-                  className="w-4 h-4 rounded cursor-pointer"
-                />
-              </div>
-              {prefs.whatsapp && (
-                <>
-                  <div className="relative">
-                    <Phone size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#8b949e]" />
-                    <input
-                      className="input pl-7 text-xs py-1.5"
-                      placeholder="91XXXXXXXXXX (with country code)"
-                      value={prefs.phoneNumber}
-                      onChange={(e) => setPrefs(p => ({ ...p, phoneNumber: e.target.value }))}
-                    />
-                  </div>
-                  <button
-                    onClick={() => testMutation.mutate('whatsapp')}
-                    disabled={testMutation.isPending || !prefs.phoneNumber}
-                    className="btn-secondary w-full justify-center text-xs py-1"
-                  >
-                    {testMutation.isPending ? <Loader2 size={11} className="animate-spin" /> : <MessageCircle size={11} />}
-                    Send test WhatsApp
-                  </button>
-                </>
-              )}
-            </div>
-
-          </div>
-
-          <button
-            onClick={() => savePrefsMutation.mutate()}
-            disabled={savePrefsMutation.isPending}
-            className="btn-primary mt-5"
-          >
-            {savePrefsMutation.isPending ? <Loader2 size={14} className="animate-spin" /> : <Save size={14} />}
-            Save Preferences
-          </button>
-        </div>
-
-        {/* ── When alerts fire ──────────────────────────────────────────────── */}
-        <div className="card">
           <div className="flex items-center gap-2 mb-4">
-            <Shield size={16} className="text-[#3b5bdb]" />
-            <h2 className="font-semibold text-[#e6edf3]">When do alerts fire?</h2>
+            <Shield size={16} className="text-indigo-400" />
+            <h2 className="font-bold text-slate-50">Active Monitoring Schedule</h2>
           </div>
-          <div className="space-y-2.5 text-xs">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-xs">
             {[
-              { icon: '🚨', label: 'Website Hacked', desc: 'Casino/pharma/redirect/defacement — every 30 min', color: 'text-red-400' },
-              { icon: '🔴', label: 'Site Down', desc: 'HTTP fails or timeout — every 15 min', color: 'text-red-400' },
-              { icon: '🔒', label: 'SSL Expiring', desc: '30d / 15d / 7d / 3d before expiry — daily 3 AM', color: 'text-yellow-400' },
-              { icon: '🌐', label: 'DNS Changed', desc: 'A/MX/NS records changed — daily 4 AM', color: 'text-purple-400' },
-              { icon: '📸', label: 'Visual Change', desc: 'Screenshot diff from previous — daily 2 AM', color: 'text-blue-400' },
+              { icon: '🔴', label: 'Uptime & Latency', desc: 'Every 5 min (flips alert immediately)', color: 'text-rose-400' },
+              { icon: '🚨', label: 'Fast Hack Scan', desc: 'Every 10 min (spam, redirects, hidden links)', color: 'text-orange-400' },
+              { icon: '🕵️', label: 'Cloaking Detection', desc: 'Hourly (Googlebot vs browser check)', color: 'text-purple-400' },
+              { icon: '🔬', label: 'Deep Security Audit', desc: 'Daily 1:00 AM (WP, .env, Safe Browsing)', color: 'text-indigo-400' },
+              { icon: '🔒', label: 'SSL & DNS Watch', desc: 'Daily 3:00 AM & 4:00 AM (deduplicated logs)', color: 'text-amber-400' },
+              { icon: '🗄️', label: 'DB Quota Guard', desc: 'Every 30 min + Daily 6:00 AM auto-prune', color: 'text-cyan-400' },
             ].map(({ icon, label, desc, color }) => (
-              <div key={label} className="flex items-start gap-2 p-2 rounded bg-[#0d1117] border border-[#21262d]">
-                <span className="text-sm shrink-0">{icon}</span>
+              <div key={label} className="flex items-start gap-2.5 p-3 rounded-xl bg-[#070b14]/80 border border-slate-800">
+                <span className="text-base shrink-0">{icon}</span>
                 <div>
-                  <p className={`font-medium ${color}`}>{label}</p>
-                  <p className="text-[#8b949e] mt-0.5">{desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ── .env reminder ────────────────────────────────────────────────── */}
-        <div className="card">
-          <div className="flex items-center gap-2 mb-4">
-            <Bell size={16} className="text-[#3b5bdb]" />
-            <h2 className="font-semibold text-[#e6edf3]">Alert Configuration</h2>
-          </div>
-
-          <div className="mt-3 space-y-2">
-            {[
-              { label: 'WhatsApp Alerts', desc: 'Via WAAPI — configure WAAPI_TOKEN in .env' },
-              { label: 'Email Alerts', desc: 'Via Nodemailer SMTP — configure SMTP_* in .env' },
-              { label: 'In-App Alerts', desc: 'Real-time via Socket.IO — always on' },
-            ].map(({ label, desc }) => (
-              <div key={label} className="flex items-start gap-2 p-2 rounded bg-[#21262d]">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
-                <div>
-                  <p className="text-[#e6edf3] font-medium text-xs">{label}</p>
-                  <p className="text-[#8b949e] text-[11px]">{desc}</p>
+                  <p className={`font-semibold ${color}`}>{label}</p>
+                  <p className="text-slate-400 mt-0.5">{desc}</p>
                 </div>
               </div>
             ))}

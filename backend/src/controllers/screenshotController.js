@@ -98,11 +98,17 @@ exports.getHistory = async (req, res, next) => {
   try {
     const { page = 1, limit = 10 } = req.query;
     const total = await ScreenshotLog.countDocuments({ website: req.params.websiteId });
-    const logs  = await ScreenshotLog.find({ website: req.params.websiteId })
+    const logs = await ScreenshotLog.find({ website: req.params.websiteId })
       .sort({ capturedAt: -1 })
       .skip((page - 1) * limit)
       .limit(+limit)
       .lean();
+
+    logs.forEach((l) => {
+      if (l.screenshotPath) l.screenshotUrl = toDataUri(l.screenshotPath);
+      delete l.screenshotPath;
+    });
+
     res.json({ success: true, data: logs, pagination: { total, page: +page, limit: +limit } });
   } catch (err) { next(err); }
 };

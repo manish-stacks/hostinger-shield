@@ -158,21 +158,10 @@ function initCronJobs(socketIO) {
   });
 
   // ── Daily 5 AM: Backup discovery ─────────────────────────────────────────────
-  cron.schedule('0 5 * * *', async () => {
-    logger.info('[CRON] Backup discovery starting');
-    try {
-      const { backupService } = getServices();
-      const websites = await Website.find({ isActive: true }).lean();
-      for (const site of websites) {
-        await backupService.discoverAllBackups(site._id).catch((e) =>
-          logger.error(`Backup discovery failed for ${site.domain}: ${e.message}`)
-        );
-      }
-      logger.info('[CRON] Backup discovery done');
-    } catch (err) {
-      logger.error(`[CRON] Backup discovery error: ${err.message}`);
-    }
-  });
+  cron.schedule('0 5 * * *', () => locked('backup-discovery', async () => {
+    const { backupService } = getServices();
+    await backupService.discoverAllBackups();
+  }));
 
   // ── Daily 8 AM: Report generation ────────────────────────────────────────────
   cron.schedule('0 8 * * *', async () => {
@@ -190,16 +179,17 @@ function initCronJobs(socketIO) {
   const runCleanup = async () => {
     try {
       await require('../services/cleanupService').runAll();
+      await require('../services/cleanupService').runIfOverLimit(io);
     } catch (err) {
       logger.error(`[CRON] Cleanup error: ${err.message}`);
     }
   };
-  cron.schedule('0 6 * * *', runCleanup);
-  // Also once shortly after startup, then every 6h if DB is over the size limit
-  setTimeout(runCleanup, 60 * 1000);
-  cron.schedule('0 */6 * * *', async () => {
-    try { await require('../services/cleanupService').runIfOverLimit(); } catch {}
-  });
+  cron.schedule('0 6 * * *', () => locked('cleanup', runCleanup));
+  // Run shortly after startup, then check DB quota every 30 minutes
+  setTimeout(() => locked('startup-cleanup', runCleanup), 45 * 1000);
+  cron.schedule('*/30 * * * *', () => locked('db-quota-guard', async () => {
+    await require('../services/cleanupService').runIfOverLimit(io);
+  }));
 
   logger.info('All cron jobs initialized');
 }

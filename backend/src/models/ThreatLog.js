@@ -31,5 +31,7 @@ const ThreatLogSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 ThreatLogSchema.index({ website: 1, detectedAt: -1 });
+ThreatLogSchema.index({ isResolved: 1, detectedAt: -1 });
+ThreatLogSchema.index({ detectedAt: -1 });
 
 module.exports = mongoose.model('ThreatLog', ThreatLogSchema);

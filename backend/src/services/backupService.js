@@ -99,11 +99,12 @@ class BackupService {
         }
       }, 5 * 60 * 1000);
 
-      await notificationService.sendDownAlert({
+      await notificationService.sendGenericAlert({
         website,
-        httpStatus: null,
-        responseTime: null,
-        // reuse as generic info — ideally add sendInfoAlert, but keeping existing interface
+        type: 'restore',
+        severity: 'low',
+        title: `Restore Initiated: ${website.domain}`,
+        message: `Backup restore started (${backup.backupDate ? new Date(backup.backupDate).toLocaleString() : 'selected snapshot'}). Post-restore verification scan will run in 5 minutes.`,
       }).catch(() => {}); // non-blocking
 
       return log;

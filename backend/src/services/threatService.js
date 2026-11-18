@@ -55,6 +55,29 @@ async function analyzeCloaking(website) {
   return { website: website._id, domain: website.domain, threats, mode: 'cloak', overallScore: overallScore(threats), isHacked: threats.length > 0 };
 }
 
+const compactEvidence = (ev) => {
+  if (!ev || typeof ev !== 'object') return ev;
+  const out = {};
+  for (const [k, v] of Object.entries(ev)) {
+    if (typeof v === 'string') out[k] = v.slice(0, 260);
+    else if (Array.isArray(v)) out[k] = v.slice(0, 8).map((x) => (typeof x === 'string' ? x.slice(0, 140) : x));
+    else out[k] = v;
+  }
+  return out;
+};
+
+async function recomputeWebsiteThreatState(websiteId) {
+  const open = await ThreatLog.find({ website: websiteId, isResolved: false }).select('threatType score').lean();
+  const overall = overallScore(open.map((t) => ({ score: t.score })));
+  const hacked = open.some((t) => HACK_TYPES.includes(t.threatType) && t.score >= 60);
+  const site = await Website.findById(websiteId).select('status').lean();
+  const isDown = site?.status === 'down';
+  const status = isDown ? 'down' : hacked ? 'hacked' : overall >= 30 ? 'warning' : 'healthy';
+  const level = overall >= 75 ? 'critical' : overall >= 50 ? 'high_risk' : overall >= 25 ? 'warning' : 'safe';
+  await Website.findByIdAndUpdate(websiteId, { threatScore: overall, threatLevel: level, status });
+  return { overall, hacked, status, level };
+}
+
 // ─── SAVE ─────────────────────────────────────────────────────────────────────
 async function saveThreatResults(website, results, io, coverage) {
   try {
@@ -74,7 +97,7 @@ async function saveThreatResults(website, results, io, coverage) {
         website: website._id, user: website.user,
         threatType: threat.type, severity: threat.severity, score: threat.score,
         title: `${threat.type.replace(/_/g, ' ').toUpperCase()} detected on ${website.domain}`,
-        description: threat.description, evidence: threat.evidence,
+        description: threat.description, evidence: compactEvidence(threat.evidence),
       });
       newThreats.push(log);
     }
@@ -90,13 +113,8 @@ async function saveThreatResults(website, results, io, coverage) {
     );
 
     // Recompute site state from ALL open threats (not just this scan's)
-    const open = await ThreatLog.find({ website: website._id, isResolved: false }).select('threatType score').lean();
-    const overall = overallScore(open.map((t) => ({ score: t.score })));
-    const hacked = open.some((t) => HACK_TYPES.includes(t.threatType) && t.score >= 60);
-    const status = hacked ? 'hacked' : overall >= 30 ? 'warning' : 'healthy';
-    const level = overall >= 75 ? 'critical' : overall >= 50 ? 'high_risk' : overall >= 25 ? 'warning' : 'safe';
-
-    await Website.findByIdAndUpdate(website._id, { threatScore: overall, threatLevel: level, status, lastThreatScan: now });
+    const { overall, hacked } = await recomputeWebsiteThreatState(website._id);
+    await Website.findByIdAndUpdate(website._id, { lastThreatScan: now });
 
     // Hack incident / alerts for NEW hack-type threats
     const hackNew = newThreats.filter((t) => HACK_TYPES.includes(t.threatType) && t.score >= 60);
@@ -208,5 +226,6 @@ async function escalateOpenIncidents(io) {
 
 module.exports = {
   analyzeWebsite, analyzeCloaking, saveThreatResults, escalateOpenIncidents,
+  recomputeWebsiteThreatState,
   scanVulnerabilities: guard.scanVulnerabilities,
 };

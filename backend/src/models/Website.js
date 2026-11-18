@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
 const WebsiteSchema = new mongoose.Schema({
-  hostingerAccount: { type: mongoose.Schema.Types.ObjectId, ref: 'HostingerAccount', required: true },
+  hostingerAccount: { type: mongoose.Schema.Types.ObjectId, ref: 'HostingerAccount', default: null },
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   domain: { type: String, required: true, lowercase: true, trim: true },
+
+  // Server / grouping metadata (supports non-Hostinger servers too)
+  serverName: { type: String, trim: true },
+  ipAddress: String,
 
   // Hostinger API synced fields
   hostingUsername: String,
@@ -19,23 +23,31 @@ const WebsiteSchema = new mongoose.Schema({
   domainExpiry: Date,
 
   // Monitoring & health
-  status: { type: String, enum: ['healthy', 'warning', 'hacked', 'down', 'critical', 'unknown'], default: 'unknown' },
+  status: { type: String, enum: ['healthy', 'warning', 'hacked', 'down', 'critical', 'restoring', 'unknown'], default: 'unknown' },
   threatScore: { type: Number, default: 0, min: 0, max: 100 },
   threatLevel: { type: String, enum: ['safe', 'warning', 'high_risk', 'critical'], default: 'safe' },
   sslStatus: { type: String, enum: ['valid', 'expiring', 'expired', 'invalid', 'none', 'unknown'], default: 'unknown' },
   sslExpiry: Date,
   sslDaysLeft: Number,
   isMonitoringEnabled: { type: Boolean, default: true },
-  monitoringInterval: { type: Number, default: 15 },
+  monitoringInterval: { type: Number, default: 5 },
   lastHealthCheck: Date,
   lastThreatScan: Date,
   lastScreenshot: Date,
   lastBackup: Date,
+  lastRestoreDate: Date,
   lastSync: Date,
   httpStatus: Number,
   responseTime: Number,
   finalUrl: String,
   hasRedirect: { type: Boolean, default: false },
+  lastError: String,
+  downSince: Date,
+  consecutiveFailures: { type: Number, default: 0 },
+  uptime24h: { type: Number, default: null },
+  lastDownAlertAt: Date,
+  alertEmail: String,
+  alertPhone: String,
   technology: {
     cms: String,
     framework: String,
