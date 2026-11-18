@@ -18,10 +18,11 @@ const sendExport = async (res, next, fn, userId, format, accountId) => {
   }
 };
 
-// POST /api/exports/websites?format=xlsx&accountId=...
+// POST /api/exports/websites?format=xlsx&accountId=...&status=...&search=...
 exports.exportWebsites = (req, res, next) => {
-  const { format = 'xlsx', accountId } = req.query;
-  sendExport(res, next, exportService.exportWebsiteInventory.bind(exportService), req.user._id, format, accountId);
+  const { format = 'xlsx', accountId, status, search, threatLevel, serverName } = req.query;
+  const filters = { accountId, status, search, threatLevel, serverName };
+  sendExport(res, next, exportService.exportWebsiteInventory.bind(exportService), req.user._id, format, filters);
 };
 
 // POST /api/exports/threats

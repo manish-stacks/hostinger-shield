@@ -5,12 +5,12 @@ import { useDebounce } from '@/lib/useDebounce';
 import { useQuery, useMutation, useQueryClient, keepPreviousData } from '@tanstack/react-query';
 import {
   Globe, Plus, Search, Scan, Trash2, ExternalLink, Loader2,
-  Filter, Upload, Zap, PauseCircle, PlayCircle,
+  Filter, Upload, Zap, PauseCircle, PlayCircle, Download,
 } from 'lucide-react';
 import Link from 'next/link';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { Pagination } from '@/components/ui/Pagination';
-import { websitesApi, accountsApi } from '@/lib/api';
+import { websitesApi, accountsApi, exportApi, downloadBlob } from '@/lib/api';
 import { toast } from '@/components/ui/Toaster';
 import { AddWebsiteModal } from '@/components/modals/AddWebsiteModal';
 import { BulkImportModal } from '@/components/modals/BulkImportModal';
@@ -50,6 +50,26 @@ function WebsitesContent() {
   const [selected, setSelected] = useState<string[]>([]);
   const [showAdd, setShowAdd] = useState(false);
   const [showBulk, setShowBulk] = useState(false);
+  const [exporting, setExporting] = useState(false);
+
+  const handleExportExcel = async () => {
+    setExporting(true);
+    try {
+      const res = await exportApi.websites('xlsx', {
+        search: debouncedSearch || undefined,
+        accountId: accountId || undefined,
+        status: statusFilter || undefined,
+      });
+      const tag = statusFilter ? `-${statusFilter}` : '';
+      const filename = `websites${tag}-${new Date().toISOString().slice(0, 10)}.xlsx`;
+      downloadBlob(res.data as Blob, filename);
+      toast.success(`Downloaded ${filename}`);
+    } catch {
+      toast.error('Excel export failed');
+    } finally {
+      setExporting(false);
+    }
+  };
 
   useEffect(() => {
     const s = searchParams.get('status');
@@ -158,6 +178,15 @@ function WebsitesContent() {
               Scan Selected ({selected.length})
             </button>
           )}
+          <button
+            onClick={handleExportExcel}
+            disabled={exporting}
+            className="btn-secondary text-xs text-emerald-700 border-emerald-200 hover:bg-emerald-50 hover:border-emerald-300"
+            title="Download currently filtered websites as Excel (.xlsx)"
+          >
+            {exporting ? <Loader2 size={14} className="animate-spin" /> : <Download size={14} />}
+            {statusFilter || accountId || debouncedSearch ? 'Export Filtered Excel' : 'Export Excel'}
+          </button>
           <button onClick={() => setShowBulk(true)} className="btn-secondary text-xs">
             <Upload size={14} /> Bulk Import
           </button>

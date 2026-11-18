@@ -165,7 +165,10 @@ export const backupApi = {
 
 // ─── Exports ──────────────────────────────────────────────────────────────────
 export const exportApi = {
-  websites:    (fmt: string, accountId?: string) => api.post('/exports/websites', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
+  websites: (fmt: string, filters?: string | Record<string, string | undefined>) => {
+    const extra = typeof filters === 'string' ? { accountId: filters } : (filters || {});
+    return api.post('/exports/websites', {}, { params: { format: fmt, ...extra }, responseType: 'blob' });
+  },
   threats:     (fmt: string, accountId?: string) => api.post('/exports/threats', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
   ssl:         (fmt: string, accountId?: string) => api.post('/exports/ssl', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),
   dns:         (fmt: string, accountId?: string) => api.post('/exports/dns', {}, { params: { format: fmt, accountId }, responseType: 'blob' }),

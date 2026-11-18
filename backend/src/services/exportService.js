@@ -17,43 +17,70 @@ async function accountFilter(userId, accountId) {
 }
 
 // ─── WEBSITE INVENTORY EXPORT ────────────────────────────────────────────────
-async function exportWebsiteInventory(userId, format = 'xlsx', accountId = null) {
-  const query = await accountFilter(userId, accountId);
+// filters can be a string (legacy accountId) or { accountId, status, search, threatLevel, serverName }
+async function exportWebsiteInventory(userId, format = 'xlsx', filters = null) {
+  const opts = typeof filters === 'string' ? { accountId: filters } : (filters || {});
+  const query = {};
+  if (opts.accountId) query.hostingerAccount = opts.accountId;
+  if (opts.threatLevel) query.threatLevel = opts.threatLevel;
+  if (opts.serverName) query.serverName = opts.serverName;
+
+  if (opts.search) {
+    const rx = { $regex: String(opts.search).trim(), $options: 'i' };
+    query.$or = [{ domain: rx }, { serverName: rx }, { ipAddress: rx }, { tags: rx }];
+  }
+
+  if (opts.status === 'slow') {
+    query.responseTime = { $gt: 3000 };
+  } else if (opts.status === 'ssl_expiring') {
+    query.sslDaysLeft = { $gte: 0, $lte: 30 };
+  } else if (opts.status === 'ssl_expired') {
+    query.sslDaysLeft = { $lt: 0 };
+  } else if (opts.status) {
+    query.status = opts.status;
+  }
+
   const websites = await Website.find(query)
     .populate('hostingerAccount', 'accountName email')
+    .sort({ domain: 1 })
     .lean();
 
   const rows = websites.map(site => ({
     'Domain': site.domain,
     'Hosting Account': site.hostingerAccount?.accountName || '—',
+    'Server / Group': site.serverName || '—',
+    'IP Address': site.ipAddress || '—',
     'Account Email': site.hostingerAccount?.email || '—',
-    'Status': site.status,
-    'Threat Score': site.threatScore,
-    'Threat Level': site.threatLevel,
-    'SSL Status': site.sslStatus,
+    'Status': site.isMonitoringEnabled === false ? 'paused' : (site.status || 'unknown'),
+    'HTTP Status': site.httpStatus ?? '—',
+    'Response Time (ms)': site.responseTime ?? '—',
+    '24h Uptime (%)': site.uptime24h ?? '—',
+    'Last Error': site.lastError || '—',
+    'Threat Score': site.threatScore ?? 0,
+    'Threat Level': site.threatLevel || 'safe',
+    'SSL Status': site.sslStatus || '—',
     'SSL Expiry': site.sslExpiry ? new Date(site.sslExpiry).toLocaleDateString() : '—',
     'SSL Days Left': site.sslDaysLeft ?? '—',
     'Hosting Plan': site.hostingPlan || '—',
     'Hosting Username': site.hostingUsername || '—',
     'Domain Expiry': site.domainExpiry ? new Date(site.domainExpiry).toLocaleDateString() : '—',
-    'Technology': site.technology?.detected?.join(', ') || '—',
-    'HTTP Status': site.httpStatus ?? '—',
-    'Response Time (ms)': site.responseTime ?? '—',
-    'Last Scan': site.lastThreatScan ? new Date(site.lastThreatScan).toLocaleString() : '—',
+    'Monitoring': site.isMonitoringEnabled === false ? 'Paused' : 'Active',
     'Last Health Check': site.lastHealthCheck ? new Date(site.lastHealthCheck).toLocaleString() : '—',
+    'Last Threat Scan': site.lastThreatScan ? new Date(site.lastThreatScan).toLocaleString() : '—',
     'Last Backup': site.lastBackup ? new Date(site.lastBackup).toLocaleString() : '—',
   }));
 
-  const filename = `website-inventory-${Date.now()}.${format}`;
+  const tag = opts.status ? `-${opts.status}` : '';
+  const filename = `websites${tag}-${new Date().toISOString().slice(0, 10)}.${format}`;
   const filepath = path.join(EXPORT_DIR, filename);
 
   if (format === 'csv') return exportCSV(rows, filepath, filename);
-  if (format === 'xlsx') return exportXLSX([{ sheetName: 'Website Inventory', data: rows }], filepath, filename);
+  if (format === 'xlsx') return exportXLSX([{ sheetName: 'Websites', data: rows }], filepath, filename);
   return exportPDF({
-    title: 'Website Inventory Report',
+    title: `Website Inventory Report${opts.status ? ` (${opts.status.toUpperCase()})` : ''}`,
     subtitle: `Generated: ${new Date().toLocaleString()} | Total: ${rows.length} websites`,
-    columns: ['Domain', 'Account', 'Status', 'Threat Score', 'SSL Status', 'SSL Days Left', 'Last Scan'],
-    rows: rows.map(r => [r.Domain, r['Hosting Account'], r.Status, r['Threat Score'], r['SSL Status'], r['SSL Days Left'], r['Last Scan']]),
+    columns: ['Domain', 'Account', 'Status', 'HTTP', 'Speed (ms)', 'Threat', 'SSL Days'],
+    rows: rows.map(r => [r.Domain, r['Hosting Account'], r.Status, r['HTTP Status'], r['Response Time (ms)'], r['Threat Score'], r['SSL Days Left']]),
     filepath, filename,
   });
 }
