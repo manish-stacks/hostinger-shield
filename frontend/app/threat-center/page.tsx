@@ -214,21 +214,21 @@ function ThreatCenterContent() {
                   </td>
                   <td>
                     <div className="flex items-start gap-2 max-w-xs">
-                      <ShieldAlert size={14} className="text-rose-400 shrink-0 mt-0.5" />
+                      <ShieldAlert size={14} className="text-rose-600 shrink-0 mt-0.5" />
                       <div className="min-w-0">
-                        <span className="font-semibold text-slate-100 capitalize block">
+                        <span className="font-semibold text-slate-900 capitalize block">
                           {(t.threatType as string || t.type as string)?.replace(/_/g, ' ')}
                         </span>
                         {t.description ? (
-                          <span className="text-[11px] text-slate-400 line-clamp-1">{t.description as string}</span>
+                          <span className="text-[11px] text-slate-500 line-clamp-1">{t.description as string}</span>
                         ) : null}
                       </div>
                     </div>
                   </td>
-                  <td className="text-slate-200 text-xs font-medium">{site?.domain || '—'}</td>
+                  <td className="text-slate-800 text-xs font-semibold">{site?.domain || '—'}</td>
                   <td className="text-xs">
                     {site?.hostingerAccount?.accountName ? (
-                      <span className="px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300">
+                      <span className="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200">
                         {site.hostingerAccount.accountName}
                       </span>
                     ) : '—'}
@@ -236,13 +236,13 @@ function ThreatCenterContent() {
                   <td><span className={SEVERITY_BADGE[t.severity as string] || 'badge-neutral'}>{t.severity as string}</span></td>
                   <td>
                     <div className="flex items-center gap-2">
-                      <div className="w-14 h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                      <div className="w-14 h-1.5 bg-slate-200 rounded-full overflow-hidden">
                         <div
                           className={`h-full rounded-full ${(t.score as number) >= 75 ? 'bg-rose-500' : (t.score as number) >= 50 ? 'bg-amber-500' : 'bg-sky-500'}`}
                           style={{ width: `${t.score as number}%` }}
                         />
                       </div>
-                      <span className="text-xs text-slate-400 tabular-nums">{t.score as number}</span>
+                      <span className="text-xs text-slate-600 tabular-nums">{t.score as number}</span>
                     </div>
                   </td>
                   <td>
@@ -250,7 +250,7 @@ function ThreatCenterContent() {
                       ? <span className="badge-success">Resolved</span>
                       : <span className="badge-danger">Active</span>}
                   </td>
-                  <td className="text-xs text-slate-400">
+                  <td className="text-xs text-slate-500">
                     {(t.detectedAt || t.createdAt)
                       ? formatDistanceToNow(new Date((t.detectedAt || t.createdAt) as string), { addSuffix: true })
                       : '—'}

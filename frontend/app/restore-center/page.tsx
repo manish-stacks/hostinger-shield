@@ -41,11 +41,11 @@ function LogRestoreModal({ onClose }: { onClose: () => void }) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal w-full max-w-md" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-5">
-          <h2 className="text-base font-semibold text-[#e6edf3]">Log Restore</h2>
+          <h2 className="text-base font-semibold text-slate-900">Log Restore</h2>
           <button onClick={onClose} className="btn-ghost p-1"><X size={16} /></button>
         </div>
 
-        <div className="flex items-start gap-2 p-3 mb-4 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300">
+        <div className="flex items-start gap-2 p-3 mb-4 rounded-lg bg-indigo-50 border border-indigo-200 text-xs text-indigo-800">
           <Info size={13} className="mt-0.5 shrink-0" />
           <span>Perform the actual restore in <strong>hPanel</strong>, then log it here for record keeping.</span>
         </div>
@@ -132,11 +132,11 @@ export default function RestoreCenterPage() {
       </div>
 
       {/* Info */}
-      <div className="flex items-start gap-2 p-3 mb-6 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300">
+      <div className="flex items-start gap-2 p-3 mb-6 rounded-lg bg-indigo-50 border border-indigo-200 text-xs text-indigo-800">
         <Info size={14} className="mt-0.5 shrink-0" />
         <div className="space-y-1">
           <p><strong>How to restore a website:</strong></p>
-          <ol className="list-decimal list-inside space-y-0.5 text-blue-200">
+          <ol className="list-decimal list-inside space-y-0.5 text-indigo-700">
             <li>Go to <strong>Backup Center</strong> → click <strong>hPanel</strong> button for the site</li>
             <li>In hPanel, select backup date and restore</li>
             <li>Come back here → click <strong>Log Restore</strong> to record it</li>
@@ -170,9 +170,9 @@ export default function RestoreCenterPage() {
         <p className="section-title mb-4">Restore History</p>
 
         {isLoading ? (
-          <div className="flex justify-center py-8"><Loader2 size={20} className="animate-spin text-[#8b949e]" /></div>
+          <div className="flex justify-center py-8"><Loader2 size={20} className="animate-spin text-slate-500" /></div>
         ) : history.length === 0 ? (
-          <div className="text-center py-8 text-[#8b949e]">
+          <div className="text-center py-8 text-slate-500">
             <RotateCcw size={32} className="mx-auto mb-2 opacity-30" />
             <p className="text-sm">No restore history yet</p>
             <p className="text-xs mt-1">After restoring via hPanel, click "Log Restore" to record it</p>
@@ -197,15 +197,15 @@ export default function RestoreCenterPage() {
                     const site = h.website as { domain?: string; hostingerAccount?: { accountName?: string } } | null;
                     return (
                       <tr key={h._id as string}>
-                        <td className="font-medium text-[#e6edf3] text-sm">{site?.domain || '—'}</td>
+                        <td className="font-medium text-slate-900 text-sm">{site?.domain || '—'}</td>
                         <td className="text-xs">
                           {site?.hostingerAccount?.accountName ? (
-                            <span className="px-2 py-0.5 rounded-full bg-[#3b5bdb]/15 text-[#3b5bdb]">
+                            <span className="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200">
                               {site.hostingerAccount.accountName}
                             </span>
                           ) : '—'}
                         </td>
-                        <td className="text-xs text-[#8b949e] capitalize">
+                        <td className="text-xs text-slate-500 capitalize">
                           {(h.restoreType as string)?.replace(/_/g, ' ') || 'full'}
                         </td>
                         <td>
@@ -213,15 +213,15 @@ export default function RestoreCenterPage() {
                             {h.status as string}
                           </span>
                         </td>
-                        <td className="text-xs text-[#8b949e]">
+                        <td className="text-xs text-slate-500">
                           {h.backupDate ? new Date(h.backupDate as string).toLocaleString() : '—'}
                         </td>
-                        <td className="text-xs text-[#8b949e]">
+                        <td className="text-xs text-slate-500">
                           {h.createdAt
                             ? formatDistanceToNow(new Date(h.createdAt as string), { addSuffix: true })
                             : '—'}
                         </td>
-                        <td className="text-xs text-[#8b949e] max-w-xs truncate">
+                        <td className="text-xs text-slate-500 max-w-xs truncate">
                           {h.notes as string || '—'}
                         </td>
                       </tr>

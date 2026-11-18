@@ -87,23 +87,23 @@ export default function AccountsPage() {
             {isLoading ? (
               <tr><td colSpan={6} className="text-center py-10"><Loader2 size={20} className="animate-spin mx-auto" /></td></tr>
             ) : accounts.length === 0 ? (
-              <tr><td colSpan={6} className="text-center py-10 text-[#8b949e]">No accounts yet. Add your first Hostinger account.</td></tr>
+              <tr><td colSpan={6} className="text-center py-10 text-slate-500">No accounts yet. Add your first Hostinger account.</td></tr>
             ) : accounts.map((a: Record<string, unknown>) => (
               <tr key={a._id as string}>
-                <td className="font-medium text-[#e6edf3]">{a.label as string || '—'}</td>
-                <td className="text-[#8b949e]">{a.email as string}</td>
+                <td className="font-medium text-slate-900">{a.label as string || '—'}</td>
+                <td className="text-slate-500">{a.email as string}</td>
                 <td>{a.isActive ? <span className="badge-success">Active</span> : <span className="badge-neutral">Inactive</span>}</td>
                 <td>{(a.websiteCount as number) || 0}</td>
-                <td className="text-xs text-[#8b949e]">{a.lastSyncAt ? new Date(a.lastSyncAt as string).toLocaleDateString() : 'Never'}</td>
+                <td className="text-xs text-slate-500">{a.lastSyncAt ? new Date(a.lastSyncAt as string).toLocaleDateString() : 'Never'}</td>
                 <td>
                   <div className="flex items-center gap-1">
                     <button onClick={() => openEdit(a)} className="btn-ghost py-1 px-2 text-xs">Edit</button>
                     <button onClick={() => syncMutation.mutate(a._id as string)} disabled={syncMutation.isPending} className="btn-ghost py-1 px-2 text-xs" title="Sync"><RefreshCw size={12} /></button>
                     <button onClick={() => validateMutation.mutate(a._id as string)} className="btn-ghost py-1 px-2 text-xs" title="Validate token"><CheckCircle size={12} /></button>
                     <button onClick={() => toggleMutation.mutate(a._id as string)} className="btn-ghost py-1 px-2 text-xs">
-                      {a.isActive ? <ToggleRight size={14} className="text-emerald-400" /> : <ToggleLeft size={14} />}
+                      {a.isActive ? <ToggleRight size={14} className="text-emerald-600" /> : <ToggleLeft size={14} />}
                     </button>
-                    <button onClick={() => { if (confirm('Delete?')) deleteMutation.mutate(a._id as string); }} className="btn-ghost py-1 px-2 text-xs text-red-400"><Trash2 size={12} /></button>
+                    <button onClick={() => { if (confirm('Delete?')) deleteMutation.mutate(a._id as string); }} className="btn-ghost py-1 px-2 text-xs text-rose-600"><Trash2 size={12} /></button>
                   </div>
                 </td>
               </tr>
@@ -113,10 +113,10 @@ export default function AccountsPage() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="card w-full max-w-md">
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal w-full max-w-md" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-5">
-              <h2 className="font-bold text-[#e6edf3]">{editing ? 'Edit Account' : 'Add Account'}</h2>
+              <h2 className="font-bold text-slate-900">{editing ? 'Edit Account' : 'Add Account'}</h2>
               <button onClick={() => setShowModal(false)} className="btn-ghost p-1"><X size={16} /></button>
             </div>
             <form onSubmit={handleSubmit((d) => saveMutation.mutate(d))} className="space-y-4">
@@ -129,7 +129,7 @@ export default function AccountsPage() {
                 <input {...register('email', { required: true })} type="email" className="input" placeholder="user@hostinger.com" />
               </div>
               <div>
-                <label className="label">API Token {editing && <span className="text-[#8b949e] font-normal">(blank = keep existing)</span>}</label>
+                <label className="label">API Token {editing && <span className="text-slate-500 font-normal">(blank = keep existing)</span>}</label>
                 <input {...register('apiToken', { required: !editing })} type="password" className="input" placeholder="hst_xxxxxxxx" />
               </div>
               <div className="flex gap-2 pt-2">

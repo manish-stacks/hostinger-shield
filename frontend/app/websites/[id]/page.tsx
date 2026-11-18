@@ -15,12 +15,12 @@ import { formatDistanceToNow } from 'date-fns';
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 const STATUS_COLOR: Record<string, string> = {
-  healthy: 'text-emerald-400',
-  hacked:  'text-red-400',
-  down:    'text-red-400',
-  warning: 'text-yellow-400',
-  critical:'text-red-400',
-  unknown: 'text-[#8b949e]',
+  healthy: 'text-emerald-600',
+  hacked:  'text-rose-600',
+  down:    'text-rose-600',
+  warning: 'text-amber-600',
+  critical:'text-rose-600',
+  unknown: 'text-slate-500',
 };
 
 const STATUS_BADGE: Record<string, string> = {
@@ -120,14 +120,14 @@ export default function WebsiteDetailPage() {
   if (isLoading) return (
     <DashboardLayout>
       <div className="flex items-center justify-center h-64">
-        <Loader2 size={24} className="animate-spin text-[#3b5bdb]" />
+        <Loader2 size={24} className="animate-spin text-indigo-600" />
       </div>
     </DashboardLayout>
   );
 
   if (!website) return (
     <DashboardLayout>
-      <div className="text-center py-20 text-[#8b949e]">Website not found</div>
+      <div className="text-center py-20 text-slate-500">Website not found</div>
     </DashboardLayout>
   );
 
@@ -141,27 +141,27 @@ export default function WebsiteDetailPage() {
     <DashboardLayout>
       {/* Header */}
       <div className="mb-6">
-        <Link href="/websites" className="flex items-center gap-1.5 text-sm text-[#8b949e] hover:text-white mb-4">
+        <Link href="/websites" className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-900 mb-4">
           <ArrowLeft size={14} /> Back to Websites
         </Link>
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#21262d] flex items-center justify-center shrink-0">
-              <Globe size={18} className="text-[#8b949e]" />
+            <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center shrink-0">
+              <Globe size={18} className="text-slate-500" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-xl font-bold text-[#e6edf3]">{website.domain}</h1>
-                <a href={`https://${website.domain}`} target="_blank" rel="noopener noreferrer" className="text-[#8b949e] hover:text-blue-400">
+                <h1 className="text-xl font-bold text-slate-900">{website.domain}</h1>
+                <a href={`https://${website.domain}`} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-indigo-600">
                   <ExternalLink size={13} />
                 </a>
               </div>
               <div className="flex items-center gap-2 mt-0.5">
-                <span className={`text-sm font-medium capitalize ${STATUS_COLOR[website.status] || 'text-[#8b949e]'}`}>
+                <span className={`text-sm font-medium capitalize ${STATUS_COLOR[website.status] || 'text-slate-500'}`}>
                   {website.status || 'unknown'}
                 </span>
                 {website.hostingerAccount?.accountName && (
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-[#3b5bdb]/15 text-[#3b5bdb]">
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200">
                     {website.hostingerAccount.accountName}
                   </span>
                 )}
@@ -174,7 +174,7 @@ export default function WebsiteDetailPage() {
               Live Ping
             </button>
             <button onClick={() => baselineMutation.mutate()} disabled={baselineMutation.isPending} className="btn-secondary text-xs" title="Lock current homepage title as defacement baseline">
-              {baselineMutation.isPending ? <Loader2 size={14} className="animate-spin" /> : <ShieldCheck size={14} className="text-emerald-400" />}
+              {baselineMutation.isPending ? <Loader2 size={14} className="animate-spin" /> : <ShieldCheck size={14} className="text-emerald-600" />}
               {website.isBaselinesSet ? 'Update Baseline' : 'Set Baseline'}
             </button>
             <button onClick={() => scanMutation.mutate()} disabled={scanMutation.isPending} className="btn-primary text-xs">
@@ -188,40 +188,40 @@ export default function WebsiteDetailPage() {
       {/* Stat cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="stat-card">
-          <p className="text-xs text-[#8b949e]">SSL Status</p>
+          <p className="text-xs text-slate-500">SSL Status</p>
           <p className={`text-lg font-bold ${
-            website.sslStatus === 'valid' ? 'text-emerald-400'
-            : website.sslStatus === 'expiring' ? 'text-yellow-400'
-            : website.sslStatus === 'expired' || website.sslStatus === 'invalid' ? 'text-red-400'
-            : 'text-[#8b949e]'
+            website.sslStatus === 'valid' ? 'text-emerald-600'
+            : website.sslStatus === 'expiring' ? 'text-amber-600'
+            : website.sslStatus === 'expired' || website.sslStatus === 'invalid' ? 'text-rose-600'
+            : 'text-slate-500'
           }`}>
             {website.sslStatus || '—'}
-            {sslDays !== null && <span className="text-xs font-normal ml-1 text-[#8b949e]">({sslDays}d)</span>}
+            {sslDays !== null && <span className="text-xs font-normal ml-1 text-slate-500">({sslDays}d)</span>}
           </p>
         </div>
         <div className="stat-card">
-          <p className="text-xs text-[#8b949e]">Active Threats</p>
-          <p className={`text-lg font-bold ${activeThreats > 0 ? 'text-red-400' : 'text-emerald-400'}`}>
+          <p className="text-xs text-slate-500">Active Threats</p>
+          <p className={`text-lg font-bold ${activeThreats > 0 ? 'text-rose-600' : 'text-emerald-600'}`}>
             {activeThreats}
           </p>
         </div>
         <div className="stat-card">
-          <p className="text-xs text-[#8b949e]">Threat Score</p>
+          <p className="text-xs text-slate-500">Threat Score</p>
           <div className="flex items-center gap-2 mt-0.5">
-            <div className="flex-1 h-2 bg-[#21262d] rounded-full overflow-hidden">
+            <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
               <div
                 className={`h-full rounded-full ${(website.threatScore || 0) >= 75 ? 'bg-red-500' : (website.threatScore || 0) >= 40 ? 'bg-yellow-500' : 'bg-emerald-500'}`}
                 style={{ width: `${website.threatScore || 0}%` }}
               />
             </div>
-            <span className={`text-sm font-bold ${(website.threatScore || 0) >= 50 ? 'text-red-400' : 'text-emerald-400'}`}>
+            <span className={`text-sm font-bold ${(website.threatScore || 0) >= 50 ? 'text-rose-600' : 'text-emerald-600'}`}>
               {website.threatScore || 0}
             </span>
           </div>
         </div>
         <div className="stat-card">
-          <p className="text-xs text-[#8b949e]">Last Scan</p>
-          <p className="text-sm font-medium text-[#e6edf3]">
+          <p className="text-xs text-slate-500">Last Scan</p>
+          <p className="text-sm font-medium text-slate-900">
             {website.lastThreatScan
               ? formatDistanceToNow(new Date(website.lastThreatScan), { addSuffix: true })
               : 'Never'}
@@ -253,15 +253,15 @@ export default function WebsiteDetailPage() {
               { label: 'Last Backup',     value: website.lastBackup     ? formatDistanceToNow(new Date(website.lastBackup), { addSuffix: true }) : 'Never' },
             ].map(({ label, value }) => (
               <div key={label} className="flex items-start gap-2">
-                <span className="text-[#8b949e] shrink-0 min-w-[100px]">{label}</span>
-                <span className="text-[#e6edf3] truncate">{value}</span>
+                <span className="text-slate-500 shrink-0 min-w-[100px]">{label}</span>
+                <span className="text-slate-900 truncate">{value}</span>
               </div>
             ))}
           </div>
           {website.tags?.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mt-3">
               {website.tags.map((tag: string) => (
-                <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-[#21262d] text-[#8b949e]">{tag}</span>
+                <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">{tag}</span>
               ))}
             </div>
           )}
@@ -271,21 +271,21 @@ export default function WebsiteDetailPage() {
         <div className="card">
           <div className="flex items-center justify-between mb-3">
             <p className="section-title">Latest Screenshot</p>
-            <Link href="/screenshot-monitor" className="text-xs text-[#3b5bdb] hover:underline">Monitor</Link>
+            <Link href="/screenshot-monitor" className="text-xs text-indigo-600 hover:underline">Monitor</Link>
           </div>
           {shotSrc ? (
             <div>
-              <img src={shotSrc} alt={website.domain} className="w-full rounded-lg border border-[#21262d]" />
-              <p className="text-[10px] text-[#8b949e] mt-2 text-right">
+              <img src={shotSrc} alt={website.domain} className="w-full rounded-lg border border-slate-200" />
+              <p className="text-[10px] text-slate-500 mt-2 text-right">
                 {latestShot?.capturedAt
                   ? formatDistanceToNow(new Date(latestShot.capturedAt), { addSuffix: true })
                   : ''}
-                {latestShot?.isDefaced && <span className="ml-2 text-red-400 font-medium">⚠ Defaced</span>}
-                {latestShot?.hasChanged && !latestShot?.isDefaced && <span className="ml-2 text-yellow-400 font-medium">Changed</span>}
+                {latestShot?.isDefaced && <span className="ml-2 text-rose-600 font-medium">⚠ Defaced</span>}
+                {latestShot?.hasChanged && !latestShot?.isDefaced && <span className="ml-2 text-amber-600 font-medium">Changed</span>}
               </p>
             </div>
           ) : (
-            <div className="h-36 flex flex-col items-center justify-center text-[#8b949e] gap-2">
+            <div className="h-36 flex flex-col items-center justify-center text-slate-500 gap-2">
               <Camera size={28} className="opacity-30" />
               <p className="text-xs">No screenshot yet</p>
               <button
@@ -312,30 +312,30 @@ export default function WebsiteDetailPage() {
             <>
               <ResponsiveContainer width="100%" height={160}>
                 <LineChart data={healthHistory} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#21262d" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                   <XAxis
                     dataKey="checkedAt"
                     tickFormatter={(v) => new Date(v).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}
-                    tick={{ fontSize: 10, fill: '#8b949e' }}
+                    tick={{ fontSize: 10, fill: '#64748b' }}
                   />
-                  <YAxis tick={{ fontSize: 10, fill: '#8b949e' }} unit="ms" />
+                  <YAxis tick={{ fontSize: 10, fill: '#64748b' }} unit="ms" />
                   <Tooltip
-                    contentStyle={{ background: '#161b22', border: '1px solid #30363d', borderRadius: 8, fontSize: 11 }}
+                    contentStyle={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: 8, fontSize: 11 }}
                     labelFormatter={(v) => new Date(v).toLocaleString()}
                     formatter={(val: number) => [`${val}ms`, 'Response']}
                   />
-                  <Line type="monotone" dataKey="responseTime" stroke="#3b5bdb" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="responseTime" stroke="#4f46e5" strokeWidth={2} dot={false} />
                 </LineChart>
               </ResponsiveContainer>
               {/* Uptime indicator */}
-              <div className="flex items-center gap-4 mt-2 text-xs text-[#8b949e]">
+              <div className="flex items-center gap-4 mt-2 text-xs text-slate-500">
                 <span>
-                  Uptime: <span className="text-emerald-400 font-medium">
+                  Uptime: <span className="text-emerald-600 font-medium">
                     {Math.round((healthHistory.filter((h: Record<string,unknown>) => h.isUp).length / healthHistory.length) * 100)}%
                   </span>
                 </span>
                 <span>
-                  Avg: <span className="text-[#e6edf3] font-medium">
+                  Avg: <span className="text-slate-900 font-medium">
                     {Math.round(healthHistory.reduce((s: number, h: Record<string,unknown>) => s + (h.responseTime as number || 0), 0) / healthHistory.length)}ms
                   </span>
                 </span>
@@ -343,7 +343,7 @@ export default function WebsiteDetailPage() {
               </div>
             </>
           ) : (
-            <div className="h-40 flex items-center justify-center text-[#8b949e] text-sm">
+            <div className="h-40 flex items-center justify-center text-slate-500 text-sm">
               No health data yet — runs every 15 min
             </div>
           )}
@@ -353,22 +353,22 @@ export default function WebsiteDetailPage() {
         <div className="card">
           <div className="flex items-center justify-between mb-3">
             <p className="section-title">Threats ({threats.length})</p>
-            <Link href={`/threat-center?websiteId=${id}`} className="text-xs text-[#3b5bdb] hover:underline">View all</Link>
+            <Link href={`/threat-center?websiteId=${id}`} className="text-xs text-indigo-600 hover:underline">View all</Link>
           </div>
           {threats.length === 0 ? (
-            <div className="h-40 flex items-center justify-center text-[#8b949e] text-sm">
-              <CheckCircle size={14} className="mr-2 text-emerald-400" /> No threats detected
+            <div className="h-40 flex items-center justify-center text-slate-500 text-sm">
+              <CheckCircle size={14} className="mr-2 text-emerald-600" /> No threats detected
             </div>
           ) : (
             <div className="space-y-2 max-h-44 overflow-y-auto">
               {threats.slice(0, 8).map((t: Record<string, unknown>) => (
-                <div key={t._id as string} className="flex items-start gap-2 py-1.5 border-b border-[#21262d] last:border-0">
-                  <AlertTriangle size={13} className={`mt-0.5 shrink-0 ${t.severity === 'critical' || t.severity === 'high' ? 'text-red-400' : 'text-yellow-400'}`} />
+                <div key={t._id as string} className="flex items-start gap-2 py-1.5 border-b border-slate-200 last:border-0">
+                  <AlertTriangle size={13} className={`mt-0.5 shrink-0 ${t.severity === 'critical' || t.severity === 'high' ? 'text-rose-600' : 'text-amber-600'}`} />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium text-[#e6edf3] capitalize">
+                    <p className="text-xs font-medium text-slate-900 capitalize">
                       {((t.threatType || t.type) as string)?.replace(/_/g, ' ')}
                     </p>
-                    <p className="text-[10px] text-[#8b949e]">
+                    <p className="text-[10px] text-slate-500">
                       {(t.detectedAt || t.createdAt)
                         ? formatDistanceToNow(new Date((t.detectedAt || t.createdAt) as string), { addSuffix: true })
                         : ''}
@@ -379,7 +379,7 @@ export default function WebsiteDetailPage() {
                       ? <span className="badge-success text-[10px]">Resolved</span>
                       : <span className="badge-danger text-[10px]">Active</span>}
                     {t.severity && (
-                      <span className={`text-[10px] font-medium ${t.severity === 'critical' || t.severity === 'high' ? 'text-red-400' : t.severity === 'medium' ? 'text-yellow-400' : 'text-blue-400'}`}>
+                      <span className={`text-[10px] font-medium ${t.severity === 'critical' || t.severity === 'high' ? 'text-rose-600' : t.severity === 'medium' ? 'text-amber-600' : 'text-indigo-600'}`}>
                         {t.severity as string}
                       </span>
                     )}
@@ -398,27 +398,27 @@ export default function WebsiteDetailPage() {
         <div className="card">
           <div className="flex items-center justify-between mb-3">
             <p className="section-title">SSL History</p>
-            <Link href="/ssl-monitor" className="text-xs text-[#3b5bdb] hover:underline">Monitor</Link>
+            <Link href="/ssl-monitor" className="text-xs text-indigo-600 hover:underline">Monitor</Link>
           </div>
           {sslLogs.length === 0 ? (
-            <div className="h-24 flex items-center justify-center text-[#8b949e] text-sm">
+            <div className="h-24 flex items-center justify-center text-slate-500 text-sm">
               <Lock size={14} className="mr-2 opacity-50" /> No SSL data yet
             </div>
           ) : (
             <div className="space-y-2">
               {sslLogs.slice(0, 4).map((l: Record<string, unknown>, i: number) => (
-                <div key={i} className="flex items-center justify-between py-1 border-b border-[#21262d] last:border-0">
+                <div key={i} className="flex items-center justify-between py-1 border-b border-slate-200 last:border-0">
                   <div>
-                    <span className={`text-xs font-medium ${l.isValid ? 'text-emerald-400' : 'text-red-400'}`}>
+                    <span className={`text-xs font-medium ${l.isValid ? 'text-emerald-600' : 'text-rose-600'}`}>
                       {l.isValid ? 'Valid' : 'Invalid'}
                     </span>
-                    {l.issuer && <span className="text-[10px] text-[#8b949e] ml-2">{l.issuer as string}</span>}
+                    {l.issuer && <span className="text-[10px] text-slate-500 ml-2">{l.issuer as string}</span>}
                   </div>
                   <div className="text-right">
-                    <p className={`text-xs font-bold ${(l.daysUntilExpiry as number) <= 7 ? 'text-red-400' : (l.daysUntilExpiry as number) <= 30 ? 'text-yellow-400' : 'text-emerald-400'}`}>
+                    <p className={`text-xs font-bold ${(l.daysUntilExpiry as number) <= 7 ? 'text-rose-600' : (l.daysUntilExpiry as number) <= 30 ? 'text-amber-600' : 'text-emerald-600'}`}>
                       {l.daysUntilExpiry != null ? `${l.daysUntilExpiry}d` : '—'}
                     </p>
-                    <p className="text-[10px] text-[#8b949e]">
+                    <p className="text-[10px] text-slate-500">
                       {l.checkedAt ? formatDistanceToNow(new Date(l.checkedAt as string), { addSuffix: true }) : ''}
                     </p>
                   </div>
@@ -432,22 +432,22 @@ export default function WebsiteDetailPage() {
         <div className="card">
           <div className="flex items-center justify-between mb-3">
             <p className="section-title">DNS History</p>
-            <Link href="/dns-monitor" className="text-xs text-[#3b5bdb] hover:underline">Monitor</Link>
+            <Link href="/dns-monitor" className="text-xs text-indigo-600 hover:underline">Monitor</Link>
           </div>
           {dnsLogs.length === 0 ? (
-            <div className="h-24 flex items-center justify-center text-[#8b949e] text-sm">
+            <div className="h-24 flex items-center justify-center text-slate-500 text-sm">
               <Network size={14} className="mr-2 opacity-50" /> No DNS data yet
             </div>
           ) : (
             <div className="space-y-2">
               {dnsLogs.slice(0, 4).map((l: Record<string, unknown>, i: number) => (
-                <div key={i} className="flex items-center justify-between py-1 border-b border-[#21262d] last:border-0">
+                <div key={i} className="flex items-center justify-between py-1 border-b border-slate-200 last:border-0">
                   <div className="flex items-center gap-2">
                     {l.hasChanged
                       ? <span className="badge-warning text-[10px]">Changed</span>
                       : <span className="badge-success text-[10px]">Stable</span>}
                     {l.records && (
-                      <span className="text-[10px] text-[#8b949e] truncate max-w-[180px]">
+                      <span className="text-[10px] text-slate-500 truncate max-w-[180px]">
                         {Object.entries(l.records as Record<string, string[]>)
                           .filter(([, v]) => v?.length)
                           .map(([k, v]) => `${k}: ${(v as string[]).slice(0,1).join(', ')}`)
@@ -455,7 +455,7 @@ export default function WebsiteDetailPage() {
                       </span>
                     )}
                   </div>
-                  <p className="text-[10px] text-[#8b949e] shrink-0">
+                  <p className="text-[10px] text-slate-500 shrink-0">
                     {l.checkedAt ? formatDistanceToNow(new Date(l.checkedAt as string), { addSuffix: true }) : ''}
                   </p>
                 </div>

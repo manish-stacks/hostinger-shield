@@ -49,12 +49,12 @@ export function AddWebsiteModal({ onClose }: { onClose: () => void }) {
       <div className="modal w-full max-w-md" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-5">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-indigo-500/15 flex items-center justify-center">
-              <Globe size={16} className="text-indigo-400" />
+            <div className="w-8 h-8 rounded-xl bg-indigo-50 flex items-center justify-center">
+              <Globe size={16} className="text-indigo-600" />
             </div>
             <div>
-              <h2 className="font-bold text-slate-50">Add Website</h2>
-              <p className="text-[11px] text-slate-400">Monitor any domain across any server</p>
+              <h2 className="font-bold text-slate-900">Add Website</h2>
+              <p className="text-[11px] text-slate-500">Monitor any domain across any server</p>
             </div>
           </div>
           <button onClick={onClose} className="btn-ghost p-1.5"><X size={16} /></button>
@@ -64,7 +64,7 @@ export function AddWebsiteModal({ onClose }: { onClose: () => void }) {
           <div>
             <label className="label">Domain *</label>
             <input {...register('domain')} className="input" placeholder="example.com (or https://example.com)" autoFocus />
-            {errors.domain && <p className="text-xs text-rose-400 mt-1">{errors.domain.message}</p>}
+            {errors.domain && <p className="text-xs text-rose-600 mt-1">{errors.domain.message}</p>}
           </div>
 
           <div className="grid grid-cols-2 gap-3">
@@ -88,7 +88,7 @@ export function AddWebsiteModal({ onClose }: { onClose: () => void }) {
           <div>
             <label className="label">Site-Specific Alert Email (optional)</label>
             <input {...register('alertEmail')} type="email" className="input" placeholder="alerts@example.com" />
-            {errors.alertEmail && <p className="text-xs text-rose-400 mt-1">{errors.alertEmail.message}</p>}
+            {errors.alertEmail && <p className="text-xs text-rose-600 mt-1">{errors.alertEmail.message}</p>}
           </div>
 
           <div>

@@ -108,6 +108,7 @@ export const websitesApi = {
   delete:           (id: string)                       => api.delete(`/websites/${id}`),
   toggleMonitoring: (id: string)                       => api.patch(`/websites/${id}/toggle-monitoring`),
   ping:             (id: string)                       => api.post(`/websites/${id}/ping`),
+  pingDown:         ()                                 => api.post('/websites/ping-down'),
   setBaseline:      (id: string, data?: unknown)       => api.post(`/websites/${id}/baseline`, data || {}),
   scan:             (id: string)                       => api.post(`/websites/${id}/scan`),
   getHealth:        (id: string)                       => api.get(`/websites/${id}/health`),
@@ -142,6 +143,11 @@ export const monitoringApi = {
 export const systemApi = {
   dbStats: ()                                     => api.get('/system/db-stats'),
   cleanup: (mode: 'normal' | 'aggressive' = 'normal') => api.post('/system/cleanup', { mode }),
+};
+
+// ─── Public Status Page (No Auth) ─────────────────────────────────────────────
+export const publicApi = {
+  status: () => axios.get(`${API_URL}/api/public/status`, { timeout: 15000 }),
 };
 
 // ─── Backups ──────────────────────────────────────────────────────────────────

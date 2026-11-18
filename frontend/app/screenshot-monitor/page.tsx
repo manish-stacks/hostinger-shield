@@ -16,20 +16,17 @@ const LIMIT = 20;
 
 function PreviewModal({ src, domain, onClose }: { src: string; domain: string; onClose: () => void }) {
   return (
-    <div
-      className="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center"
-      onClick={onClose}
-    >
+    <div className="modal-overlay" onClick={onClose}>
       <div
-        className="bg-[#0d1117] p-4 rounded-xl max-w-4xl w-full"
+        className="modal max-w-4xl w-full p-5"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex justify-between mb-3">
-          <p>{domain}</p>
-          <button onClick={onClose}>✕</button>
+        <div className="flex items-center justify-between mb-3 pb-3 border-b border-slate-200">
+          <p className="font-bold text-slate-900">{domain}</p>
+          <button onClick={onClose} className="btn-ghost p-1.5"><X size={16} /></button>
         </div>
 
-        <img src={src} alt={domain} className="w-full rounded-lg" />
+        <img src={src} alt={domain} className="w-full rounded-xl border border-slate-200" />
       </div>
     </div>
   );
@@ -123,15 +120,15 @@ export default function ScreenshotMonitorPage() {
           { label: 'Defaced', value: stats.defaced ?? '—', alert: (stats.defaced || 0) > 0 },
         ].map(({ label, value, alert }) => (
           <div key={label} className="stat-card">
-            <p className={`text-2xl font-bold ${alert ? 'text-red-400' : 'text-[#e6edf3]'}`}>{value}</p>
-            <p className="text-xs text-[#8b949e]">{label}</p>
+            <p className={`text-2xl font-bold ${alert ? 'text-rose-600' : 'text-slate-900'}`}>{value}</p>
+            <p className="text-xs text-slate-500">{label}</p>
           </div>
         ))}
       </div>
 
       {/* Info bar */}
-      <div className="flex items-center gap-2 p-3 mb-4 rounded-xl bg-[#0d1321] border border-slate-800 text-xs text-slate-400">
-        <Camera size={13} className="text-indigo-400 shrink-0" />
+      <div className="flex items-center gap-2 p-3 mb-4 rounded-xl bg-white border border-slate-200 text-xs text-slate-400">
+        <Camera size={13} className="text-indigo-600 shrink-0" />
         Stored on disk — latest 2 screenshots kept per site · orphan &amp; old captures auto-pruned to protect storage
       </div>
 
@@ -139,7 +136,7 @@ export default function ScreenshotMonitorPage() {
       <div className="flex flex-wrap items-center gap-3 mb-4">
         {/* Search */}
         <div className="relative">
-          <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8b949e]" />
+          <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             className="input pl-8 w-52 text-sm"
             placeholder="Search domain..."
@@ -150,7 +147,7 @@ export default function ScreenshotMonitorPage() {
 
         {/* Account filter */}
         <div className="flex items-center gap-2">
-          <Filter size={13} className="text-[#8b949e]" />
+          <Filter size={13} className="text-slate-500" />
           <select
             value={accountId}
             onChange={(e) => { setAccountId(e.target.value); resetPage(); }}
@@ -165,12 +162,12 @@ export default function ScreenshotMonitorPage() {
           </select>
         </div>
 
-        <label className="flex items-center gap-2 cursor-pointer text-sm text-[#8b949e]">
+        <label className="flex items-center gap-2 cursor-pointer text-sm text-slate-500">
           <input type="checkbox" checked={changedOnly} onChange={(e) => { setChanged(e.target.checked); resetPage(); }} className="rounded" />
           Changed only
         </label>
 
-        <label className="flex items-center gap-2 cursor-pointer text-sm text-red-400">
+        <label className="flex items-center gap-2 cursor-pointer text-sm text-rose-600">
           <input type="checkbox" checked={defacedOnly} onChange={(e) => { setDefaced(e.target.checked); resetPage(); }} className="rounded" />
           Defaced only
         </label>
@@ -178,14 +175,14 @@ export default function ScreenshotMonitorPage() {
         {hasFilters && (
           <button
             onClick={() => { setSearch(''); setAccountId(''); setChanged(false); setDefaced(false); resetPage(); }}
-            className="text-xs text-[#8b949e] hover:text-red-400"
+            className="text-xs text-slate-500 hover:text-rose-600"
           >
             Clear all
           </button>
         )}
 
         {pagination.total > 0 && (
-          <span className="ml-auto text-xs text-[#8b949e]">{pagination.total} sites</span>
+          <span className="ml-auto text-xs text-slate-500">{pagination.total} sites</span>
         )}
       </div>
 
@@ -205,10 +202,10 @@ export default function ScreenshotMonitorPage() {
           <tbody>
             {isLoading ? (
               <tr><td colSpan={6} className="text-center py-12">
-                <Loader2 size={20} className="animate-spin mx-auto text-[#8b949e]" />
+                <Loader2 size={20} className="animate-spin mx-auto text-slate-500" />
               </td></tr>
             ) : logs.length === 0 ? (
-              <tr><td colSpan={6} className="text-center py-12 text-[#8b949e]">
+              <tr><td colSpan={6} className="text-center py-12 text-slate-500">
                 <Camera size={32} className="mx-auto mb-2 opacity-30" />
                 {hasFilters ? 'No results match filters' : 'No screenshots yet — click "Capture All" to start'}
               </td></tr>
@@ -220,12 +217,12 @@ export default function ScreenshotMonitorPage() {
               const imgSrc = l.screenshotUrl as string | null; // base64 data URI
 
               return (
-                <tr key={(l._id || site?._id) as string} className={isDefaced ? 'bg-red-500/5' : ''}>
-                  <td className="font-medium text-[#e6edf3]">{site?.domain || '—'}</td>
+                <tr key={(l._id || site?._id) as string} className={isDefaced ? 'bg-rose-50/70' : ''}>
+                  <td className="font-medium text-slate-900">{site?.domain || '—'}</td>
 
                   <td className="text-xs">
                     {site?.hostingerAccount?.accountName ? (
-                      <span className="px-2 py-0.5 rounded-full bg-[#3b5bdb]/15 text-[#3b5bdb]">
+                      <span className="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200">
                         {site.hostingerAccount.accountName}
                       </span>
                     ) : '—'}
@@ -236,7 +233,7 @@ export default function ScreenshotMonitorPage() {
                     {imgSrc ? (
                       <button
                         onClick={() => setPreview({ src: imgSrc, domain: site?.domain || '' })}
-                        className="w-24 h-14 rounded border border-[#21262d] overflow-hidden hover:border-[#3b5bdb] transition-colors"
+                        className="w-24 h-14 rounded border border-slate-200 overflow-hidden hover:border-indigo-400 transition-colors"
                       >
                         <img
                           src={imgSrc}
@@ -245,8 +242,8 @@ export default function ScreenshotMonitorPage() {
                         />
                       </button>
                     ) : (
-                      <div className="w-24 h-14 rounded border border-[#21262d] flex items-center justify-center">
-                        <Camera size={16} className="text-[#8b949e] opacity-30" />
+                      <div className="w-24 h-14 rounded border border-slate-200 flex items-center justify-center">
+                        <Camera size={16} className="text-slate-500 opacity-30" />
                       </div>
                     )}
                   </td>
@@ -259,20 +256,20 @@ export default function ScreenshotMonitorPage() {
                       <span className="badge-danger" title={l.error as string}>Error</span>
                     ) : isDefaced ? (
                       <div className="flex items-center gap-1.5">
-                        <AlertTriangle size={12} className="text-red-400 shrink-0" />
+                        <AlertTriangle size={12} className="text-rose-600 shrink-0" />
                         <span className="badge-danger">Defaced</span>
                       </div>
                     ) : hasChanged ? (
                       <span className="badge-warning">Changed</span>
                     ) : (
                       <div className="flex items-center gap-1.5">
-                        <CheckCircle size={12} className="text-emerald-400 shrink-0" />
+                        <CheckCircle size={12} className="text-emerald-600 shrink-0" />
                         <span className="badge-success">Normal</span>
                       </div>
                     )}
                   </td>
 
-                  <td className="text-xs text-[#8b949e]">
+                  <td className="text-xs text-slate-500">
                     {l.capturedAt
                       ? formatDistanceToNow(new Date(l.capturedAt as string), { addSuffix: true })
                       : <span className="italic">Never</span>}

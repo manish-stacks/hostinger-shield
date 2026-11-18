@@ -99,7 +99,7 @@ export default function IncidentsPage() {
       <div className="flex flex-wrap items-center gap-3 mb-4">
         {/* Search */}
         <div className="relative">
-          <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8b949e]" />
+          <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             className="input pl-8 w-48 text-sm"
             placeholder="Search domain..."
@@ -109,7 +109,7 @@ export default function IncidentsPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Filter size={13} className="text-[#8b949e]" />
+          <Filter size={13} className="text-slate-500" />
           <select value={statusFilter} onChange={(e) => { setStatusFilter(e.target.value); resetPage(); }} className="input w-36 py-1.5 text-sm">
             <option value="">All Status</option>
             <option value="open">Open</option>
@@ -136,13 +136,13 @@ export default function IncidentsPage() {
         </select>
 
         {hasFilters && (
-          <button onClick={() => { setSearch(''); setStatusFilter(''); setSeverity(''); setAccountId(''); resetPage(); }} className="text-xs text-[#8b949e] hover:text-red-400">
+          <button onClick={() => { setSearch(''); setStatusFilter(''); setSeverity(''); setAccountId(''); resetPage(); }} className="text-xs text-slate-500 hover:text-rose-600">
             Clear all
           </button>
         )}
 
         {pagination.total > 0 && (
-          <span className="ml-auto text-xs text-[#8b949e]">{pagination.total} incidents</span>
+          <span className="ml-auto text-xs text-slate-500">{pagination.total} incidents</span>
         )}
       </div>
 
@@ -158,19 +158,19 @@ export default function IncidentsPage() {
             {isLoading ? (
               <tr><td colSpan={8} className="text-center py-10"><Loader2 size={20} className="animate-spin mx-auto" /></td></tr>
             ) : incidents.length === 0 ? (
-              <tr><td colSpan={8} className="text-center py-10 text-[#8b949e]">
-                <Flame size={32} className="mx-auto mb-2 opacity-30 text-orange-400" />
+              <tr><td colSpan={8} className="text-center py-10 text-slate-500">
+                <Flame size={32} className="mx-auto mb-2 opacity-30 text-orange-600" />
                 {hasFilters ? 'No incidents match filters' : 'No incidents'}
               </td></tr>
             ) : incidents.map((i: Record<string, unknown>) => {
               const site = i.website as { domain?: string; hostingerAccount?: { accountName?: string } } | null;
               return (
                 <tr key={i._id as string}>
-                  <td className="font-medium text-[#e6edf3]">{i.title as string}</td>
-                  <td className="text-[#8b949e] text-xs">{site?.domain || '—'}</td>
+                  <td className="font-medium text-slate-900">{i.title as string}</td>
+                  <td className="text-slate-500 text-xs">{site?.domain || '—'}</td>
                   <td className="text-xs">
                     {site?.hostingerAccount?.accountName ? (
-                      <span className="px-2 py-0.5 rounded-full bg-[#3b5bdb]/15 text-[#3b5bdb]">
+                      <span className="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200">
                         {site.hostingerAccount.accountName}
                       </span>
                     ) : '—'}
@@ -187,7 +187,7 @@ export default function IncidentsPage() {
                       : i.status === 'in_progress' ? <span className="badge-warning">In Progress</span>
                       : <span className="badge-success">Resolved</span>}
                   </td>
-                  <td className="text-xs text-[#8b949e]">
+                  <td className="text-xs text-slate-500">
                     {(i.detectionTime || i.createdAt)
                       ? formatDistanceToNow(new Date((i.detectionTime || i.createdAt) as string), { addSuffix: true })
                       : '—'}

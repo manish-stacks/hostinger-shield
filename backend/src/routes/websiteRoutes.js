@@ -7,6 +7,7 @@ router.use(protect);
 // Static routes FIRST — before /:id so Express doesn't treat them as IDs
 router.get('/stats', websiteController.getSummaryStats);
 router.post('/bulk-import', websiteController.bulkImport);
+router.post('/ping-down', websiteController.pingDownWebsites);
 router.post('/bulk-scan', websiteController.bulkScan);
 router.post('/bulk-ssl-check', websiteController.bulkSSLCheck);
 router.post('/full-scan', websiteController.fullScan);

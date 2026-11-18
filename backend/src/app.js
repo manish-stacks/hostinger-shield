@@ -33,6 +33,7 @@ const notificationRoutes = require('./routes/notificationRoutes');
 const userRoutes = require('./routes/userRoutes');
 const screenshotRoutes = require('./routes/screenshotRoutes');
 const systemRoutes = require('./routes/systemRoutes');
+const publicRoutes = require('./routes/publicRoutes');
 
 const app = express();
 const httpServer = createServer(app);
@@ -85,6 +86,7 @@ app.use('/api/incidents', incidentRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/screenshots', screenshotRoutes);
 app.use('/api/system', systemRoutes);
+app.use('/api/public', publicRoutes);
 
 // Health check
 app.get('/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));

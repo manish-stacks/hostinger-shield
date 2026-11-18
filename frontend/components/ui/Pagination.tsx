@@ -15,7 +15,6 @@ export function Pagination({ page, total, limit, onChange }: Props) {
   const from = (page - 1) * limit + 1;
   const to = Math.min(page * limit, total);
 
-  // Build page numbers: always show first, last, current ±2, with ellipsis
   const nums: (number | '...')[] = [];
   const add = (n: number) => { if (!nums.includes(n)) nums.push(n); };
 
@@ -26,10 +25,10 @@ export function Pagination({ page, total, limit, onChange }: Props) {
   if (pages > 1) add(pages);
 
   return (
-    <div className="flex items-center justify-between mt-4 pt-3 border-t border-[#21262d]">
-      <p className="text-xs text-[#8b949e]">
-        Showing <span className="text-[#e6edf3] font-medium">{from}–{to}</span> of{' '}
-        <span className="text-[#e6edf3] font-medium">{total}</span>
+    <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200">
+      <p className="text-xs text-slate-500">
+        Showing <span className="text-slate-900 font-semibold tabular-nums">{from}–{to}</span> of{' '}
+        <span className="text-slate-900 font-semibold tabular-nums">{total}</span>
       </p>
       <div className="flex items-center gap-1">
         <button
@@ -42,15 +41,15 @@ export function Pagination({ page, total, limit, onChange }: Props) {
 
         {nums.map((n, i) =>
           n === '...' ? (
-            <span key={`e${i}`} className="px-2 text-xs text-[#8b949e]">…</span>
+            <span key={`e${i}`} className="px-2 text-xs text-slate-400">…</span>
           ) : (
             <button
               key={n}
               onClick={() => onChange(n as number)}
-              className={`py-1 px-2.5 rounded text-xs font-medium transition-all ${
+              className={`py-1 px-2.5 rounded-lg text-xs font-semibold transition-all tabular-nums ${
                 n === page
-                  ? 'bg-[#3b5bdb] text-white'
-                  : 'text-[#8b949e] hover:bg-[#21262d] hover:text-[#e6edf3]'
+                  ? 'bg-indigo-600 text-white shadow-sm'
+                  : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
               }`}
             >
               {n}

@@ -93,7 +93,7 @@ export default function ExportCenterPage() {
 
       {/* Account filter */}
       <div className="flex items-center gap-3 mb-6">
-        <label className="text-sm text-[#8b949e]">Filter by account:</label>
+        <label className="text-sm text-slate-500">Filter by account:</label>
         <select
           value={accountId}
           onChange={(e) => setAccountId(e.target.value)}
@@ -107,7 +107,7 @@ export default function ExportCenterPage() {
           ))}
         </select>
         {accountId && (
-          <button onClick={() => setAccountId('')} className="text-xs text-[#8b949e] hover:text-red-400">
+          <button onClick={() => setAccountId('')} className="text-xs text-slate-500 hover:text-rose-600">
             Clear
           </button>
         )}
@@ -121,8 +121,8 @@ export default function ExportCenterPage() {
                 <Icon size={18} className="text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-[#e6edf3]">{label}</h3>
-                <p className="text-xs text-[#8b949e]">Export as {formats.join(', ').toUpperCase()}</p>
+                <h3 className="font-semibold text-slate-900">{label}</h3>
+                <p className="text-xs text-slate-500">Export as {formats.join(', ').toUpperCase()}</p>
               </div>
             </div>
             <div className="flex gap-2">

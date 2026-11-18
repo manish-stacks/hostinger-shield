@@ -143,7 +143,7 @@ function WebsitesContent() {
       <div className="page-header">
         <div>
           <h1 className="page-title">Websites</h1>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-slate-500 mt-0.5">
             Monitor uptime, response latency, SSL expiry &amp; security threats across all server domains
           </p>
         </div>
@@ -173,10 +173,10 @@ function WebsitesContent() {
           <button
             key={f.value}
             onClick={() => { setStatusFilter(f.value); resetPage(); }}
-            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all border ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all border ${
               statusFilter === f.value
-                ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-200'
-                : 'bg-[#0d1321]/80 border-slate-800 text-slate-400 hover:text-slate-100 hover:border-slate-700'
+                ? 'bg-indigo-50 border-indigo-300 text-indigo-700'
+                : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300'
             }`}
           >
             {f.label}
@@ -187,7 +187,7 @@ function WebsitesContent() {
       {/* Search & Account Filters */}
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <div className="relative">
-          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
             className="input pl-9 w-60"
             placeholder="Search domain, IP, server..."
@@ -197,7 +197,7 @@ function WebsitesContent() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Filter size={14} className="text-slate-500 shrink-0" />
+          <Filter size={14} className="text-slate-400 shrink-0" />
           <select
             value={accountId}
             onChange={(e) => { setAccountId(e.target.value); resetPage(); }}
@@ -215,14 +215,14 @@ function WebsitesContent() {
         {(accountId || statusFilter || search) && (
           <button
             onClick={() => { setAccountId(''); setStatusFilter(''); setSearch(''); resetPage(); }}
-            className="text-xs text-slate-400 hover:text-rose-400"
+            className="text-xs text-slate-500 hover:text-rose-600 font-medium"
           >
             Clear filters
           </button>
         )}
 
         {pagination.total > 0 && (
-          <span className="ml-auto text-xs text-slate-400 tabular-nums">{pagination.total} websites</span>
+          <span className="ml-auto text-xs text-slate-500 font-medium tabular-nums">{pagination.total} websites</span>
         )}
       </div>
 
@@ -251,15 +251,15 @@ function WebsitesContent() {
           <tbody>
             {isLoading ? (
               <tr>
-                <td colSpan={9} className="text-center py-12 text-slate-400">
-                  <Loader2 size={20} className="animate-spin mx-auto" />
+                <td colSpan={9} className="text-center py-12 text-slate-500">
+                  <Loader2 size={20} className="animate-spin mx-auto text-indigo-600" />
                 </td>
               </tr>
             ) : websites.length === 0 ? (
               <tr>
-                <td colSpan={9} className="text-center py-14 text-slate-400">
-                  <Globe size={34} className="mx-auto mb-2 opacity-25" />
-                  <p className="text-sm font-medium text-slate-300">
+                <td colSpan={9} className="text-center py-14 text-slate-500">
+                  <Globe size={34} className="mx-auto mb-2 opacity-30" />
+                  <p className="text-sm font-semibold text-slate-700">
                     {search || accountId || statusFilter ? 'No websites match these filters' : 'No websites monitored yet'}
                   </p>
                   {!search && !accountId && !statusFilter && (
@@ -289,29 +289,29 @@ function WebsitesContent() {
                     <td>
                       <div className="flex items-center gap-2">
                         <span className={`w-2 h-2 rounded-full shrink-0 ${
-                          paused ? 'bg-slate-500'
-                          : w.status === 'healthy' ? 'bg-emerald-400'
+                          paused ? 'bg-slate-400'
+                          : w.status === 'healthy' ? 'bg-emerald-500'
                           : w.status === 'down' ? 'bg-rose-500 animate-pulse'
                           : w.status === 'hacked' || w.status === 'critical' ? 'bg-orange-500 animate-pulse'
-                          : w.status === 'warning' ? 'bg-amber-400'
-                          : 'bg-slate-500'
+                          : w.status === 'warning' ? 'bg-amber-500'
+                          : 'bg-slate-400'
                         }`} />
                         <div className="min-w-0">
                           <div className="flex items-center gap-1.5">
-                            <Link href={`/websites/${w._id as string}`} className="font-semibold text-slate-100 hover:text-indigo-300 truncate">
+                            <Link href={`/websites/${w._id as string}`} className="font-semibold text-slate-900 hover:text-indigo-600 truncate">
                               {w.domain as string}
                             </Link>
                             <a
                               href={`https://${w.domain as string}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-slate-500 hover:text-cyan-400"
+                              className="text-slate-400 hover:text-indigo-600"
                             >
                               <ExternalLink size={11} />
                             </a>
                           </div>
                           {w.ipAddress ? (
-                            <p className="text-[10px] text-slate-500 font-mono">{w.ipAddress as string}</p>
+                            <p className="text-[10px] text-slate-400 font-mono">{w.ipAddress as string}</p>
                           ) : null}
                         </div>
                       </div>
@@ -319,16 +319,16 @@ function WebsitesContent() {
                     <td>
                       <div className="flex flex-wrap gap-1">
                         {acct?.accountName && (
-                          <span className="text-[11px] px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 ring-1 ring-indigo-500/25">
+                          <span className="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200">
                             {acct.accountName}
                           </span>
                         )}
                         {w.serverName ? (
-                          <span className="text-[11px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 ring-1 ring-cyan-500/25">
+                          <span className="text-[11px] px-2 py-0.5 rounded-full bg-sky-50 text-sky-700 ring-1 ring-sky-200">
                             {w.serverName as string}
                           </span>
                         ) : null}
-                        {!acct?.accountName && !w.serverName && <span className="text-xs text-slate-500">—</span>}
+                        {!acct?.accountName && !w.serverName && <span className="text-xs text-slate-400">—</span>}
                       </div>
                     </td>
                     <td>
@@ -342,10 +342,10 @@ function WebsitesContent() {
                     <td className="tabular-nums">
                       <div className="text-xs">
                         <span className={
-                          !resp ? 'text-slate-500'
-                          : resp > 3000 ? 'text-rose-400 font-semibold'
-                          : resp > 1500 ? 'text-amber-400'
-                          : 'text-emerald-400'
+                          !resp ? 'text-slate-400'
+                          : resp > 3000 ? 'text-rose-600 font-semibold'
+                          : resp > 1500 ? 'text-amber-600 font-semibold'
+                          : 'text-emerald-700 font-medium'
                         }>
                           {resp ? `${resp}ms` : '—'}
                         </span>
@@ -366,7 +366,7 @@ function WebsitesContent() {
                     </td>
                     <td>
                       <div className="flex items-center gap-2">
-                        <div className="w-14 h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div className="w-14 h-1.5 bg-slate-200 rounded-full overflow-hidden">
                           <div
                             className={`h-full rounded-full ${
                               (w.threatScore as number) >= 75 ? 'bg-rose-500'
@@ -376,10 +376,10 @@ function WebsitesContent() {
                             style={{ width: `${Math.max(4, (w.threatScore as number) || 0)}%` }}
                           />
                         </div>
-                        <span className="text-xs text-slate-400 tabular-nums">{(w.threatScore as number) || 0}</span>
+                        <span className="text-xs text-slate-600 tabular-nums">{(w.threatScore as number) || 0}</span>
                       </div>
                     </td>
-                    <td className="text-slate-400 text-xs whitespace-nowrap">
+                    <td className="text-slate-500 text-xs whitespace-nowrap">
                       {w.lastHealthCheck
                         ? formatDistanceToNow(new Date(w.lastHealthCheck as string), { addSuffix: true })
                         : 'Never'}
@@ -389,7 +389,7 @@ function WebsitesContent() {
                         <button
                           onClick={() => pingMutation.mutate(w._id as string)}
                           disabled={pingMutation.isPending && pingMutation.variables === (w._id as string)}
-                          className="btn-ghost py-1 px-2 text-xs text-cyan-400 hover:text-cyan-300"
+                          className="btn-ghost py-1 px-2 text-xs text-indigo-600 hover:text-indigo-700"
                           title="Instant live ping"
                         >
                           {pingMutation.isPending && pingMutation.variables === (w._id as string)
@@ -411,13 +411,13 @@ function WebsitesContent() {
                           className="btn-ghost py-1 px-2 text-xs"
                           title={paused ? 'Resume monitoring' : 'Pause monitoring'}
                         >
-                          {paused ? <PlayCircle size={13} className="text-emerald-400" /> : <PauseCircle size={13} />}
+                          {paused ? <PlayCircle size={13} className="text-emerald-600" /> : <PauseCircle size={13} />}
                         </button>
                         <button
                           onClick={() => {
                             if (confirm(`Delete ${w.domain}?`)) deleteMutation.mutate(w._id as string);
                           }}
-                          className="btn-ghost py-1 px-2 text-xs text-rose-400 hover:text-rose-300"
+                          className="btn-ghost py-1 px-2 text-xs text-rose-600 hover:text-rose-700 hover:bg-rose-50"
                           title="Delete"
                         >
                           <Trash2 size={12} />

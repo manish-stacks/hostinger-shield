@@ -252,6 +252,30 @@ exports.deleteWebsite = async (req, res, next) => {
   }
 };
 
+// POST /api/websites/ping-down — instant parallel re-check of all currently DOWN sites
+exports.pingDownWebsites = async (req, res, next) => {
+  try {
+    const downSites = await Website.find({ isActive: true, status: 'down' }).lean();
+    if (!downSites.length) {
+      return res.json({ success: true, data: { checked: 0, recovered: 0, stillDown: 0 }, message: 'No down sites to check' });
+    }
+    const results = await Promise.allSettled(downSites.map((s) => monitoringService.checkWebsite(s)));
+    let recovered = 0;
+    let stillDown = 0;
+    for (const r of results) {
+      if (r.status === 'fulfilled' && r.value?.isUp) recovered++;
+      else stillDown++;
+    }
+    res.json({
+      success: true,
+      data: { checked: downSites.length, recovered, stillDown },
+      message: `Checked ${downSites.length} site(s): ${recovered} recovered, ${stillDown} still down`,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
 // POST /api/websites/:id/ping — instant live health check
 exports.pingWebsite = async (req, res, next) => {
   try {
@@ -414,10 +438,12 @@ exports.getSummaryStats = async (req, res, next) => {
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 6);
     sevenDaysAgo.setHours(0, 0, 0, 0);
 
+    const thirtyDaysAhead = new Date(Date.now() + 30 * 86400000);
+
     const [
       total, healthy, warning, hacked, down, unknown, paused,
       activeThreats, openIncidents, sslExpiring, sslExpired, slowSites,
-      perfAgg, trendAgg, downSites, hackedSites, liveMatrix,
+      perfAgg, trendAgg, downSites, hackedSites, liveMatrix, expiringDomains,
     ] = await Promise.all([
       Website.countDocuments({ isActive: true }),
       Website.countDocuments({ isActive: true, status: 'healthy' }),
@@ -454,6 +480,11 @@ exports.getSummaryStats = async (req, res, next) => {
         .select('_id domain status responseTime httpStatus sslDaysLeft uptime24h isMonitoringEnabled')
         .sort({ status: 1, domain: 1 })
         .limit(60)
+        .lean(),
+      Website.find({ isActive: true, domainExpiry: { $ne: null, $lte: thirtyDaysAhead } })
+        .select('_id domain domainExpiry')
+        .sort({ domainExpiry: 1 })
+        .limit(10)
         .lean(),
     ]);
 
@@ -494,6 +525,8 @@ exports.getSummaryStats = async (req, res, next) => {
         downSites,
         hackedSites,
         liveMatrix,
+        expiringDomains,
+        domainExpiring: expiringDomains.length,
       },
     });
   } catch (err) {

@@ -104,7 +104,7 @@ export default function AlertsPage() {
       {/* Filters */}
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <div className="flex items-center gap-2">
-          <Filter size={14} className="text-[#8b949e]" />
+          <Filter size={14} className="text-slate-500" />
           <select value={readFilter} onChange={(e) => { setReadFilter(e.target.value); resetPage(); }} className="input w-32 py-1.5 text-sm">
             <option value="">All</option>
             <option value="unread">Unread</option>
@@ -123,21 +123,21 @@ export default function AlertsPage() {
           <option value="warning">Warning</option>
         </select>
         {(readFilter || typeFilter) && (
-          <button onClick={() => { setReadFilter(''); setTypeFilter(''); resetPage(); }} className="text-xs text-[#8b949e] hover:text-red-400">
+          <button onClick={() => { setReadFilter(''); setTypeFilter(''); resetPage(); }} className="text-xs text-slate-500 hover:text-rose-600">
             Clear filters
           </button>
         )}
         {pagination.total > 0 && (
-          <span className="ml-auto text-xs text-[#8b949e]">{pagination.total} notifications</span>
+          <span className="ml-auto text-xs text-slate-500">{pagination.total} notifications</span>
         )}
       </div>
 
       {/* List */}
       <div className="space-y-2">
         {isLoading ? (
-          <div className="text-center py-10"><Loader2 size={20} className="animate-spin mx-auto text-[#8b949e]" /></div>
+          <div className="text-center py-10"><Loader2 size={20} className="animate-spin mx-auto text-slate-500" /></div>
         ) : notifications.length === 0 ? (
-          <div className="card text-center py-10 text-[#8b949e]">
+          <div className="card text-center py-10 text-slate-500">
             <Bell size={32} className="mx-auto mb-2 opacity-30" />
             {readFilter || typeFilter ? 'No notifications match filters' : 'No notifications'}
           </div>
@@ -150,11 +150,11 @@ export default function AlertsPage() {
               key={n._id as string}
               onClick={() => !n.isRead && readMutation.mutate(n._id as string)}
               className={`card-sm flex items-start gap-3 transition-all ${
-                n.isRead ? 'opacity-60' : 'cursor-pointer hover:bg-[#1c2128]'
+                n.isRead ? 'opacity-60' : 'cursor-pointer hover:bg-slate-50'
               }`}
             >
               {/* Unread dot */}
-              <div className={`w-2 h-2 rounded-full mt-2 shrink-0 ${n.isRead ? 'bg-[#3d4451]' : 'bg-[#3b5bdb]'}`} />
+              <div className={`w-2 h-2 rounded-full mt-2 shrink-0 ${n.isRead ? 'bg-slate-300' : 'bg-indigo-600'}`} />
 
               <div className="flex-1 min-w-0">
                 {/* Top row — type badge + severity + time + NEW */}
@@ -170,22 +170,22 @@ export default function AlertsPage() {
                       {n.severity as string}
                     </span>
                   )}
-                  <span className="text-[10px] text-[#8b949e]">
+                  <span className="text-[10px] text-slate-500">
                     {n.createdAt ? formatDistanceToNow(new Date(n.createdAt as string), { addSuffix: true }) : ''}
                   </span>
-                  {!n.isRead && <span className="ml-auto text-[10px] text-[#3b5bdb] font-medium">NEW</span>}
+                  {!n.isRead && <span className="ml-auto text-[10px] text-indigo-600 font-medium">NEW</span>}
                 </div>
 
                 {/* Title + message */}
-                <p className="text-sm font-medium text-[#e6edf3]">{n.title as string}</p>
-                <p className="text-xs text-[#8b949e] mt-0.5">{n.message as string}</p>
+                <p className="text-sm font-medium text-slate-900">{n.title as string}</p>
+                <p className="text-xs text-slate-500 mt-0.5">{n.message as string}</p>
 
                 {/* Domain + Account — same row */}
                 {site?.domain && (
                   <div className="flex items-center gap-2 mt-1.5 flex-wrap">
-                    <span className="text-xs text-[#8b949e]">🌐 {site.domain}</span>
+                    <span className="text-xs text-slate-500">🌐 {site.domain}</span>
                     {account && (
-                      <span className="px-2 py-0.5 rounded-full bg-[#3b5bdb]/15 text-[#3b5bdb] text-[10px] font-medium">
+                      <span className="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200 text-[10px] font-medium">
                         {account}
                       </span>
                     )}

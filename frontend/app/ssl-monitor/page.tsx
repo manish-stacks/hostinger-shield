@@ -26,10 +26,10 @@ const sslBadgeClass = (s: string) => {
 };
 
 const daysColor = (days: number | null) => {
-  if (days === null || days === undefined) return 'text-[#8b949e]';
-  if (days <= 7)  return 'text-red-400';
-  if (days <= 30) return 'text-yellow-400';
-  return 'text-emerald-400';
+  if (days === null || days === undefined) return 'text-slate-500';
+  if (days <= 7)  return 'text-rose-600';
+  if (days <= 30) return 'text-amber-600';
+  return 'text-emerald-600';
 };
 
 const LIMIT = 25;
@@ -90,7 +90,7 @@ export default function SSLMonitorPage() {
       {/* Filters */}
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <div className="flex items-center gap-2">
-          <Filter size={14} className="text-[#8b949e]" />
+          <Filter size={14} className="text-slate-500" />
           <select
             value={statusFilter}
             onChange={(e) => { setStatus(e.target.value); setPage(1); }}
@@ -119,13 +119,13 @@ export default function SSLMonitorPage() {
         {(statusFilter || accountId) && (
           <button
             onClick={() => { setStatus(''); setAccountId(''); setPage(1); }}
-            className="text-xs text-[#8b949e] hover:text-red-400"
+            className="text-xs text-slate-500 hover:text-rose-600"
           >
             Clear filters
           </button>
         )}
         {pagination.total > 0 && (
-          <span className="ml-auto text-xs text-[#8b949e]">{pagination.total} domains</span>
+          <span className="ml-auto text-xs text-slate-500">{pagination.total} domains</span>
         )}
       </div>
 
@@ -146,13 +146,13 @@ export default function SSLMonitorPage() {
             {isLoading ? (
               <tr>
                 <td colSpan={7} className="text-center py-12">
-                  <Loader2 size={20} className="animate-spin mx-auto text-[#8b949e]" />
+                  <Loader2 size={20} className="animate-spin mx-auto text-slate-500" />
                 </td>
               </tr>
             ) : logs.length === 0 ? (
               <tr>
-                <td colSpan={7} className="text-center py-12 text-[#8b949e]">
-                  <CheckCircle size={32} className="mx-auto mb-2 opacity-30 text-emerald-400" />
+                <td colSpan={7} className="text-center py-12 text-slate-500">
+                  <CheckCircle size={32} className="mx-auto mb-2 opacity-30 text-emerald-600" />
                   {statusFilter || accountId ? 'No records match filters' : 'No SSL data — run a scan first'}
                 </td>
               </tr>
@@ -167,15 +167,15 @@ export default function SSLMonitorPage() {
                   <tr key={(l._id || l.website) as string}>
                     <td>
                       <div className="flex items-center gap-2">
-                        <Lock size={13} className="text-[#8b949e] shrink-0" />
-                        <span className="font-medium text-[#e6edf3]">
+                        <Lock size={13} className="text-slate-500 shrink-0" />
+                        <span className="font-medium text-slate-900">
                           {site?.domain || '—'}
                         </span>
                       </div>
                     </td>
                     <td className="text-xs">
                       {site?.hostingerAccount?.accountName ? (
-                        <span className="px-2 py-0.5 rounded-full bg-[#3b5bdb]/15 text-[#3b5bdb]">
+                        <span className="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200">
                           {site.hostingerAccount.accountName}
                         </span>
                       ) : '—'}
@@ -185,24 +185,24 @@ export default function SSLMonitorPage() {
                         {status === 'critical' ? 'expiring soon' : status}
                       </span>
                       {isFallback && (
-                        <span className="ml-1 text-[10px] text-[#8b949e]">(cached)</span>
+                        <span className="ml-1 text-[10px] text-slate-500">(cached)</span>
                       )}
                     </td>
-                    <td className="text-xs text-[#8b949e]">{l.issuer as string || '—'}</td>
+                    <td className="text-xs text-slate-500">{l.issuer as string || '—'}</td>
                     <td>
                       <span className={`font-bold text-sm ${daysColor(days)}`}>
                         {days !== null && days !== undefined ? days : '—'}
                       </span>
                     </td>
-                    <td className="text-xs text-[#8b949e]">
+                    <td className="text-xs text-slate-500">
                       {l.validTo
                         ? new Date(l.validTo as string).toLocaleDateString()
                         : '—'}
                     </td>
-                    <td className="text-xs text-[#8b949e]">
+                    <td className="text-xs text-slate-500">
                       {l.checkedAt
                         ? new Date(l.checkedAt as string).toLocaleDateString()
-                        : <span className="text-[#8b949e] italic">Never checked</span>}
+                        : <span className="text-slate-500 italic">Never checked</span>}
                     </td>
                   </tr>
                 );

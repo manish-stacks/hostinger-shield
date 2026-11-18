@@ -71,7 +71,7 @@ export default function DNSMonitorPage() {
       {/* Filters */}
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <div className="flex items-center gap-2">
-          <Filter size={14} className="text-[#8b949e]" />
+          <Filter size={14} className="text-slate-500" />
           <select
             value={accountId}
             onChange={(e) => { setAccountId(e.target.value); setPage(1); }}
@@ -86,7 +86,7 @@ export default function DNSMonitorPage() {
           </select>
         </div>
 
-        <label className="flex items-center gap-2 cursor-pointer text-sm text-[#8b949e]">
+        <label className="flex items-center gap-2 cursor-pointer text-sm text-slate-500">
           <input
             type="checkbox"
             checked={changedOnly}
@@ -99,14 +99,14 @@ export default function DNSMonitorPage() {
         {(accountId || changedOnly) && (
           <button
             onClick={() => { setAccountId(''); setChanged(false); setPage(1); }}
-            className="text-xs text-[#8b949e] hover:text-red-400"
+            className="text-xs text-slate-500 hover:text-rose-600"
           >
             Clear filters
           </button>
         )}
 
         {pagination.total > 0 && (
-          <span className="ml-auto text-xs text-[#8b949e]">{pagination.total} domains</span>
+          <span className="ml-auto text-xs text-slate-500">{pagination.total} domains</span>
         )}
       </div>
 
@@ -125,12 +125,12 @@ export default function DNSMonitorPage() {
             {isLoading ? (
               <tr>
                 <td colSpan={5} className="text-center py-12">
-                  <Loader2 size={20} className="animate-spin mx-auto text-[#8b949e]" />
+                  <Loader2 size={20} className="animate-spin mx-auto text-slate-500" />
                 </td>
               </tr>
             ) : logs.length === 0 ? (
               <tr>
-                <td colSpan={5} className="text-center py-12 text-[#8b949e]">
+                <td colSpan={5} className="text-center py-12 text-slate-500">
                   <Network size={32} className="mx-auto mb-2 opacity-30" />
                   {changedOnly ? 'No DNS changes detected' : 'No websites found'}
                 </td>
@@ -145,13 +145,13 @@ export default function DNSMonitorPage() {
                   <tr key={(l._id || site?._id) as string}>
                     <td>
                       <div className="flex items-center gap-2">
-                        <Network size={13} className="text-[#8b949e] shrink-0" />
-                        <span className="font-medium text-[#e6edf3]">{site?.domain || '—'}</span>
+                        <Network size={13} className="text-slate-500 shrink-0" />
+                        <span className="font-medium text-slate-900">{site?.domain || '—'}</span>
                       </div>
                     </td>
                     <td className="text-xs">
                       {site?.hostingerAccount?.accountName ? (
-                        <span className="px-2 py-0.5 rounded-full bg-[#3b5bdb]/15 text-[#3b5bdb]">
+                        <span className="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200">
                           {site.hostingerAccount.accountName}
                         </span>
                       ) : '—'}
@@ -165,12 +165,12 @@ export default function DNSMonitorPage() {
                         <span className="badge-success">Stable</span>
                       )}
                     </td>
-                    <td className="text-xs text-[#8b949e] max-w-xs">
+                    <td className="text-xs text-slate-500 max-w-xs">
                       {records
                         ? <span className="truncate block">{records}</span>
                         : <span className="italic">Not scanned yet</span>}
                     </td>
-                    <td className="text-xs text-[#8b949e]">
+                    <td className="text-xs text-slate-500">
                       {l.checkedAt
                         ? formatDistanceToNow(new Date(l.checkedAt as string), { addSuffix: true })
                         : <span className="italic">Never</span>}

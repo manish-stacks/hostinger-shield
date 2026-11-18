@@ -17,7 +17,6 @@ export default function SettingsPage() {
   const { user } = useAuthStore();
   const [showPass, setShowPass] = useState(false);
 
-  // ── Password form ──────────────────────────────────────────────────────────
   const { register, handleSubmit, reset, formState: { isSubmitting } } =
     useForm<{ currentPassword: string; newPassword: string; confirmPassword: string }>();
 
@@ -106,7 +105,6 @@ export default function SettingsPage() {
     onError: () => toast.error('Scan failed'),
   });
 
-  // Single site scan
   const [singleSearch, setSingleSearch] = useState('');
   const [selectedSite, setSelectedSite] = useState<{ _id: string; domain: string } | null>(null);
 
@@ -142,7 +140,7 @@ export default function SettingsPage() {
       <div className="page-header">
         <div>
           <h1 className="page-title">Settings &amp; System Control</h1>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-slate-500 mt-0.5">
             Database storage guard, instant multi-channel alerting, and manual scans
           </p>
         </div>
@@ -150,15 +148,15 @@ export default function SettingsPage() {
 
       <div className="grid lg:grid-cols-2 gap-6 max-w-7xl">
 
-        {/* ── Database Storage Guard & Optimizer (Solves Atlas 512MB Overflow!) ── */}
-        <div id="db-storage" className="card lg:col-span-2 border-cyan-500/25">
+        {/* ── Database Storage Guard & Optimizer ───────────────────────────── */}
+        <div id="db-storage" className="card lg:col-span-2 border-indigo-200/80">
           <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/15 flex items-center justify-center shrink-0">
-                <Database size={18} className="text-cyan-400" />
+              <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+                <Database size={18} className="text-indigo-600" />
               </div>
               <div>
-                <h2 className="font-bold text-slate-50 flex items-center gap-2">
+                <h2 className="font-bold text-slate-900 flex items-center gap-2">
                   Database Storage &amp; Auto-Retention Guard
                   {db?.connected && (
                     <span className={
@@ -170,7 +168,7 @@ export default function SettingsPage() {
                     </span>
                   )}
                 </h2>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="text-xs text-slate-500 mt-0.5">
                   Per-site rolling caps + 30-min quota guard prevent MongoDB Atlas from ever filling up.
                 </p>
               </div>
@@ -207,24 +205,23 @@ export default function SettingsPage() {
           </div>
 
           {dbLoading || !db?.connected ? (
-            <div className="py-8 text-center text-slate-400 text-xs">
-              <Loader2 size={18} className="animate-spin mx-auto mb-2" /> Loading MongoDB storage stats…
+            <div className="py-8 text-center text-slate-500 text-xs">
+              <Loader2 size={18} className="animate-spin mx-auto mb-2 text-indigo-600" /> Loading MongoDB storage stats…
             </div>
           ) : (
             <div className="space-y-5">
-              {/* Storage bar + KPIs */}
               <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
-                <div className="sm:col-span-2 p-3.5 rounded-xl bg-[#070b14]/80 border border-slate-800">
+                <div className="sm:col-span-2 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
                   <div className="flex justify-between text-xs mb-2">
-                    <span className="text-slate-400">Quota Usage ({db.dbName})</span>
-                    <span className="font-bold text-slate-100 tabular-nums">{db.usedMB} MB / {db.limitMB} MB</span>
+                    <span className="text-slate-600 font-medium">Quota Usage ({db.dbName})</span>
+                    <span className="font-bold text-slate-900 tabular-nums">{db.usedMB} MB / {db.limitMB} MB</span>
                   </div>
-                  <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div className="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all ${
                         db.usagePercent >= 85 ? 'bg-rose-500'
                         : db.usagePercent >= 65 ? 'bg-amber-500'
-                        : 'bg-gradient-to-r from-indigo-500 to-cyan-400'
+                        : 'bg-indigo-600'
                       }`}
                       style={{ width: `${Math.max(3, db.usagePercent)}%` }}
                     />
@@ -234,28 +231,27 @@ export default function SettingsPage() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#070b14]/80 border border-slate-800">
-                  <span className="text-[11px] text-slate-400 block">Data / Storage</span>
-                  <span className="text-lg font-bold text-slate-100 tabular-nums">{db.dataSizeMB} MB</span>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <span className="text-[11px] text-slate-500 block">Data / Storage</span>
+                  <span className="text-lg font-bold text-slate-900 tabular-nums">{db.dataSizeMB} MB</span>
                   <span className="text-[11px] text-slate-500 block">Disk: {db.storageSizeMB} MB</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#070b14]/80 border border-slate-800">
-                  <span className="text-[11px] text-slate-400 block">Indexes Size</span>
-                  <span className="text-lg font-bold text-cyan-400 tabular-nums">{db.indexSizeMB} MB</span>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <span className="text-[11px] text-slate-500 block">Indexes Size</span>
+                  <span className="text-lg font-bold text-sky-600 tabular-nums">{db.indexSizeMB} MB</span>
                   <span className="text-[11px] text-slate-500 block">Max {db.retention?.maxHealthPerSite} health/site</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#070b14]/80 border border-slate-800">
-                  <span className="text-[11px] text-slate-400 block">API Server RAM</span>
-                  <span className="text-lg font-bold text-indigo-400 tabular-nums">{server?.rssMB ?? '—'} MB</span>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <span className="text-[11px] text-slate-500 block">API Server RAM</span>
+                  <span className="text-lg font-bold text-indigo-600 tabular-nums">{server?.rssMB ?? '—'} MB</span>
                   <span className="text-[11px] text-slate-500 block">
                     Up {server?.uptimeSec ? `${Math.floor(server.uptimeSec / 3600)}h ${Math.floor((server.uptimeSec % 3600) / 60)}m` : '—'}
                   </span>
                 </div>
               </div>
 
-              {/* Per-Collection Breakdown */}
               <div className="table-wrapper">
                 <table>
                   <thead>
@@ -270,11 +266,11 @@ export default function SettingsPage() {
                   <tbody>
                     {(db.collections || []).map((c: { name: string; count: number; sizeMB: number; storageMB: number; indexMB: number }) => (
                       <tr key={c.name}>
-                        <td className="font-mono text-xs text-slate-200">{c.name}</td>
-                        <td className="text-xs tabular-nums text-slate-300">{c.count.toLocaleString()}</td>
-                        <td className="text-xs tabular-nums text-slate-300">{c.sizeMB} MB</td>
-                        <td className="text-xs tabular-nums text-slate-400">{c.storageMB} MB</td>
-                        <td className="text-xs tabular-nums text-cyan-400">{c.indexMB} MB</td>
+                        <td className="font-mono text-xs font-semibold text-slate-800">{c.name}</td>
+                        <td className="text-xs tabular-nums text-slate-700">{c.count.toLocaleString()}</td>
+                        <td className="text-xs tabular-nums text-slate-700">{c.sizeMB} MB</td>
+                        <td className="text-xs tabular-nums text-slate-500">{c.storageMB} MB</td>
+                        <td className="text-xs tabular-nums font-medium text-sky-700">{c.indexMB} MB</td>
                       </tr>
                     ))}
                   </tbody>
@@ -285,14 +281,14 @@ export default function SettingsPage() {
         </div>
 
         {/* ── Manual Full Scan ─────────────────────────────────────────────── */}
-        <div className="card lg:col-span-2 border-indigo-500/30 bg-indigo-950/10">
+        <div className="card lg:col-span-2 border-indigo-200 bg-indigo-50/40">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Zap size={16} className="text-indigo-400" />
-                <h2 className="font-bold text-slate-50">Manual Full Server Scan</h2>
+                <Zap size={16} className="text-indigo-600" />
+                <h2 className="font-bold text-slate-900">Manual Full Server Scan</h2>
               </div>
-              <p className="text-xs text-slate-400 mb-3">
+              <p className="text-xs text-slate-600 mb-3">
                 Runs Health + Threat + SSL + DNS + Screenshot checks immediately on all active websites.
               </p>
               <div className="flex flex-wrap gap-2">
@@ -303,10 +299,10 @@ export default function SettingsPage() {
                   { icon: '❤️', label: 'Uptime Ping', desc: 'Status & latency' },
                   { icon: '📸', label: 'Screenshot', desc: 'Visual defacement' },
                 ].map(({ icon, label, desc }) => (
-                  <div key={label} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#0d1321] border border-slate-800 text-xs">
+                  <div key={label} className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs shadow-sm">
                     <span>{icon}</span>
                     <div>
-                      <p className="text-slate-100 font-medium">{label}</p>
+                      <p className="text-slate-900 font-semibold">{label}</p>
                       <p className="text-slate-500 text-[10px]">{desc}</p>
                     </div>
                   </div>
@@ -324,12 +320,11 @@ export default function SettingsPage() {
             </button>
           </div>
 
-          {/* Single site scan */}
-          <div className="mt-5 pt-4 border-t border-slate-800/80">
-            <p className="text-xs font-medium text-slate-400 mb-2">Or deep-scan a specific website:</p>
+          <div className="mt-5 pt-4 border-t border-indigo-200/70">
+            <p className="text-xs font-semibold text-slate-600 mb-2">Or deep-scan a specific website:</p>
             <div className="flex gap-2">
               <div className="relative flex-1">
-                <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                 <input
                   className="input pl-9 text-sm w-full"
                   placeholder="Type domain to search..."
@@ -337,17 +332,17 @@ export default function SettingsPage() {
                   onChange={(e) => { setSingleSearch(e.target.value); setSelectedSite(null); }}
                 />
                 {singleSearch.length > 1 && !selectedSite && searchSites.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#0d1321] border border-slate-700 rounded-xl shadow-2xl z-50 max-h-48 overflow-y-auto">
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-200 rounded-xl shadow-xl z-50 max-h-48 overflow-y-auto">
                     {searchSites.map((s: Record<string, unknown>) => (
                       <button
                         key={s._id as string}
                         onClick={() => { setSelectedSite({ _id: s._id as string, domain: s.domain as string }); setSingleSearch(''); }}
-                        className="w-full flex items-center gap-2 px-3 py-2 text-sm text-left hover:bg-slate-800/70 transition-colors"
+                        className="w-full flex items-center gap-2 px-3 py-2 text-sm text-left hover:bg-slate-50 transition-colors"
                       >
                         <Globe size={12} className="text-slate-400 shrink-0" />
-                        <span className="text-slate-100">{s.domain as string}</span>
+                        <span className="text-slate-900 font-medium">{s.domain as string}</span>
                         {s.status ? (
-                          <span className={`ml-auto text-[10px] ${s.status === 'healthy' ? 'text-emerald-400' : s.status === 'hacked' || s.status === 'down' ? 'text-rose-400' : 'text-amber-400'}`}>
+                          <span className={`ml-auto text-[10px] font-semibold ${s.status === 'healthy' ? 'text-emerald-600' : s.status === 'hacked' || s.status === 'down' ? 'text-rose-600' : 'text-amber-600'}`}>
                             {s.status as string}
                           </span>
                         ) : null}
@@ -374,41 +369,41 @@ export default function SettingsPage() {
         {/* ── Instant Alert Channels ───────────────────────────────────────── */}
         <div className="card lg:col-span-2">
           <div className="flex items-center gap-2 mb-1">
-            <Bell size={16} className="text-indigo-400" />
-            <h2 className="font-bold text-slate-50">Instant Alert Channels</h2>
+            <Bell size={16} className="text-indigo-600" />
+            <h2 className="font-bold text-slate-900">Instant Alert Channels</h2>
           </div>
-          <p className="text-xs text-slate-400 mb-5">
+          <p className="text-xs text-slate-500 mb-5">
             Get notified within seconds when any site goes down, gets hacked, SSL expires, or DNS changes.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* In-App */}
-            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-sky-500/15 flex items-center justify-center shrink-0">
-                <Bell size={16} className="text-sky-400" />
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-sky-100 flex items-center justify-center shrink-0">
+                <Bell size={16} className="text-sky-600" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-slate-100">In-App + Browser + Alarm</p>
-                <p className="text-[11px] text-slate-400">Real-time Socket.IO alerts — always active</p>
+                <p className="text-sm font-semibold text-slate-900">In-App + Browser + Alarm</p>
+                <p className="text-[11px] text-slate-500">Real-time Socket.IO alerts — always active</p>
               </div>
-              <CheckCircle size={18} className="text-emerald-400 shrink-0" />
+              <CheckCircle size={18} className="text-emerald-600 shrink-0" />
             </div>
 
             {/* Email */}
-            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-3">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-indigo-500/15 flex items-center justify-center shrink-0">
-                  <Mail size={16} className="text-indigo-400" />
+                <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center shrink-0">
+                  <Mail size={16} className="text-indigo-600" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-slate-100">Email Alerts</p>
-                  <p className="text-[11px] text-slate-400">Detailed HTML incident reports</p>
+                  <p className="text-sm font-semibold text-slate-900">Email Alerts</p>
+                  <p className="text-[11px] text-slate-500">Detailed HTML incident reports</p>
                 </div>
                 <input
                   type="checkbox"
                   checked={prefs.email}
                   onChange={(e) => setPrefs((p) => ({ ...p, email: e.target.checked }))}
-                  className="w-4 h-4 rounded cursor-pointer"
+                  className="w-4 h-4 rounded cursor-pointer accent-indigo-600"
                 />
               </div>
               {prefs.email && (
@@ -431,26 +426,26 @@ export default function SettingsPage() {
             </div>
 
             {/* WhatsApp */}
-            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-3">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-emerald-500/15 flex items-center justify-center shrink-0">
-                  <MessageCircle size={16} className="text-emerald-400" />
+                <div className="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                  <MessageCircle size={16} className="text-emerald-600" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-slate-100">WhatsApp (WAAPI)</p>
-                  <p className="text-[11px] text-slate-400">Instant mobile message</p>
+                  <p className="text-sm font-semibold text-slate-900">WhatsApp (WAAPI)</p>
+                  <p className="text-[11px] text-slate-500">Instant mobile message</p>
                 </div>
                 <input
                   type="checkbox"
                   checked={prefs.whatsapp}
                   onChange={(e) => setPrefs((p) => ({ ...p, whatsapp: e.target.checked }))}
-                  className="w-4 h-4 rounded cursor-pointer"
+                  className="w-4 h-4 rounded cursor-pointer accent-indigo-600"
                 />
               </div>
               {prefs.whatsapp && (
                 <>
                   <div className="relative">
-                    <Phone size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                    <Phone size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                     <input
                       className="input pl-8 text-xs py-1.5"
                       placeholder="91XXXXXXXXXX (with country code)"
@@ -470,20 +465,20 @@ export default function SettingsPage() {
             </div>
 
             {/* Telegram Bot */}
-            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-3">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-cyan-500/15 flex items-center justify-center shrink-0">
-                  <Send size={16} className="text-cyan-400" />
+                <div className="w-9 h-9 rounded-xl bg-sky-100 flex items-center justify-center shrink-0">
+                  <Send size={16} className="text-sky-600" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-slate-100">Telegram Bot</p>
-                  <p className="text-[11px] text-slate-400">Free, ultra-fast instant push</p>
+                  <p className="text-sm font-semibold text-slate-900">Telegram Bot</p>
+                  <p className="text-[11px] text-slate-500">Free, ultra-fast instant push</p>
                 </div>
                 <input
                   type="checkbox"
                   checked={prefs.telegram}
                   onChange={(e) => setPrefs((p) => ({ ...p, telegram: e.target.checked }))}
-                  className="w-4 h-4 rounded cursor-pointer"
+                  className="w-4 h-4 rounded cursor-pointer accent-indigo-600"
                 />
               </div>
               {prefs.telegram && (
@@ -506,20 +501,20 @@ export default function SettingsPage() {
             </div>
 
             {/* Slack / Discord Webhook */}
-            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-3">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-purple-500/15 flex items-center justify-center shrink-0">
-                  <Webhook size={16} className="text-purple-400" />
+                <div className="w-9 h-9 rounded-xl bg-purple-100 flex items-center justify-center shrink-0">
+                  <Webhook size={16} className="text-purple-600" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-slate-100">Discord / Slack Webhook</p>
-                  <p className="text-[11px] text-slate-400">Team channel alerts</p>
+                  <p className="text-sm font-semibold text-slate-900">Discord / Slack Webhook</p>
+                  <p className="text-[11px] text-slate-500">Team channel alerts</p>
                 </div>
                 <input
                   type="checkbox"
                   checked={prefs.webhook}
                   onChange={(e) => setPrefs((p) => ({ ...p, webhook: e.target.checked }))}
-                  className="w-4 h-4 rounded cursor-pointer"
+                  className="w-4 h-4 rounded cursor-pointer accent-indigo-600"
                 />
               </div>
               {prefs.webhook && (
@@ -542,9 +537,9 @@ export default function SettingsPage() {
             </div>
 
             {/* Escalation Contact */}
-            <div className="p-4 rounded-xl bg-[#070b14]/80 border border-slate-800 space-y-2.5">
-              <p className="text-sm font-semibold text-slate-100">Escalation Backup Contact</p>
-              <p className="text-[11px] text-slate-400">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+              <p className="text-sm font-semibold text-slate-900">Escalation Backup Contact</p>
+              <p className="text-[11px] text-slate-500">
                 Notified automatically if a hack incident stays unacknowledged after 2 reminders.
               </p>
               <input
@@ -575,21 +570,21 @@ export default function SettingsPage() {
         {/* ── Profile ──────────────────────────────────────────────────────── */}
         <div className="card">
           <div className="flex items-center gap-2 mb-4">
-            <User size={16} className="text-indigo-400" />
-            <h2 className="font-bold text-slate-50">Profile</h2>
+            <User size={16} className="text-indigo-600" />
+            <h2 className="font-bold text-slate-900">Profile</h2>
           </div>
           <div className="space-y-3">
             <div>
               <label className="label">Name</label>
-              <input readOnly value={user?.name || ''} className="input opacity-65 cursor-default" />
+              <input readOnly value={user?.name || ''} className="input bg-slate-50 text-slate-600 cursor-default" />
             </div>
             <div>
               <label className="label">Email</label>
-              <input readOnly value={user?.email || ''} className="input opacity-65 cursor-default" />
+              <input readOnly value={user?.email || ''} className="input bg-slate-50 text-slate-600 cursor-default" />
             </div>
             <div>
               <label className="label">Role</label>
-              <input readOnly value={user?.role?.replace('_', ' ') || ''} className="input opacity-65 cursor-default capitalize" />
+              <input readOnly value={user?.role?.replace('_', ' ') || ''} className="input bg-slate-50 text-slate-600 cursor-default capitalize" />
             </div>
           </div>
         </div>
@@ -597,8 +592,8 @@ export default function SettingsPage() {
         {/* ── Change Password ───────────────────────────────────────────────── */}
         <div className="card">
           <div className="flex items-center gap-2 mb-4">
-            <Lock size={16} className="text-indigo-400" />
-            <h2 className="font-bold text-slate-50">Change Password</h2>
+            <Lock size={16} className="text-indigo-600" />
+            <h2 className="font-bold text-slate-900">Change Password</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
             <div>
@@ -609,7 +604,7 @@ export default function SettingsPage() {
               <label className="label">New Password</label>
               <div className="relative">
                 <input {...register('newPassword', { required: true, minLength: 8 })} type={showPass ? 'text' : 'password'} className="input pr-10" />
-                <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+                <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700">
                   {showPass ? <EyeOff size={14} /> : <Eye size={14} />}
                 </button>
               </div>
@@ -627,23 +622,23 @@ export default function SettingsPage() {
         {/* ── Automated Cron Schedule Reference ────────────────────────────── */}
         <div className="card lg:col-span-2">
           <div className="flex items-center gap-2 mb-4">
-            <Shield size={16} className="text-indigo-400" />
-            <h2 className="font-bold text-slate-50">Active Monitoring Schedule</h2>
+            <Shield size={16} className="text-indigo-600" />
+            <h2 className="font-bold text-slate-900">Active Monitoring Schedule</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-xs">
             {[
-              { icon: '🔴', label: 'Uptime & Latency', desc: 'Every 5 min (flips alert immediately)', color: 'text-rose-400' },
-              { icon: '🚨', label: 'Fast Hack Scan', desc: 'Every 10 min (spam, redirects, hidden links)', color: 'text-orange-400' },
-              { icon: '🕵️', label: 'Cloaking Detection', desc: 'Hourly (Googlebot vs browser check)', color: 'text-purple-400' },
-              { icon: '🔬', label: 'Deep Security Audit', desc: 'Daily 1:00 AM (WP, .env, Safe Browsing)', color: 'text-indigo-400' },
-              { icon: '🔒', label: 'SSL & DNS Watch', desc: 'Daily 3:00 AM & 4:00 AM (deduplicated logs)', color: 'text-amber-400' },
-              { icon: '🗄️', label: 'DB Quota Guard', desc: 'Every 30 min + Daily 6:00 AM auto-prune', color: 'text-cyan-400' },
+              { icon: '🔴', label: 'Uptime & Latency', desc: 'Every 5 min (flips alert immediately)', color: 'text-rose-700' },
+              { icon: '🚨', label: 'Fast Hack Scan', desc: 'Every 10 min (spam, redirects, hidden links)', color: 'text-orange-700' },
+              { icon: '🕵️', label: 'Cloaking Detection', desc: 'Hourly (Googlebot vs browser check)', color: 'text-purple-700' },
+              { icon: '🔬', label: 'Deep Security Audit', desc: 'Daily 1:00 AM (WP, .env, Safe Browsing)', color: 'text-indigo-700' },
+              { icon: '🔒', label: 'SSL & DNS Watch', desc: 'Daily 3:00 AM & 4:00 AM (deduplicated logs)', color: 'text-amber-700' },
+              { icon: '🗄️', label: 'DB Quota Guard', desc: 'Every 30 min + Daily 6:00 AM auto-prune', color: 'text-sky-700' },
             ].map(({ icon, label, desc, color }) => (
-              <div key={label} className="flex items-start gap-2.5 p-3 rounded-xl bg-[#070b14]/80 border border-slate-800">
+              <div key={label} className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200">
                 <span className="text-base shrink-0">{icon}</span>
                 <div>
                   <p className={`font-semibold ${color}`}>{label}</p>
-                  <p className="text-slate-400 mt-0.5">{desc}</p>
+                  <p className="text-slate-600 mt-0.5">{desc}</p>
                 </div>
               </div>
             ))}

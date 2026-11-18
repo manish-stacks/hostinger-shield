@@ -70,20 +70,20 @@ export default function ReportsPage() {
           </thead>
           <tbody>
             {isLoading ? (
-              <tr><td colSpan={5} className="text-center py-10"><Loader2 size={20} className="animate-spin mx-auto" /></td></tr>
+              <tr><td colSpan={5} className="text-center py-10"><Loader2 size={20} className="animate-spin mx-auto text-indigo-600" /></td></tr>
             ) : reports.length === 0 ? (
-              <tr><td colSpan={5} className="text-center py-12 text-slate-400">No reports yet. Generate one above.</td></tr>
+              <tr><td colSpan={5} className="text-center py-12 text-slate-500">No reports yet. Generate one above.</td></tr>
             ) : reports.map((r: Record<string, unknown>) => (
               <tr key={r._id as string}>
-                <td className="font-medium text-slate-100">
+                <td className="font-semibold text-slate-900">
                   <div className="flex items-center gap-2">
-                    <FileText size={14} className="text-indigo-400 shrink-0" />
+                    <FileText size={14} className="text-indigo-600 shrink-0" />
                     <span>{r.title as string}</span>
                   </div>
                 </td>
                 <td><span className="badge-info capitalize">{(r.reportType || r.type) as string}</span></td>
                 <td>{r.status === 'ready' ? <span className="badge-success">Ready</span> : <span className="badge-warning capitalize">{r.status as string}</span>}</td>
-                <td className="text-xs text-slate-400">{r.createdAt ? formatDistanceToNow(new Date(r.createdAt as string), { addSuffix: true }) : '—'}</td>
+                <td className="text-xs text-slate-500">{r.createdAt ? formatDistanceToNow(new Date(r.createdAt as string), { addSuffix: true }) : '—'}</td>
                 <td>
                   {r.status === 'ready' && (
                     <div className="flex items-center gap-1">

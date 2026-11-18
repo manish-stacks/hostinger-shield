@@ -48,12 +48,12 @@ export function BulkImportModal({ onClose }: { onClose: () => void }) {
       <div className="modal w-full max-w-lg" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-cyan-500/15 flex items-center justify-center">
-              <Upload size={16} className="text-cyan-400" />
+            <div className="w-8 h-8 rounded-xl bg-indigo-50 flex items-center justify-center">
+              <Upload size={16} className="text-indigo-600" />
             </div>
             <div>
-              <h2 className="font-bold text-slate-50">Bulk Import Server Domains</h2>
-              <p className="text-[11px] text-slate-400">Paste all domains hosted on your server — one per line or comma-separated</p>
+              <h2 className="font-bold text-slate-900">Bulk Import Server Domains</h2>
+              <p className="text-[11px] text-slate-500">Paste all domains hosted on your server — one per line or comma-separated</p>
             </div>
           </div>
           <button onClick={onClose} className="btn-ghost p-1.5"><X size={16} /></button>
@@ -63,7 +63,7 @@ export function BulkImportModal({ onClose }: { onClose: () => void }) {
           <div>
             <div className="flex items-center justify-between mb-1">
               <label className="label mb-0">Domains List *</label>
-              <span className="text-[11px] text-cyan-400 font-medium tabular-nums">{parsedCount} detected</span>
+              <span className="text-[11px] text-indigo-600 font-semibold tabular-nums">{parsedCount} detected</span>
             </div>
             <textarea
               value={text}
@@ -98,7 +98,7 @@ export function BulkImportModal({ onClose }: { onClose: () => void }) {
             </div>
           </div>
 
-          <label className="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+          <label className="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
             <input
               type="checkbox"
               checked={runImmediateCheck}

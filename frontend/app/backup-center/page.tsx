@@ -42,7 +42,7 @@ function AddBackupModal({ onClose }: { onClose: () => void }) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal w-full max-w-md" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-5">
-          <h2 className="text-base font-semibold text-[#e6edf3]">Log Manual Backup</h2>
+          <h2 className="text-base font-semibold text-slate-900">Log Manual Backup</h2>
           <button onClick={onClose} className="btn-ghost p-1"><X size={16} /></button>
         </div>
 
@@ -158,7 +158,7 @@ export default function BackupCenterPage() {
       </div>
 
       {/* Info banner */}
-      <div className="flex items-start gap-2 p-3 mb-5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300">
+      <div className="flex items-start gap-2 p-3 mb-5 rounded-lg bg-indigo-50 border border-indigo-200 text-xs text-indigo-800">
         <HardDrive size={14} className="mt-0.5 shrink-0" />
         <span>
           Hostinger shared hosting backups are managed via <strong>hPanel</strong>. Use the{' '}
@@ -170,14 +170,14 @@ export default function BackupCenterPage() {
       {/* Stat cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {[
-          { label: 'Total Sites',          value: stats.totalSites            ?? '—', color: 'text-blue-400',    bg: 'bg-blue-500/10' },
-          { label: 'Backed Up (7d)',        value: stats.sitesWithRecentBackup ?? '—', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
-          { label: 'Needs Backup',          value: stats.sitesNeedingBackup    ?? '—', color: 'text-red-400',     bg: 'bg-red-500/10', alert: (stats.sitesNeedingBackup || 0) > 0 },
+          { label: 'Total Sites',          value: stats.totalSites            ?? '—', color: 'text-indigo-600',    bg: 'bg-blue-500/10' },
+          { label: 'Backed Up (7d)',        value: stats.sitesWithRecentBackup ?? '—', color: 'text-emerald-600', bg: 'bg-emerald-500/10' },
+          { label: 'Needs Backup',          value: stats.sitesNeedingBackup    ?? '—', color: 'text-rose-600',     bg: 'bg-red-500/10', alert: (stats.sitesNeedingBackup || 0) > 0 },
           { label: 'Total Records',         value: stats.totalBackupRecords    ?? '—', color: 'text-purple-400',  bg: 'bg-purple-500/10' },
         ].map(({ label, value, color, bg, alert }) => (
           <div key={label} className="stat-card">
-            <p className={`text-2xl font-bold ${alert ? 'text-red-400' : 'text-[#e6edf3]'}`}>{value}</p>
-            <p className="text-xs text-[#8b949e]">{label}</p>
+            <p className={`text-2xl font-bold ${alert ? 'text-rose-600' : 'text-slate-900'}`}>{value}</p>
+            <p className="text-xs text-slate-500">{label}</p>
           </div>
         ))}
       </div>
@@ -185,7 +185,7 @@ export default function BackupCenterPage() {
       {/* Filters */}
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <div className="flex items-center gap-2">
-          <Filter size={14} className="text-[#8b949e]" />
+          <Filter size={14} className="text-slate-500" />
           <select
             value={accountId}
             onChange={(e) => { setAccountId(e.target.value); setPage(1); }}
@@ -200,7 +200,7 @@ export default function BackupCenterPage() {
           </select>
         </div>
 
-        <label className="flex items-center gap-2 cursor-pointer text-sm text-[#8b949e]">
+        <label className="flex items-center gap-2 cursor-pointer text-sm text-slate-500">
           <input
             type="checkbox"
             checked={needsOnly}
@@ -213,14 +213,14 @@ export default function BackupCenterPage() {
         {(accountId || needsOnly) && (
           <button
             onClick={() => { setAccountId(''); setNeedsOnly(false); setPage(1); }}
-            className="text-xs text-[#8b949e] hover:text-red-400"
+            className="text-xs text-slate-500 hover:text-rose-600"
           >
             Clear filters
           </button>
         )}
 
         {pagination.total > 0 && (
-          <span className="ml-auto text-xs text-[#8b949e]">{pagination.total} sites</span>
+          <span className="ml-auto text-xs text-slate-500">{pagination.total} sites</span>
         )}
       </div>
 
@@ -240,9 +240,9 @@ export default function BackupCenterPage() {
           </thead>
           <tbody>
             {isLoading ? (
-              <tr><td colSpan={7} className="text-center py-12"><Loader2 size={20} className="animate-spin mx-auto text-[#8b949e]" /></td></tr>
+              <tr><td colSpan={7} className="text-center py-12"><Loader2 size={20} className="animate-spin mx-auto text-slate-500" /></td></tr>
             ) : rows.length === 0 ? (
-              <tr><td colSpan={7} className="text-center py-12 text-[#8b949e]">
+              <tr><td colSpan={7} className="text-center py-12 text-slate-500">
                 <HardDrive size={32} className="mx-auto mb-2 opacity-30" />
                 No data — add your websites first
               </td></tr>
@@ -255,10 +255,10 @@ export default function BackupCenterPage() {
 
               return (
                 <tr key={site?._id as string}>
-                  <td className="font-medium text-[#e6edf3]">{site?.domain || '—'}</td>
+                  <td className="font-medium text-slate-900">{site?.domain || '—'}</td>
                   <td className="text-xs">
                     {site?.hostingerAccount?.accountName ? (
-                      <span className="px-2 py-0.5 rounded-full bg-[#3b5bdb]/15 text-[#3b5bdb]">
+                      <span className="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200">
                         {site.hostingerAccount.accountName}
                       </span>
                     ) : '—'}
@@ -266,32 +266,32 @@ export default function BackupCenterPage() {
                   <td>
                     {row.lastBackupDate ? (
                       <div>
-                        <p className="text-xs text-[#e6edf3]">
+                        <p className="text-xs text-slate-900">
                           {formatDistanceToNow(new Date(row.lastBackupDate as string), { addSuffix: true })}
                         </p>
-                        <p className="text-[10px] text-[#8b949e]">
+                        <p className="text-[10px] text-slate-500">
                           {new Date(row.lastBackupDate as string).toLocaleDateString()}
                         </p>
                       </div>
                     ) : (
-                      <span className="text-xs text-[#8b949e] italic">Never logged</span>
+                      <span className="text-xs text-slate-500 italic">Never logged</span>
                     )}
                   </td>
-                  <td className="text-xs text-[#8b949e] capitalize">
+                  <td className="text-xs text-slate-500 capitalize">
                     {latest?.backupType as string || '—'}
                   </td>
-                  <td className="text-xs text-[#8b949e]">{row.totalBackups as number}</td>
+                  <td className="text-xs text-slate-500">{row.totalBackups as number}</td>
                   <td>
                     {needsBackup ? (
                       <div className="flex items-center gap-1.5">
-                        <AlertTriangle size={12} className="text-red-400" />
+                        <AlertTriangle size={12} className="text-rose-600" />
                         <span className="badge-danger text-[10px]">
                           {days === null ? 'Never' : `${days}d ago`}
                         </span>
                       </div>
                     ) : (
                       <div className="flex items-center gap-1.5">
-                        <CheckCircle size={12} className="text-emerald-400" />
+                        <CheckCircle size={12} className="text-emerald-600" />
                         <span className="badge-success text-[10px]">{days}d ago</span>
                       </div>
                     )}
@@ -323,7 +323,7 @@ export default function BackupCenterPage() {
                             if (confirm('Delete this backup record?'))
                               deleteMutation.mutate(latest._id as string);
                           }}
-                          className="btn-ghost py-1 px-2 text-xs text-red-400 hover:text-red-300"
+                          className="btn-ghost py-1 px-2 text-xs text-rose-600 hover:text-rose-700"
                           title="Delete record"
                         >
                           ×
